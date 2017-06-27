@@ -33,8 +33,9 @@ class docrnn():
             while next_char is not META_TOKEN:
                 encoded_text = docrnn_encode_sequence(gen_text,
                                                       self.tokenizer.word_index)
-                next_char = indices_char[sample(model.predict(
-                    encoded_text)[0])]
+                probs = self.model.predict(encoded_text)[0]
+                next_char_index = docrnn_sample(probs)
+                next_char = indices_char[next_char_index]
                 gen_text += [next_char]
             print(gen_text[1:-1])
             gen_texts.append(gen_text[1:-1])
@@ -77,6 +78,19 @@ class docrnn():
                            optimizer=Adam(lr=0.01, decay=1e-6))
 
         self.model.fit(X, y, batch_size=BATCH_SIZE, epochs=EPOCHS)
+
+    def train_from_file(self, file_path, **kwargs):
+        files = [file_path] if file_path is str else file_path
+        texts = []
+        for file in files:
+            texts += docrnn_texts_from_file(file, **kwargs)
+        self.train(texts, **kwargs)
+
+    def generate_to_file(self, destination_path, **kwargs):
+        texts = self.generate(**kwargs, return_as_list=True)
+        with open(destination_path, 'w', encoding='utf-8') as f:
+            for text in texts:
+                f.write("{}\n".format(text))
 
 
 def docrnn_sample(preds, temperature):
@@ -122,8 +136,10 @@ def docrnn_encode_training(text, meta_token='<s>', maxlen=150):
 
 def docrnn_texts_from_file(file_path, header=True):
     '''
-    Retrieves texts and returns as list from a newline-delimited file.
+    Retrieves texts from a newline-delimited file and returns as a list.
     '''
 
-    texts = []
     with open(file_path, 'r', encoding="utf-8") as f:
+        f.readline() if header
+        texts = [line.rstrip('\n').replace("\n", " ") for line in f]
+    return texts
