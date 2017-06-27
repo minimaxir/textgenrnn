@@ -41,6 +41,25 @@ class docrnn():
         return gen_texts if return_as_list
 
     def train(self, texts, fc_layers=[256, 128]):
+
+        # Encode texts as valid X and y.
+        X = []
+        y = []
+
+        for text in texts:
+            subset_x, subset_y = docrnn_encode_training(text, meta_token)
+            for i in range(len(subset_x)):
+                X.append(subset_x[i])
+                y.append(subset_y[i])
+
+        X = np.array(X)
+        y = np.array(y)
+
+        X = self.tokenizer.texts_to_sequences(X)
+        X = sequence.pad_sequences(X, maxlen=MAX_LENGTH+1)
+        y = np.array([self.tokenizer.word_index[x] for x in y])
+
+        # Append Dense layers to model and retrain.
         self.model.layers.pop()
         output = self.model.layers[-1].output
 
@@ -57,6 +76,14 @@ class docrnn():
         self.model.compile(loss='categorical_crossentropy',
                            optimizer=Adam(lr=0.01, decay=1e-6))
 
+        self.model.fit(X, y, batch_size=BATCH_SIZE, epochs=EPOCHS)
+
+
+'''
+Samples predicted probabilities of the next character to allow
+for the network to show "creativity."
+'''
+
 
 def docrnn_sample(preds, temperature):
     preds = np.asarray(preds).astype('float64')
@@ -66,7 +93,29 @@ def docrnn_sample(preds, temperature):
     probas = np.random.multinomial(1, preds, 1)
     return np.argmax(probas)
 
+'''
+Encodes a string into the corresponding encoding for prediction with
+the model.
+'''
+
 
 def docrnn_encode_sequence(text, vocab, meta_token='<s>', maxlen=150):
     encoded = [[vocab.get(x, 0) for x in ([meta_token] + list(text))]]
     return sequence.pad_sequences(encoded, maxlen=maxlen)
+
+'''
+Encodes a list of texts into a list of list of char tokens,
+and the next char.
+'''
+
+
+def docrnn_encode_training(text, meta_token='<s>', maxlen=150):
+    text_aug = [meta_token] + list(text) + [meta_token]
+    chars = []
+    next_char = []
+
+    for i in range(min(len(text_aug) - 1, maxlen)):
+        chars.append(text_aug[0:i + 1])
+        next_char.append(text_aug[i + 1])
+
+    return chars, next_char
