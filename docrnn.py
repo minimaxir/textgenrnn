@@ -79,13 +79,12 @@ class docrnn():
         self.model.fit(X, y, batch_size=BATCH_SIZE, epochs=EPOCHS)
 
 
-'''
-Samples predicted probabilities of the next character to allow
-for the network to show "creativity."
-'''
-
-
 def docrnn_sample(preds, temperature):
+    '''
+    Samples predicted probabilities of the next character to allow
+    for the network to show "creativity."
+    '''
+
     preds = np.asarray(preds).astype('float64')
     preds = np.log(preds) / temperature
     exp_preds = np.exp(preds)
@@ -93,23 +92,23 @@ def docrnn_sample(preds, temperature):
     probas = np.random.multinomial(1, preds, 1)
     return np.argmax(probas)
 
-'''
-Encodes a string into the corresponding encoding for prediction with
-the model.
-'''
-
 
 def docrnn_encode_sequence(text, vocab, meta_token='<s>', maxlen=150):
+    '''
+    Encodes a string into the corresponding encoding for prediction with
+    the model.
+    '''
+
     encoded = [[vocab.get(x, 0) for x in ([meta_token] + list(text))]]
     return sequence.pad_sequences(encoded, maxlen=maxlen)
 
-'''
-Encodes a list of texts into a list of list of char tokens,
-and the next char.
-'''
-
 
 def docrnn_encode_training(text, meta_token='<s>', maxlen=150):
+    '''
+    Encodes a list of texts into a sequence of texts, and the next character
+    in those texts.
+    '''
+
     text_aug = [meta_token] + list(text) + [meta_token]
     chars = []
     next_char = []
@@ -119,3 +118,12 @@ def docrnn_encode_training(text, meta_token='<s>', maxlen=150):
         next_char.append(text_aug[i + 1])
 
     return chars, next_char
+
+
+def docrnn_texts_from_file(file_path, header=True):
+    '''
+    Retrieves texts and returns as list from a newline-delimited file.
+    '''
+
+    texts = []
+    with open(file_path, 'r', encoding="utf-8") as f:
