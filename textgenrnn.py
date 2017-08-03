@@ -31,7 +31,7 @@ class textgenrnn():
             next_char = ''
             while next_char is not META_TOKEN:
                 encoded_text = textgenrnn_encode_sequence(gen_text,
-                                                      self.tokenizer.word_index)
+                                                          self.tokenizer.word_index)
                 probs = self.model.predict(encoded_text)[0]
                 next_char_index = textgenrnn_sample(probs)
                 next_char = indices_char[next_char_index]
@@ -121,20 +121,29 @@ def textgenrnn_sample(preds, temperature):
     '''
 
     preds = np.asarray(preds).astype('float64')
-    preds = np.log(preds) / temperature
+
+    if temperature is None or temperature == 0.0:
+        return np.argmax(preds)
+
+    preds = np.log(preds + 1e-12) / temperature
     exp_preds = np.exp(preds)
     preds = exp_preds / np.sum(exp_preds)
-    probas = np.random.multinomial(1, preds, 1)
-    return np.argmax(probas)
+    index = -1
+
+    # prevent function from being able to choose 0 (placeholder)
+    while index < 1:
+        probas = np.random.multinomial(1, preds, 1)
+        index = np.argmax(probas)
+    return index
 
 
-def textgenrnn_encode_sequence(text, vocab, meta_token='<s>', maxlen=40):
+def textgenrnn_encode_sequence(text, vocab):
     '''
     Encodes a string into the corresponding encoding for prediction with
     the model.
     '''
 
-    encoded = [[vocab.get(x, 0) for x in ([meta_token] + list(text))]]
+    encoded = np.array([vocab.get(x, 0) for x in text])
     return sequence.pad_sequences(encoded, maxlen=maxlen)
 
 
@@ -148,8 +157,8 @@ def textgenrnn_encode_training(text, meta_token='<s>', maxlen=40):
     chars = []
     next_char = []
 
-    for i in range(min(len(text_aug) - 1, maxlen)):
-        chars.append(text_aug[0:i + 1])
+    for i in range(len(text_aug) - 1):
+        chars.append(text_aug[0:i + 1][-maxlen:])
         next_char.append(text_aug[i + 1])
 
     return chars, next_char
@@ -162,5 +171,5 @@ def textgenrnn_texts_from_file(file_path, header=True):
 
     with open(file_path, 'r', encoding="utf-8") as f:
         f.readline() if header
-        texts = [line.rstrip('\n').replace("\n", " ") for line in f]
+        texts = [line.rstrip('\n') for line in f]
     return texts
