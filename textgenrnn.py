@@ -1,10 +1,10 @@
-from keras.layers import Input, Embedding, LSTM, Dense, GRU
-from keras.optimizers import Nadam, Adam
+from keras.layers import Input, Embedding, Dense, GRU
+from keras.optimizers import Nadam
 from keras.callbacks import ModelCheckpoint, Callback
 from keras.callbacks import LearningRateScheduler, LambdaCallback
 from keras.models import Model, load_model
 from keras.preprocessing import sequence
-from random import seed, random, sample
+from random import random
 import numpy as np
 import json
 import h5py
@@ -33,7 +33,7 @@ class textgenrnn():
         if return_as_list:
             return gen_texts
 
-    def train_on_texts(self, texts, batch_size=128, epochs=50):
+    def train_on_texts(self, texts, batch_size=128, num_epochs=50):
 
         # Encode chars as X and y.
         X = []
@@ -59,7 +59,7 @@ class textgenrnn():
         def lr_linear_decay(epoch):
             return (base_lr * (1 - (epoch / num_epochs)))
 
-        self.model.fit(X, y, batch_size=batch_size, epochs=epochs,
+        self.model.fit(X, y, batch_size=batch_size, epochs=num_epochs,
                        callbacks=[LearningRateScheduler(lr_linear_decay)])
 
     def train_from_file(self, file_path, **kwargs):
@@ -67,7 +67,7 @@ class textgenrnn():
         texts = []
         for file in files:
             texts += textgenrnn_texts_from_file(file, **kwargs)
-        self.train(texts, **kwargs)
+        self.train_on_texts(texts, **kwargs)
 
     def generate_to_file(self, destination_path, **kwargs):
         texts = self.generate(**kwargs, return_as_list=True)
@@ -85,16 +85,13 @@ def textgenrnn_model(weights_path, num_classes, maxlen=40):
     input = Input(shape=(maxlen,), name='input')
     embedded = Embedding(num_classes, 100, input_length=maxlen,
                          training=False, name='embedding')(input)
-
     rnn = GRU(128, return_sequences=False, name='rnn')(embedded)
-
     output = Dense(num_classes, name='output', activation='softmax')(rnn)
 
     model = Model(inputs=[input], outputs=[output])
-
     model.load_weights(weights_path, by_name=True)
-
     model.compile(loss='categorical_crossentropy', optimizer='nadam')
+    return model
 
 
 def textgenrnn_sample(preds, temperature):
