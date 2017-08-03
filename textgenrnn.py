@@ -3,6 +3,7 @@ from keras.optimizers import Nadam
 from keras.callbacks import Callback, LearningRateScheduler
 from keras.models import Model, load_model
 from keras.preprocessing import sequence
+from keras.preprocessing.text import Tokenizer
 from random import random
 import numpy as np
 import json
@@ -10,14 +11,22 @@ import h5py
 import csv
 
 
-class textgenrnn():
+class textgenrnn:
     META_TOKEN = '<s>'
 
-    def __init__(self, weights_path, vocab_path):
+    def __init__(self, weights_path=None,
+                 vocab_path=None):
+
+        if weights_path is None:
+            weights_path = 'textgenrnn_weights.hdf5'
+
+        if vocab_path is None:
+            vocab_path = 'textgenrnn_vocab.json'
+
         with open(vocab_path, 'r') as json_file:
             self.vocab = json.load(json_file)
 
-        self.tokenizer = Tokenizer()
+        self.tokenizer = Tokenizer(filters='', char_level=True)
         self.tokenizer.word_index = self.vocab
         self.num_classes = len(self.vocab) + 1
         self.model = textgenrnn_model(weights_path, self.num_classes)
@@ -26,10 +35,12 @@ class textgenrnn():
     def generate(self, n=1, return_as_list=False, **kwargs):
         gen_texts = []
         for _ in range(n):
-            gen_text = textgenrnn_generate(model,
-                                           indices_char=self.indices_char,
+            gen_text = textgenrnn_generate(self.model,
+                                           self.vocab,
+                                           self.indices_char,
                                            **kwargs)
-            print(gen_text)
+            if not return_as_list:
+                print("{}\n".format(gen_text))
             gen_texts.append(gen_text)
         if return_as_list:
             return gen_texts
@@ -41,7 +52,8 @@ class textgenrnn():
         y = []
 
         for text in texts:
-            subset_x, subset_y = textgenrnn_encode_training(text, meta_token)
+            subset_x, subset_y = textgenrnn_encode_training(text,
+                                                            self.META_TOKEN)
             for i in range(len(subset_x)):
                 if random() < 0.33:
                     X.append(subset_x[i])
@@ -51,8 +63,8 @@ class textgenrnn():
         y = np.array(y)
 
         X = self.tokenizer.texts_to_sequences(X)
-        X = sequence.pad_sequences(X, maxlen=MAX_LENGTH)
-        y = textgenrnn_encode_cat(y, self.tokenizer.word_index)
+        X = sequence.pad_sequences(X, maxlen=40)
+        y = textgenrnn_encode_cat(y, self.vocab)
 
         base_lr = 2e-3
 
@@ -69,11 +81,12 @@ class textgenrnn():
     def load(self, weights_path):
         self.model = textgenrnn_model(weights_path, self.num_classes)
 
-    def train_from_file(self, file_path, **kwargs):
-        files = [file_path] if file_path is str else file_path
+    def train_from_file(self, file_path, header=True, delim="\n", **kwargs):
+        files = [file_path] if isinstance(file_path, str) else file_path
         texts = []
         for file in files:
-            texts += textgenrnn_texts_from_file(file, **kwargs)
+            texts += textgenrnn_texts_from_file(file, header, delim)
+        print("{} texts collected.".format(len(texts)))
         self.train_on_texts(texts, **kwargs)
 
     def train_from_largetext_file(self, file_path, **kwargs):
@@ -94,7 +107,7 @@ def textgenrnn_model(weights_path, num_classes, maxlen=40, optimizer='nadam'):
 
     input = Input(shape=(maxlen,), name='input')
     embedded = Embedding(num_classes, 100, input_length=maxlen,
-                         training=False, name='embedding')(input)
+                         trainable=False, name='embedding')(input)
     rnn = GRU(128, return_sequences=False, name='rnn')(embedded)
     output = Dense(num_classes, name='output', activation='softmax')(rnn)
 
@@ -127,7 +140,8 @@ def textgenrnn_sample(preds, temperature):
     return index
 
 
-def textgenrnn_generate(model, indices_char, prefix=None, temperature=1.0,
+def textgenrnn_generate(model, vocab,
+                        indices_char, prefix=None, temperature=0.2,
                         maxlen=40, meta_token='<s>',
                         max_gen_length=200):
     '''
@@ -138,22 +152,24 @@ def textgenrnn_generate(model, indices_char, prefix=None, temperature=1.0,
     next_char = ''
 
     while next_char != meta_token and len(text) < max_gen_length:
-        encoded_text = encode_sequence(text[-maxlen:])
+        encoded_text = textgenrnn_encode_sequence(text[-maxlen:],
+                                                  vocab, maxlen)
         next_index = textgenrnn_sample(
-            model.predict(encoded_text, batch_size=1)[0])
+            model.predict(encoded_text, batch_size=1)[0],
+            temperature)
         next_char = indices_char[next_index]
         text += [next_char]
     return ''.join(text[1:-1])
 
 
-def textgenrnn_encode_sequence(text, vocab):
+def textgenrnn_encode_sequence(text, vocab, maxlen):
     '''
     Encodes a text into the corresponding encoding for prediction with
     the model.
     '''
 
     encoded = np.array([vocab.get(x, 0) for x in text])
-    return sequence.pad_sequences(encoded, maxlen=maxlen)
+    return sequence.pad_sequences([encoded], maxlen=maxlen)
 
 
 def textgenrnn_encode_training(text, meta_token='<s>', maxlen=40):
@@ -178,7 +194,7 @@ def textgenrnn_texts_from_file(file_path, header=True, delim='\n'):
     Retrieves texts from a newline-delimited file and returns as a list.
     '''
 
-    with open(file_path, 'r', encoding="utf-8", delim=delim) as f:
+    with open(file_path, 'r', encoding="utf-8") as f:
         if header:
             f.readline()
         texts = [line.rstrip(delim) for line in f]
