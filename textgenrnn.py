@@ -1,7 +1,6 @@
 from keras.layers import Input, Embedding, Dense, GRU
 from keras.optimizers import Nadam
-from keras.callbacks import ModelCheckpoint, Callback
-from keras.callbacks import LearningRateScheduler, LambdaCallback
+from keras.callbacks import Callback, LearningRateScheduler
 from keras.models import Model, load_model
 from keras.preprocessing import sequence
 from random import random
@@ -35,7 +34,7 @@ class textgenrnn():
         if return_as_list:
             return gen_texts
 
-    def train_on_texts(self, texts, batch_size=128, num_epochs=50):
+    def train_on_texts(self, texts, batch_size=128, num_epochs=100):
 
         # Encode chars as X and y.
         X = []
@@ -78,7 +77,7 @@ class textgenrnn():
         self.train_on_texts(texts, **kwargs)
 
     def train_from_largetext_file(self, file_path, **kwargs):
-        self.train_from_file(file_path, delim="\n\n", kwargs)
+        self.train_from_file(file_path, delim="\n\n", **kwargs)
 
     def generate_to_file(self, destination_path, **kwargs):
         texts = self.generate(**kwargs, return_as_list=True)
@@ -87,7 +86,7 @@ class textgenrnn():
                 f.write("{}\n".format(text))
 
 
-def textgenrnn_model(weights_path, num_classes, maxlen=40):
+def textgenrnn_model(weights_path, num_classes, maxlen=40, optimizer='nadam'):
     '''
     Builds the model architecture for textgenrnn and
     loads the pretrained weights for the model.
@@ -101,7 +100,7 @@ def textgenrnn_model(weights_path, num_classes, maxlen=40):
 
     model = Model(inputs=[input], outputs=[output])
     model.load_weights(weights_path, by_name=True)
-    model.compile(loss='categorical_crossentropy', optimizer='nadam')
+    model.compile(loss='categorical_crossentropy', optimizer=optimizer)
     return model
 
 
@@ -128,10 +127,9 @@ def textgenrnn_sample(preds, temperature):
     return index
 
 
-def textgenrnn_generate(model, prefix=None, temperature=1.0,
+def textgenrnn_generate(model, indices_char, prefix=None, temperature=1.0,
                         maxlen=40, meta_token='<s>',
-                        max_gen_length=200,
-                        indices_char):
+                        max_gen_length=200):
     '''
     Generates and returns a single text.
     '''
@@ -150,7 +148,7 @@ def textgenrnn_generate(model, prefix=None, temperature=1.0,
 
 def textgenrnn_encode_sequence(text, vocab):
     '''
-    Encodes a string into the corresponding encoding for prediction with
+    Encodes a text into the corresponding encoding for prediction with
     the model.
     '''
 
@@ -160,7 +158,7 @@ def textgenrnn_encode_sequence(text, vocab):
 
 def textgenrnn_encode_training(text, meta_token='<s>', maxlen=40):
     '''
-    Encodes a list of texts into a sequence of texts, and the next character
+    Encodes a list of texts into a list of texts, and the next character
     in those texts.
     '''
 
@@ -175,13 +173,14 @@ def textgenrnn_encode_training(text, meta_token='<s>', maxlen=40):
     return chars, next_char
 
 
-def textgenrnn_texts_from_file(file_path, header=True):
+def textgenrnn_texts_from_file(file_path, header=True, delim='\n'):
     '''
     Retrieves texts from a newline-delimited file and returns as a list.
     '''
 
-    with open(file_path, 'r', encoding="utf-8", delim='\n') as f:
-        f.readline() if header
+    with open(file_path, 'r', encoding="utf-8", delim=delim) as f:
+        if header:
+            f.readline()
         texts = [line.rstrip(delim) for line in f]
     return texts
 
