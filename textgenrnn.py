@@ -20,14 +20,16 @@ class textgenrnn():
 
         self.tokenizer = Tokenizer()
         self.tokenizer.word_index = self.vocab
-        self.num_classes = len(self.tokenizer.word_index) + 1
+        self.num_classes = len(self.vocab) + 1
         self.model = textgenrnn_model(weights_path, self.num_classes)
         self.indices_char = dict((self.vocab[c], c) for c in self.vocab)
 
     def generate(self, n=1, return_as_list=False, **kwargs):
         gen_texts = []
         for _ in range(n):
-            gen_text = textgenrnn_generate(model, **kwargs)
+            gen_text = textgenrnn_generate(model,
+                                           indices_char=self.indices_char,
+                                           **kwargs)
             print(gen_text)
             gen_texts.append(gen_text)
         if return_as_list:
@@ -62,12 +64,21 @@ class textgenrnn():
         self.model.fit(X, y, batch_size=batch_size, epochs=num_epochs,
                        callbacks=[LearningRateScheduler(lr_linear_decay)])
 
+    def save(self, weights_path="textgenrnn_weights.hdf5"):
+        self.model.save_weights(weights_path)
+
+    def load(self, weights_path):
+        self.model = textgenrnn_model(weights_path, self.num_classes)
+
     def train_from_file(self, file_path, **kwargs):
         files = [file_path] if file_path is str else file_path
         texts = []
         for file in files:
             texts += textgenrnn_texts_from_file(file, **kwargs)
         self.train_on_texts(texts, **kwargs)
+
+    def train_from_largetext_file(self, file_path, **kwargs):
+        self.train_from_file(file_path, delim="\n\n", kwargs)
 
     def generate_to_file(self, destination_path, **kwargs):
         texts = self.generate(**kwargs, return_as_list=True)
@@ -119,7 +130,8 @@ def textgenrnn_sample(preds, temperature):
 
 def textgenrnn_generate(model, prefix=None, temperature=1.0,
                         maxlen=40, meta_token='<s>',
-                        max_gen_length=300):
+                        max_gen_length=200,
+                        indices_char):
     '''
     Generates and returns a single text.
     '''
