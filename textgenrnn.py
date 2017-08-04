@@ -1,5 +1,4 @@
-from keras.layers import Input, Embedding, Dense, GRU
-from keras.optimizers import Nadam
+from keras.layers import Input, Embedding, Dense, LSTM
 from keras.callbacks import Callback, LearningRateScheduler
 from keras.models import Model, load_model
 from keras.preprocessing import sequence
@@ -45,7 +44,7 @@ class textgenrnn:
         if return_as_list:
             return gen_texts
 
-    def train_on_texts(self, texts, batch_size=128, num_epochs=100):
+    def train_on_texts(self, texts, batch_size=128, num_epochs=50):
 
         # Encode chars as X and y.
         X = []
@@ -55,9 +54,8 @@ class textgenrnn:
             subset_x, subset_y = textgenrnn_encode_training(text,
                                                             self.META_TOKEN)
             for i in range(len(subset_x)):
-                if random() < 0.33:
-                    X.append(subset_x[i])
-                    y.append(subset_y[i])
+                X.append(subset_x[i])
+                y.append(subset_y[i])
 
         X = np.array(X)
         y = np.array(y)
@@ -99,7 +97,7 @@ class textgenrnn:
                 f.write("{}\n".format(text))
 
 
-def textgenrnn_model(weights_path, num_classes, maxlen=40, optimizer='nadam'):
+def textgenrnn_model(weights_path, num_classes, maxlen=40):
     '''
     Builds the model architecture for textgenrnn and
     loads the pretrained weights for the model.
@@ -108,12 +106,13 @@ def textgenrnn_model(weights_path, num_classes, maxlen=40, optimizer='nadam'):
     input = Input(shape=(maxlen,), name='input')
     embedded = Embedding(num_classes, 100, input_length=maxlen,
                          trainable=False, name='embedding')(input)
-    rnn = GRU(128, return_sequences=False, name='rnn')(embedded)
+    rnn = LSTM(128, return_sequences=False, name='rnn')(embedded)
     output = Dense(num_classes, name='output', activation='softmax')(rnn)
 
     model = Model(inputs=[input], outputs=[output])
     model.load_weights(weights_path, by_name=True)
-    model.compile(loss='categorical_crossentropy', optimizer=optimizer)
+    # optimizer = Adam()
+    model.compile(loss='categorical_crossentropy', optimizer='nadam')
     return model
 
 
