@@ -73,11 +73,15 @@ class textgenrnn:
         self.model.fit(X, y, batch_size=batch_size, epochs=num_epochs,
                        callbacks=[LearningRateScheduler(lr_linear_decay)])
 
-    def save(self, weights_path="textgenrnn_weights.hdf5"):
+    def save(self, weights_path="textgenrnn_weights_saved.hdf5"):
         self.model.save_weights(weights_path)
 
     def load(self, weights_path):
         self.model = textgenrnn_model(weights_path, self.num_classes)
+
+    def reset(self):
+        self.model = textgenrnn_model("textgenrnn_weights.hdf5",
+                                      self.num_classes)
 
     def train_from_file(self, file_path, header=True, delim="\n", **kwargs):
         files = [file_path] if isinstance(file_path, str) else file_path
