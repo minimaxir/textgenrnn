@@ -88,10 +88,8 @@ class textgenrnn:
             self.num_classes)
 
     def train_from_file(self, file_path, header=True, delim="\n", **kwargs):
-        files = [file_path] if isinstance(file_path, str) else file_path
         texts = []
-        for file in files:
-            texts += textgenrnn_texts_from_file(file, header, delim)
+        texts = textgenrnn_texts_from_file(file_path, header, delim)
         print("{} texts collected.".format(len(texts)))
         self.train_on_texts(texts, **kwargs)
 
