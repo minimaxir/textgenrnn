@@ -98,7 +98,7 @@ class textgenrnn:
 
     def generate_to_file(self, destination_path, **kwargs):
         texts = self.generate(return_as_list=True, **kwargs)
-        with open(destination_path, 'w', encoding='utf-8') as f:
+        with open(destination_path, 'w') as f:
             for text in texts:
                 f.write("{}\n".format(text))
 
