@@ -1,13 +1,12 @@
 from keras.layers import Input, Embedding, Dense, LSTM
-from keras.callbacks import Callback, LearningRateScheduler
+from keras.callbacks import LearningRateScheduler
 from keras.models import Model, load_model
 from keras.preprocessing import sequence
 from keras.preprocessing.text import Tokenizer
-from random import random
 import numpy as np
 import json
 import h5py
-import csv
+from pkg_resources import resource_filename
 
 
 class textgenrnn:
@@ -17,10 +16,12 @@ class textgenrnn:
                  vocab_path=None):
 
         if weights_path is None:
-            weights_path = 'textgenrnn_weights.hdf5'
+            weights_path = resource_filename(__name__,
+                                             'textgenrnn_weights.hdf5')
 
         if vocab_path is None:
-            vocab_path = 'textgenrnn_vocab.json'
+            vocab_path = resource_filename(__name__,
+                                           'textgenrnn_vocab.json')
 
         with open(vocab_path, 'r') as json_file:
             self.vocab = json.load(json_file)
@@ -44,7 +45,7 @@ class textgenrnn:
         if return_as_list:
             return gen_texts
 
-    def train_on_texts(self, texts, batch_size=128, num_epochs=50):
+    def train_on_texts(self, texts, batch_size=128, num_epochs=50, verbose=1):
 
         # Encode chars as X and y.
         X = []
@@ -71,7 +72,8 @@ class textgenrnn:
             return (base_lr * (1 - (epoch / num_epochs)))
 
         self.model.fit(X, y, batch_size=batch_size, epochs=num_epochs,
-                       callbacks=[LearningRateScheduler(lr_linear_decay)])
+                       callbacks=[LearningRateScheduler(lr_linear_decay)],
+                       verbose=verbose)
 
     def save(self, weights_path="textgenrnn_weights_saved.hdf5"):
         self.model.save_weights(weights_path)
@@ -80,8 +82,10 @@ class textgenrnn:
         self.model = textgenrnn_model(weights_path, self.num_classes)
 
     def reset(self):
-        self.model = textgenrnn_model("textgenrnn_weights.hdf5",
-                                      self.num_classes)
+        self.model = textgenrnn_model(
+            resource_filename(__name__,
+                              'textgenrnn_weights.hdf5'),
+            self.num_classes)
 
     def train_from_file(self, file_path, header=True, delim="\n", **kwargs):
         files = [file_path] if isinstance(file_path, str) else file_path

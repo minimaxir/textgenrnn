@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name='textgenrnn',
@@ -12,5 +12,6 @@ setup(
     keywords=['deep learning', 'tensorflow', 'keras', 'text generation'],
     classifiers=[],
     license='MIT',
-    include_package_data=True
+    include_package_data=True,
+    install_requires=['tensorflow', 'keras', 'h5py']
 )
