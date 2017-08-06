@@ -1,0 +1,2 @@
+include textgenrnn/textgenrnn_weights.hdf5
+include textgenrnn/textgenrnn_vocab.json
