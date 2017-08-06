@@ -1,2 +1,9 @@
 /old
 __pycache__
+/build
+/dist
+/textgenrnn.egg-info
+/.ipynb_checkpoints
+/docs/.ipynb_checkpoints
+/docs/textgenrnn_texts.txt
+/docs/hn_weights.hdf5
