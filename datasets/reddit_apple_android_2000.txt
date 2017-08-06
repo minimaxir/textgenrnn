@@ -1,0 +1,2001 @@
+title
+The Apple Watch feature I once thought was a throwaway novelty is now crucial to me.
+Apple is trying to limit how often your iPhone apps can bug you to give them a rating
+The App Store now requires developers to use the official API to request app ratings. Custom prompts are not allowed.
+I built a custom Reddit TouchBar interface!
+TIL that if Apple finds an underage worker in a factory of a supplier, They make the supplier return the child to their home, pay for their education, and pay for their basic needs until they are of working age. They also must offer them re-employment.
+iPhone owners are about 21 times more likely to negatively judge a date who uses an Android phone
+Real time screen capture of Apple's new ARKit in action
+[shower thought] 10 years ago, 'sent from my iphone' meant you were at the leading edge of technology, now it means you probably don't know how to turn off auto-signature.
+Apple Is Trying To Make Your iMessages Even More Private. Apple wants to make its cloud as secure and private as its devices, starting with iMessage.
+Firm That Helped FBI Break Into San Bernardino iPhone Gets Hacked, Tools Leaked Online
+The speed of iPhone 7's camera.
+PSA: If a website displays "Sorry, you need to download flash" (or something similar) to view a video, you really don't. Just use the 'Develop' menu in Safari and switch the user agent to 'Safari - iPad'; the video will likely play right away using HTML5 format.
+Apple promises to stop mining the earth, build all products from recycled materials
+Siri saved my life
+Apple engineer about the original iPhone keynote: 'We were in the fifth row doing shots of Scotch after every segment of the demo. When the finale came and it worked, we all just drained the flask. It was the best demo we'd ever seen. We just spent the entire rest of the day drinking in the city.'
+Tim Cook says Trump’s executive orders are ‘not a policy we support’
+Apple has released a free, beginner-level, 900-page book "App Development with Swift" + related teaching materials.
+Easily share your WiFi with friends on iOS 11, automatically sends passwords to nearby devices
+Tim Cook's letter to employees regarding Trump's withdrawal from Paris accords
+Tim Cook was right to fight the FBI
+Apple's Tim Cook asked President Trump for coding requirement at US schools
+Apple Supplier Confirms New iPhone Models Will Be Waterproof With Wireless Charging
+What Apple gives you for $100 as a Safari Extension Developer — and why Reddit Enhancement Suite may cease support for Safari
+In 2016, Apple was the largest single taxpayer in the United States, paying $15.8 Billion at an effective rate of 25.8%.
+Daring Fireball: The Mac Pro Lives
+Apple sticking with climate change fight despite Trump administration regulation loosening
+Apple's real advantage in AR over Google: Whatever Apple builds, it can deploy across the majority of iOS devices quickly. Android struggles with that.
+WSJ reporting Apple will ditch lightning connector in favor of USB-C in next iPhone
+I Got Rejected by Apple Music… So I Redesigned It – Startup Grind
+You know Apple did a good job this week when you don't see r/all complain
+Showerthought: The MacBook Air is now the thickest new laptop that Apple sells, despite being originally marketed as "The worlds thinnest notebook"
+Here is everything Apple announced at WWDC today!
+I still can't believe the huge volume indicator isn't fixed
+Why can't we interact with Siri on the phone without the UI taking over the screen? Seems Siri should be the spirit of the phone that gets me answers / does stuff for me all while I can keep going what I'm doing.
+Apple, Facebook, Google, and 94 others file opposition to Trump's immigration ban
+Three apps in the top 10 on Mac app store are windows snapping apps - apple needs to address this properly, natively.
+Consumer reports now recommends the MacBook Pro 2016
+Apple's consumer iOS and macOS apps are now officially free
+iMac Pro is not overpriced. The baseline iMac pro specs configured on a Lenovo workstation costs 2300$ more.
+After 10 years of being a Mac user, I think my favourite feature of MacOS has to be the ability to change a file name whilst having that file open.
+Apple's Tim Cook: If You Work Only For Money, You Will Never Be Happy
+Happy 10th Birthday iPhone!
+IAMA Foxconn insider with information on next 12 months of hardware updates
+Today I went hard in the Mac Paint again
+Apple's Night Shift is coming to macOS
+for the love of Jobs will you people stop installing MacKeeper. it's total crap.
+Apple Places Order for 70 Million OLED iPhone Panels From Samsung
+Samsung strikes a $4.3B supply deal with Apple for OLED panels
+AT&amp;T Shuts Down 2G Network and Ends Cellular Connectivity for Original iPhone
+Apple has a secret team working on the holy grail for treating diabetes
+AirPods Have The Highest Customer Satisfaction of Any New Product From Apple
+TIL you can close all open tabs in safari on iPhone/iPad at once by pressing and holding the new tab (double square) button.
+Modern “Hackintoshes” show that Apple should probably just build a Mac tower
+Apple confirms sales of Apple Watch Pride Edition band will support LGBTQ groups.
+Apple removes 58,000 apps from App Store
+All the new things Apple revealed today
+Apple Watch should have a "Music mode" that allows adjusting music volume through the crown without lighting up the screen
+I find myself upvoting more posts since I got my 7 plus. Because of the haptic feedback. Anyone else?
+The new iPad is absurd
+Amazon App coming to the Apple Tv this Summer
+Dear Apple, long story short, thank you. Freak accident occured this morning and my 15" MBP Retina screen cracked. I was quoted $600 to fix it. I'm poor, in school and dead broke. Apple decided to fix it free of charge. I'm forever in your debt &amp; eco-system. THANK YOU!
+Fake news is 'killing people's minds', says Apple boss Tim Cook: Apple chief calls on governments and technology companies to crack down on misinformation in public discourse
+Apple releases first iOS 11 public beta for iPhone and iPad
+UK government says Apple ‘cannot get away with’ unbreakable encryption following terrorist attack
+PSA: AirPods will kill your hotel key
+Wanted to share something personal. My Dad died recently and I noticed a tonne of my mums photos of him were live photos. She didn't know!
+Apple’s Mac Pro, Touch Bar MacBook and original Air designer, Matt Casebolt, will now be designing Teslas
+iOS 11 - Control Center IS now customisable
+21% of Windows users plan to switch to Mac, says survey â against 2% Mac to Windows
+Apple granted patents for bezel-free display and Touch ID button embedded in screen
+Tim Cook confirms Apple's long secretive autonomous vehicle project
+TIL Steve Jobs had 323 patents under his name. The founders of Google and Microsoft combined have less than 30.
+Apple’s record Q1 2017 earnings: 78.3M iPhones, 13.1M iPads, $78.4B revenue
+Apple Expected to Announce New Products as Soon as Next Week, Supply Chain Sources Say
+This 82-Year-Old Woman Is WWDC’s Oldest Attendee: "I didn't see any apps for the elderly, so I decided to create my own."
+What iOS apps do you consider a must have?
+Apple, Microsoft and Uber help staff stranded by Trump ban (update: Airbnb)
+Apple really needs to change the Facetime dial tone.
+A Year of Google Maps &amp; Apple Maps
+Apple Receives Permit From California DMV to Test Self-Driving Cars
+Apple working on enhanced Siri for iPhone 8 launch in the face of competition from Google Assistant and Alexa
+The AirPods have been on the market for 6 months and they STILL have a 6-week order backlog
+Facebook iOS app is now over 380 MB... I mean what?!
+[Suggestion] [iOS] Make the "=" button holdable to make ≠ and ≈.
+Developer access to iPhone's NFC chip coming in iOS 11.
+Apple has acquired Workflow a powerful automation tool for iPad and iPhone
+It’s High Time We Have a Fireside Chat With Everyone
+No more sound bar in the middle of the screen in iOS11
+China uncovers massive underground network of Apple employees selling customers' personal data
+Apple drops to fifth place in best laptop brand survey over higher prices and fewer options
+Monochrome for Reddit, a new reddit app for iPhone
+On this day in 1997, 20 years ago: Steve Jobs returns to Apple as an adviser after Apple buys Jobs' NeXT Computer.
+Over 187,000 apps could become obsolete with Apple's 64-bit only 'iOS 11'
+I've been too ignorant and laughed at those PC gamers for using 120Hz displays thinking it's overkill. Sorry I was wrong about that
+Apple Watch most accurate wrist-worn fitness tracker in new study of heart rate and energy expenditure
+Apple says most vulnerabilities in WikiLeaks docs are already patched
+WikiLeaks reveals CIA malware that "targets iPhone, Android, Smart TVs"
+Tim Cook spotted dining with Google CEO
+Apple park opens to employees in April
+iOS11 lets you choose to provide all apps your location only While Using.
+Apple patents screen tech capable of reading fingerprints without dedicated sensor
+Apple's Siri To Get Smarter As $200 Million Acquisition Of 'Dark Data' AI Specialist Lattice Data Pushes Through
+Facebook app updates are usually 200 MB+ on the App Store and occur roughly once a week. At 1.5 billion active app users, that's over 3000 TBs a week or 156 PBs a year.
+OnePlus Mocks Removal of Headphone Jack in iPhone 7 While Copying its Design for New OnePlus 5
+Apple iPhone 7 is being hardened to handle military-grade secrets - iPhone chosen over a Android handset to be turned into "dual-persona" device that can be used to discuss confidential matters
+Comparing iOS10 &amp; Android N
+Apple climbs past Samsung as world's top phone vendor
+Apple now has record $246.09 billion in the bank
+Apple's payment service Apple Pay is growing – the company saw a 450% rise in transactions over the last year.
+Last week I took my base model mid-2012 rMBP to Apple to get the battery fixed, and today I received this email from them...
+iPhone 8 dummy model surfaces with edge-to-edge display, no rear Touch ID, and elongated power button
+Apple releases iOS 10.3 with Find My AirPods, Apple File System, CarPlay updates, more
+Apple to 'rapidly address' any security holes as companies respond to CIA leak
+Report: Tim Cook testing wearable blood sugar tracker on Apple’s campus, connected to Apple Watch
+iPhone 8 will strain world's supply of OLED displays
+Funny story: An email I sent to the CEO of Nvidia &amp; Tim Cook last month is the reason Pascal is now supported on MacOS
+Apple Confirms June 5 WWDC Keynote Will Be Live Streamed
+Google Assistant announced for iPhone
+I love my AirPods so far, but...
+Report: iPhone 8 to feature Touch ID directly on the OLED screen with optical fingerprint sensor
+I haven't downloaded an app for my phone in about 2 years. What apps am I missing out on?
+Apple, please allow us to remove our 3rd party email addresses from our Apple ID accounts and let us our iCloud emails as the primary Apple ID addresses.
+It really annoys me when an app doesn't had the swipe back command.
+MacOS Desktop Wallpapers by Luke Chesser
+Apple is bringing iTunes to the Windows Store
+TIL: You can backspace on the iOS calculator.
+So my AirPods went through the washing machine :(
+Craig is the MVP of Apple Keynotes
+A UPS employee is continuously stealing every Apple watch my wife orders.
+Apple's Tim Cook says increasing pace of 'iPhone 8' leaks hurting sales
+TIL you can check the battery status of your iPhone from your Mac by holding down 'option', selecting wifi and then hovering the cursor over your iPhone.
+Here's to hoping Siri gets her act together in 2017 (with iOS11)
+'iPhone 8' Production on Schedule for September Launch, October Sales
+I wish I could get a way to have my driver's license as a virtual card in Wallet.
+AppleCare+ Can Now be Purchased Up to One Year After Buying an iPhone
+Apple Patents Long-Range Wireless Charging
+For the first time in 2017: Back again, it’s Apple Keynote Bingo
+Intel reveals its new 18-core, 36-thread “extreme” Core i9 processor at Computex
+Apple really impressed me this week.
+Apple Park, Apple's new campus, is set to take in employees next month.
+Real World Comparison between Apple CarPlay and Android Auto
+Apple inexplicably removes iCloud Activation Lock status page, which helped people avoid buying stolen iPhones
+Apple TV, iPhone, iPad gain ability to play Netflix movies directly in TV app
+@irace: Apple engineering has confirmed that 3D Touch multitasking was intentionally removed in iOS 11.
+When you send someone an iMessage saying "Happy new year!" In iOS 10, it automatically sends the message with a fireworks effect.
+7 Years Ago Today. The iPad was announced.
+iPhone Ownership Reaches All-Time High in United States
+PayPal CEO claims Apple Pay’s person-to-person payment service will struggle to compete
+Anybody remember paid iOS updates?
+iOS starting to get complicated and messy
+How can I stop my iPhone from auto playing the first song in iTunes when I plug it into my car?
+Is it me or did Apple miss an opportunity not including a bite in the apple emoji ��
+Rant: I thought I liked Siri until I got an Amazon Dot
+Apple - Press Info - Apple Introduces iPhone 7; iPhone 7 Plus (PRODUCT)RED Special Edition
+New MacOS Malware, Signed With Legit Apple ID, Found Spying On HTTPS Traffic
+Former iPhone factory worker explains how they keep the new iPhones a secret
+Taken with iPhone 7 Plus: Keukenhof - the Tulip garden, Holland
+Everything u/Foxconninsider Reported Today
+Dr. Dre is actually a huge force at Apple — he talks with Jimmy Iovine every morning
+FBI must reveal cost of San Bernardino iPhone hack, argue three news organizations
+Apple Points to VR as One Reason Why Next Mac Pro Needs to be More Powerful
+Apparently there is a tornado screen in the weather app...
+First Alleged iPhone 8 Part Leaks Surface
+Marco Arment on Twitter: "Don’t blame Workflow or Apple for removing Google, etc. actions in last night’s Workflow update. It was lawyers, not strategy."
+As a Windows die-hard since I was 10 the last 24 hours has been a revelation for me.
+Apple Aims to Make Every iPhone With an OLED Display by 2019
+Apple Said to Debut New iPad Pro Lineup, 128GB iPhone SE, and Red iPhone 7 and 7 Plus at March Event
+Apple Music saw over 40M users on mobile last month, leading Spotify by 10M
+Be careful, some developers are rather clever.
+LPT: Tap 3 times on the APPLE TV remote trackpad to enable and disable subtitles
+From 1st of July and forward, the police in Norway can force a person to use your finger to unlock Touch-ID. Unacceptable?
+Blizzard VP Jeff Kaplan Says Company is 'Open Minded' About Bringing Overwatch to Mac
+Apple to offer 32GB of desktop RAM in top-end 2017 MacBook Pro, 16GB for 12" MacBook
+Apple to Announce New MacBook, MacBook Pro, and Possibly MacBook Air at WWDC
+The most consistent thing about the Mac OS in the last 30 years.
+iPhone 8 mass production delayed to October/November
+App devs, please add clear cache to your apps!
+iOS 10 Security White Paper
+Why the hell does macOS not have the iMessage effects??
+Selecting text from websites is overly aggressive
+YouTube skip feature should be a thing in iOS
+One of the most exciting things of the event was Apple officially supporting external GPUs on their Macbooks!
+Why is Google working so hard to deliberately cripple the Picture-in-Picture feature on iPads and macOS?
+Awesome OS X Command Line
+And so it begins
+It's official: iTunes Podcasts is now Apple Podcasts
+In Apple Music there should be a way to disable censored music
+Apple Set to Join Amazon, Google, Facebook in AI Research Group
+Mac sales declined nearly 10% last year as Lenovo, Dell and others gained ground
+Apple finally gives iOS a proper file management system with new Files app
+Apple sues iPhone modem supplier Qualcomm, claims $1 billion in payments withheld over FTC probe
+iOS 11 brings back signal bars!
+Apple CEO Tim Cook: 'You Will See Us Do More in the Pro Area'
+Apple Support 1.1 lets you schedule repair appointments at Apple Authorized Service Providers, not just Apple store Genius Bars.
+Apple releases iOS 11 beta 2 to developers
+"I can't set a timer here" - Siri really is terrible.
+Apple Registers New Macs and iPads in Eurasia Ahead of WWDC on June 5
+Ikea and Apple building AR app that’ll let you try out virtual furniture at home
+With all the great announcements, lets not forget that Safari will now block autoplaying videos
+GIFs now play in Photos on iOS 11
+Apple: Developer Support for ARKit has been ‘Unbelievable’
+The new Apple "App Development with Swift" book is great...
+Here's why I gave up on Apple Music
+Recent version of Handbrake download infected with malware
+In the latest High Sierra beta, a small relic from Steve Jobs was removed from the Mac
+Warren Buffett grows Berkshire Hathaway AAPL stake to 133 million shares worth $17 billion
+The Telegraph says Apple News has become the most effective third-party platform to drive readers to its sites and app; Telegraph posts about 240 articles/day
+Apple’s Tim Cook: Steve Jobs’ philosophy will be at Apple in 100 years
+Nintendo developing ‘The Legend of Zelda’ game for iPhone
+Apple’s desktop Mac lineup: A showcase of old technology
+Apple halves 2TB iCloud plan to $9.99 a month
+Google and Amazon killed their Apple Watch apps and it went unnoticed for weeks
+Walt Mossberg is Retiring This June :(
+Apple shutters reviews of LG Ultrafine 5K display in wake of technical issues
+Apple gets a lot of hate for when it goes wrong, Now with WWDC 2017, it has done most of the things right
+Apple’s AR is closer to reality than Google’s
+Tip: Set your email address to "@@" in Text Replacement.
+iPhone 8 Expected to Include Faster 10W USB-C Wall Charger
+iPhone Camera Quality
+From a Touch bar 15" to a MacBook Pro 17"
+Swift Creator Chris Lattner Quits Tesla After Only Six Months in the Job
+"Inter-dimensional Portal" made with ARKit
+Early Adopters Love Their Apple AirPods
+Apple never made a display with built-in eGPU so this is what I did.
+Apple’s latest iPad is the tablet equivalent of the iPhone SE
+The iPod-based interface that lost out to iOS for the iPhone
+the evolution of the iPhone from 2007 in 3 seconds
+Apple Releases iOS 10.2.1 With Bug Fixes, Performance Improvements
+Apple should make PiP on iOS an user option not something controlled by developer (and get abused by Youtube for example)
+The Chinese iPhones let you choose which apps can connect to the internet
+TSMC reportedly starts production of Apple A11 chip for iPhone 8 with 10nm process
+Is anyone else tired of seeing their carrier name on the status bar?
+Dear Devs, please support iCloud Keychain!
+My MBP has changed the Trash Bin icon to the Chrome icon
+Find lost AirPods for free
+iPhone 7 Plus – Take Mine – Apple
+Lessons I've Learned from Three Million App Downloads
+Using the same pair AirPods with another person is really cool
+All of Apple's 2017 iPhones will include fast charging via Lightning port, not USB-C
+Today in Apple history: Bill Gates predicts doom for Apple’s biggest product
+High quality apple ID phishing scam. posting for visibility so no one gets duped
+Apple's Tim Cook, other executives urge Texas not to pass anti-trans 'bathroom bill'
+Apple officially announces new HomePod speaker to ‘reinvent home music,’ coming in December for $349
+iOS 11: When you turn off Bluetooth inside Control Center, it doesn’t actually turn off, it simply disconnects from other devices. Why?
+Intel has reportedly moved up the launch timeline of its next-generation Coffee Lake chips
+OSX: There should be an alarm clock
+Apple Has a Redesigned Fingerprint ID Solution For the iPhone 8
+macOS 10.12.4 Beta 1 brings Night Shift to the mac!
+The new “Files” app is exactly what everyone hoped it would be
+Sources: Apple Will Announce Amazon Prime Video Coming To Apple TV At WWDC
+Apple seemingly ends support for 32-bit devices with iOS 10.3.2
+I would love to see Tim Cook get fired up about the Mac
+Next time you're using Safari on macOS with AdBlock extension and website asks you turn it off, press ⇧⌘R for Reader and read article anyway
+Apple is developing its own graphics chips for the iPhone and won't use Imagination Technologies anymore
+Apple shows off Dubai Mall store with 'stunning views', motorised carbon fibre windows
+iPad Pro A10X Geekbench scores -- 4GB RAM confirmed
+Apple Online Store Going Down for 'Maintenance' Tomorrow Morning Ahead of Rumored Product Updates
+Apple Music randomly skipping songs? You are not alone
+Do you guys use the wallet app?
+Apple Revokes Cert for Sophisticated Mac Trojan
+Apple hires Stanford digital health leader as it continues to ramp up medical efforts
+It would be nice if Apple automatically added any photo that I set as a wallpaper to a "Wallpapers" album in Photos for later reference, much like it does with the "Selfies" album.
+I went to a drawing session for the new "Today at Apple"
+Apple Hires Amazon’s Fire TV Head to Run Apple TV Business
+Target Returns iPhone SE Stock Ahead of Apple's Rumored March Event
+Pressing ⌘B in Spotlight will open Safari and search your entry using your preferred search engine.
+The most underrated feature to come out of WWDC. Thank you Apple!
+BlackBerry Hits '0%' Market Share Nearly Ten Years After iPhone Launched
+The Hot New Hip-Hop Producer Who Does Everything on His iPhone
+Thank you for 8 years, Apple
+Apple Expected to Return to Growth With Biggest Earnings Ever Today
+The mystery iPad Pro app everyone wanted to know about with the strange music axis is actually an illustration app called Graphic by Indeeo Inc, thanks Craig!
+NYTimes: How Uber intentionally deceived Apple and got away with it — for a while.
+Price drop on macbook Pro is because of 128GB SSD instead of 256GB
+Apple and Valve are working together. Maybe if we yell loud enough we can get a GLaDOS Siri voice
+Apple's Spaceship Campus is God Damn Insane
+What I think the 2017 iPad means for this September's iPhone devices
+All 3D / Force Touch features on iPhone
+Apple launches new 9.7-Inch iPad for $329
+Apple no longer allows developers to advertise pricing info such as ‘Free’ in app titles
+Apple Nears $800 Billion Valuation On Path to Becoming World's First Trillion Dollar Company
+Scott Forstall says Steve Jobs created the iPhone because he was sick of hearing a Microsoft employee arrogantly telling him Microsoft was working on a touch-screen device so advanced that it would pave the way for computing
+Wine 2.0 is here -- run Windows software on macOS
+Apple Tells Lawmaker that Right to Repair iPhones Will Turn Nebraska Into a ‘Mecca’ for Hackers - Motherboard
+Apple Tops 'Tech Support Showdown' List for Third Consecutive Year
+iOS Tip: If you're going to take a photo with the sole intention of sending it via iMessage (and then immediately deleting it from Photos), use the camera functionality built in to iMessage; it doesn't save the pic to your camera roll.
+Apple's 'iPhone 8' to replace Touch ID home button with 'function area'
+iPhone 8 Pre-Orders Still Expected in September, But Shipments Likely Delayed Until 'Several Weeks Later'
+New report claims the iPhone 8 will actually cost less than $1,000
+Next iPhone Said to Have Even Better IP68-Rated Water Resistance
+TIL iOS highlights the fingerprint "slot" when you lay your finger on the homebutton
+Random thought: Force clicking the red 'x' should quit the app.
+10 years ago, the second phone call to be made on iPhone was a prank call to Starbucks.
+Heads Up: Pixelmator is $0.99 right now on iPhone and iPad
+Apple’s AR features will debut first in iPhone, later in glasses, reports Bloomberg
+Qualcomm sues Apple for hobbling its iPhone chips to make Intel look better
+T-Mobile now lists complimentary AppleCare+ perks as part of Jump upgrade program
+LPT for macOS: Uncheck "Automatically rearrange Spaces based on most recent use" in System Preferences &gt; Mission Control to prevent fullscreen apps from automatically shifting around.
+Moom removed from Mac App Store due to patent "apparatus and method for positioning windows on a display"
+Chicago's New Apple Store looks like a MacBook from above.
+Hi, I made an app which lets you pick colors (and shows closest Pantone colors) through your iPhone's camera in real time.
+In 1998, the New York Times criticized Apple for leaving the floppy disc drive out of the iMac
+Opening the AirPods case next to an iPad should do the same as the iPhone
+according to release notes: "Apps over 100MB may download over Cellular connection after acknowledging the warning prompt."
+Apple Pencil latency (50ms) is 2x slower the new Surface Pen latency (21ms)
+Spotify can now be controlled from the lock screen and control center when playing through Spotify Connect
+Search party of Apple Devices - Classic Apple
+Readdle’s new drag-and-drop feature shows how Apple could improve multitasking on the iPad - The Verge
+Apple to forge 'iPhone 8' chassis from stainless steel
+Macbook Air's CPU was updated from 5th gen Intel Core i5 to.... 5th gen Core i5 with an extra 200 MHz.
+Apple apologizes to users for mistakenly saying their paid iCloud subscription was canceled
+What are some cool features MacOS has that not many users know about?
+How to Make $80,000 Per Month on the Apple App Store
+Apple Is Making a Siri Speaker to Outdo Google and Amazon
+WWDC, Apple's Worldwide Developers Conference, returns to San Jose June 5-9, 2017
+iPhone 8 Said to Pack Battery Capacity of Current 5.5-Inch Model Into 4.7-Inch Form Factor
+Apple's new USB-C cables are much better quality
+Apple Store goes down ahead of new MacBooks and iPad Pro expected at WWDC 2017 keynote
+Apple really need to work on printing from iOS.
+Apple online store, "We've got something special in store for you"
+Phil Schiller on iPhone’s Launch, How It Changed Apple, and Why It Will Keep Going for 50 Years
+10.5 and 12.9 iPads not expected to shit until June.
+Tim Cook says ‘the best is yet to come’, Apple commemorates 10 year iPhone anniversary
+Apple and Tim Cook Honor Dr. Martin Luther King, Jr.
+Apple Is Working on a Dedicated Chip to Power AI on Devices
+[best buy] Airpods back in stock with free 2 day shipping
+Apple Store is down again
+WWDC 2017 | Post-Event Megathread
+TIL force touching the fullscreen button of a window on a mac, takes it to split screen mode rather than normal fullscreen.
+It's amusing how Apple Music doesn't have handover, but can stop you listening in a fraction of second if listening on another device
+"1‑Month subscription for 50GB has been discontinued." Email received this morning
+LG admits premium display fails near wi-fi
+Happy Birthday Steve!!
+Apple Officially Begins Assembling iPhone SE in India
+Apple CEO Tim Cook never joined Trump administration's presidential advisory council
+And so it begins... 32-bit apps no longer appear in App Store search results
+Switch to uBlock Origin if you're on Chrome
+Dell launches 'world's first' 31.5-inch 8K display, buy it now for a cool $5K
+Anyone else downgrade from a 2016 to 2015 rMBP and love it?
+New iPad Pro Ad
+No, an LTE-equipped Apple Watch will not come with a physical SIM card
+Spotify tops 50 million paid subscribers as it continues battle with Apple Music
+YouTube for iOS gets Chromecast lock screen controls
+100 NEW iOS 11 Hidden Features &amp; Changes
+Simple but brilliant tape measure apps show just how useful AR is going to be [Video]
+How to Easy Google Image Search on iOS
+Apple produces half a gallon of fake sweat every day for product testing
+Apple sends press invites for WWDC 2017, officially announces keynote event for June 5 10AM PT
+Warren Buffett's Berkshire Hathaway triples its stake in Apple
+Apple says iOS 10.2.1 has reduced unexpected iPhone 6 &amp; iPhone 6s shutdown issues by 80%
+Man dies after charging his iPhone while using it in the bath
+WWDC 2017 | Event Megathread
+The 21.5 inch iMac STILL ships with a 5400rpm hard drive
+New Report Suggests Apple Could Delay 'iPhone 8' Launch to October or November
+Dear Apple if you are reading this: Please develop a Paint app that works as cool as Garageband across iPad Pro iOS and Mac OS X.
+iPad 10,5 screen is ASTONISHING
+PSA: Finder for Airpods has been removed from the store by Apple. Refund details inside.
+Report: New Apple Watch coming in third quarter of 2017, main focus on better battery life
+Apple is releasing a Find My AirPods feature
+iOS Bug: A 3-finger tap on control centre is all you need to freeze your iPhone
+WhatsApp backdoor allows snooping on encrypted messages
+Apple posted two job openings for "Siri Designer" today
+Got a text from 2003.
+Speed up your Time Machine backups tremendously.
+Apple Sold Fewer iPads Year Over Year for 13th Straight Quarter as Tablet Market Shrinks to Five-Year Low
+All I want from WWDC this year is the ability to change notification tones on Watch
+It's frustrating how far behind iCloud Drive is compared to Google Drive.
+TIL in iOS Safari you can hold the refresh button to request the desktop site.
+TIL There is NO upper limit for Apple Pay
+Nike’s new Apple Watch bands match their sneaker counterparts
+Apple should start making their pro-level apps available for iPad Pro's
+iOS Grew to Capture 42% of U.S. Smartphone Market Over Holidays
+Why is nobody talking about the 120hz iPad Pro display?
+Living with AirPods &amp; Apple Watch
+iPhone 7 or any iPhone... get the water out of the speakers with a few taps
+In iOS 11, turning on Airplane Mode no longer disables Wifi/Bluetooth
+MacOS 10.12.4 With Night Shift - Available Now
+On the WWDC keynote, does anyone else look frantically on the slides when they say "And theres so much more we haven't had time to cover" and its full small text
+Made With AR KIT - Really cool stuff.
+Steve Jobs Almost Named The iMac The MacMan, Until This Guy Stopped Him
+TIL if you force touch on a folder, you get a list of apps that you have notifications for.
+[iOS 11] [Discussion] Does anybody else absolutely hate the new Notification Center?
+The official Tor browser for iOS is free to use
+Monument Valley 2 now available
+Better Touch Tool has changed TouchBar from "kinda interesting" to "completely necessary" for me.
+Apple releases $200 Pro App bundle for education customers which include Final Cut Pro X and Logic Pro X
+Apple has introduced Picture-In-Picture mode for Mac over a year ago and yet we still need to use a 3rd party plugin to use it on most sites.
+Matte Black AirPods!!!
+Apple Debuts Revamped 'Switch' Site to Lure Android Users
+Apple Will Cut Laptop Production by 16% and Discontinue the Macbook Air, Says IHS Research Firm
+App Store app prices to rise in the UK by 25% following Brexit exchange rate fluctuations
+iPhone games for people who can't think?
+Hidden Interactions in Default iOS Apps
+iOS no longer wishes you Happy Birthday from the Notification Center like on iOS 9.
+f.lux developer says Apple's new competitive macOS Night Shift feature falls short
+Apple ramping up App Store cleaning efforts, has already removed ‘hundreds of thousands’ of apps
+Apple's AirPods are winning with the critics that matter
+I feel like this is the most in-the-dark we've been before WWDC since iOS 7
+Apple's Jennifer Bailey Says Customers Are Willing to Switch Banks to Use Apple Pay
+Apple Says Third-Party iPhone Screen Repairs No Longer Fully Void Your Warranty
+How to shoot on iPhone 7 - Apple
+A Famous Steve Jobs Speech Is Hidden on Your Mac
+AirPods automatically pair with Apple TV starting with tvOS 11
+I think the News App on iOS is visually the best app from Apple
+What features would Android have to include for you to consider switching?
+The 2017 iPhone will cost a $1000 because of 3D touch on an OLED display
+KGI predicts wireless charging for all three new iPhones, iPhone 8 requires higher cost 3D Touch sensor
+Apple now sells the woven nylon rainbow Apple Watch Pride band that was previously an employee exclusive
+Apple Music execs say Beats 1 is ‘the biggest radio station in the world’
+As a lifelong PC user, there is only one device that I would pitch a tent outside an Apple store for.
+iOS 10 Now Installed on Nearly 80% of active iOS Devices
+Positive Rant: Apple’s older hardware is now proving itself in the long run
+Apple begins testing 5G data speeds for iPhone
+On April 7th, nothing happened
+Nest is considering Apple HomeKit support as iOS 11 makes supporting existing products easier
+CIA has been hacking dozens of wifi routers for years, but seemingly not Apple ones
+Developers Are Already Impressed With Apple’s Augmented Reality Software: "It tends to just work."
+PSA: Apple is not obligated to provide you with any maintenance, technical or other support for the Pre-Release Software (iOS 11)
+Apple holding ‘Lose Your Wallet’ shopping event promoting Apple Pay w/ exclusive discounts
+People with Jet Black iPhone 7/7+, how is your phone doing after a few months?
+The Verge: iPad Pro 10.5 review
+I returned my 2016 MacBook Pro with Touch Bar
+It's like iOS 11 kills all the pet peeves.
+Several months after the launch of iPhone 7 I can testify I cursed a few times for not having the headphones adapter with me
+Here's the 'Stealth' Case Apple Uses to Conceal iPhone Prototypes During Transport
+So... how is Apple Maps?
+Apple overtakes Fitbit to be crowned world's largest wearables vendor
+iMac Pro, the most powerful Mac ever, arrives this December
+Clips, a new app from Apple
+Tim Cook says Apple is 'investing aggressively' in the future of the Mac
+Honestly I really like Google products, but Apple's commitment to privacy has me won over.
+iOS 11 is outstanding so far.
+Apple announces it has two million Final Cut Pro X users
+Nikkei Now Agrees 'iPhone 8' Will Have Larger 5.8-Inch OLED Display
+To anyone thinking if they should get AirPods or not...
+Tidal Owner Jay Z Has Removed All of His Albums From Apple Music
+How many people on this sub own shares in Apple?
+Apple should have made this years ago
+Apple will reportedly drop 32-bit app support entirely with iOS 11 this fall
+Apple Says WikiLeaks CIA Documents Are Old and Exploits Have Been Fixed
+Apple should make the Mac an AirPlay receiver.
+How Apple won silicon: Why Galaxy S8 can't go core-to-core with iPhone 7
+AR is amazing in iOS 11.
+Mystery Apple 'wireless device' turns out to be door access system, likely for Apple Park
+TIL you can bit-flip using the macOS calculator's built-in programmer mode.
+TIL People who wear glasses may notice in that the "X" in a macOS window's close button appears off-center, while to those who don't wear glasses, it appears centered.
+Apple wants to use lasers to polish future ceramic iPhones
+Apple unveils Live Photos API
+Apple's statement on Consumer Reports' MBP battery life results
+When Apple makes a new iMac and a new Mac Mini, they should kill internal HDD's in Macs once and for all.
+How many of you use Apple Pay?
+Unconfirmed rumor says iPhone 6s battery replacement program may be extended to iPhone 6
+MacBook Pro 2016 users, what has been your experience with the new USB-C charging cable? Compared to Magsafe, in terms of durability and usability.
+Report: 5.8 inch OLED iPhone 8 to include 3 GB RAM, available in 64 GB and 256 GB storage sizes
+Cheap and Painless eGPU Thrills on a 2013 MacBook Pro
+Apple’s new Danish data center will supply heat to nearby homes, fertilizer to farmers
+Does anyone else use their iPhone naked for a few minutes everyday as a guilty pleasure?
+Pascal Eggert: Mac Pro 2 Concept
+Introduction of Exposé on Mac OS X Panther
+3D Touch is the most underrated iphone feature
+macOS High Sierra tech preview: A quick look at the stuff you can’t see
+Developers can no longer edit App Store descriptions without App Review approval
+Dear Apple: I'd really like a RED iPhone, BUT I want a BLACK frame around the screen, NOT white.
+Daring Fireball: Video Pros Moving From Mac to Windows for High-End GPUs
+Is anyone else's iPad Air made by Nokia? My battery lasted for 22hrs usage and 388hrs standby.
+KGI: 3 new iPads to debut next quarter will slow decline in sales, 10-10.5 inch model wildcard
+Apple Maps really needs to get more advanced.
+Apple Forces Recyclers to Shred All iPhones and MacBooks
+Apple Adds 2016 MacBook Pro Without Touch Bar to Refurbished Store
+EveryAppleVideo YouTube channel archive of all Apple videos have shut down :(
+This is what they mean by water drop design...
+Message to Apple: with unlimited data, it's time to remove the wifi-only download limits
+Apple's Indoor Maps for Airports and Shopping Malls in iOS 11 Slowly Rolling Out
+Apple Releases iOS 10.3.2 With Multiple Bug Fixes and Security Updates
+MKBHD - Dear Apple (2017)
+The Apple Watch outsold every other wearable last quarter - Watch Series 2 has been selling quite well all over the globe
+Review: 10.5-inch iPad Pro is “pro” hardware waiting for pro software
+After watching WWDC, It is clear to me that Apple have found their innovation switch again.
+Apple just uploaded a lot of cool videos to YouTube.
+I have access to an early iPhone unit used on stage for the 2007 Macworld demo...AM(A)A
+It's 2017, Chrome has 50%+ browser market share and Safari less than 15%, why does Apple still restrict streaming to only Safari and Edge?
+Apple Launches New Website and Videos Featuring iPhone 7 Photography Tutorials
+'Constant Negativity' From Pro Users Led Apple to Develop Modular Mac Pro, Which May Not Ship Until 2019
+Why hasn't Apple released an iCloud Keychain password manager app?
+iOS 11 lets you scan a router’s QR code to quickly join a network
+Europe may outlaw the kind of backdoor access the FBI wanted Apple to create for iPhones
+Tim Cook gave a strong hint that Apple will battle Amazon and Netflix in original video
+iPhone 7 – The Archives – Apple
+10.5-inch iPad teardown reveals a scaled-down 12.9-inch model, not a scaled-up 9.7-inch one
+Why isn't CarPlay available as an app?
+Apple will eventually require apps to use the new iOS 10.3 API for App Store rating popups
+No, Apple won't move the home button and Touch ID to the back of the 'iPhone 8'
+iPhone 7 Plus — Barbers [Ad]
+iOS 11- Low Power Mode toggle can be added to Control Center!
+A List of Everything Released Today By Apple
+Warning: malicious iOS 11 beta configuration profiles are being distributed through third-party beta download websites
+LPT: If the wifi login pop up won't show, type captive.apple.com in your iPhone's browser
+iOS 11 is a lot about removing long standing annoyances
+ios11.com redirects to Microsoft.com
+I love the mac trackpads
+Some teens earning $20k+ fixing iPhones in their summer break
+The best part about iOS 10.3 - the update to CarPlay
+Developer Earnings from the App Store Top $70 Billion
+Merriam-Webster adds ‘sheeple’ to dictionary, cites Apple users as example
+CNN just interviewed a victim of the Ft. Lauderdale Airport attack whose MacBook (Pro?) possibly saved his life by absorbing a bullet.
+Apple’s long-time head of Apple Mail leaves to lead Readdle’s Spark email app
+Imagine for a moment that Apple dropped a $999 new Macbook Air with retina display. Then only let you run apps outside the Mac App store for a $50 fee. Would people riot? Microsoft did just that.
+Clips app now available
+Feedback app references ‘Drag and Drop’ feature as Apple readies iOS 11 announcements later today
+I was freezing late one night on a bus, so I wrote a script.
+TIL If you SLAM the notification bar down, it bounces back up quite high.
+Apple should seriously consider Dark Mode in Finder.
+When you’re in landscape mode in Safari on iPhone, it now shows tabs on iOS 11 beta 2
+BeatsX self mic doesn't turn off when you mute a phone call
+So glad to see huge Siri improvements in iOS 11 (b1)
+High Sierra runs on all Sierra-capable hardware, starts process to kill 32-bit apps
+How much I've earned on the App Store - hopefully some useful info for anyone getting into iOS development.
+Watching porn with the AirPods is actually pretty awesome
+Hey Siri lock my phone
+BeatsX on sale for $99.99 at Best Buy/Amazon
+Reduced bezels concept
+The 21.5" iMac now has replaceable RAM! - Photo from iFixit
+[History] An Apple phone? Palm CEO says, `What, me worry?' (2006)
+Get up to $1500 for Your Old Mac with Apple's Trade-up Program
+HTC Vive is now officially on the Apple website!
+Tip - 3d-touching the dial button on dialer allows you to choose between FaceTime Audio, FaceTime, and voice call.
+Let's be honest. Who would be disappointed if Craig Federighi didn't make an appearance at WWDC?
+Overcast Podcast App Gains Standalone Apple Watch Playback Feature
+The Plus sized iPhones need much more landscape support in iOS than what's currently in place.
+What did you guys do with your Apple Stickers?
+Apple’s ‘Planet of the Apps’ is even worse than you thought
+I’ve found the perfect settings for AirPod controls
+It would be great if the silent mode button wasn't next to the ping iPhone button in Apple Watch.
+$350 off MacBook 12-inch at BestBuy
+iOS 11 fixes Bluetooth Siri lag!
+Apple Developing New Mac Chip in Test of Intel Independence
+WWDC 2017
+Apple should make apps ask for permission to the "Clipboard"
+iPhone SE now comes in 32GB and 128GB variants
+AirPods Have Captured One-Fourth of Wireless Headphone Spending Since Launching
+Tim Cook promises ‘exciting things in the pipeline’
+All I really want right now with the new iOS 11 is a successor to the iPhone SE with 3d touch
+My 7 year old MBP: still going strong
+I wish tapping on a word in iMessage would add an emoji next to it instead of replace it
+Apple's Tim Cook says Indian operations to use all-green energy within 6 months
+Apple, showing me the resolution and frame rate in the video camera app but forcing me to go to system settings to change them is annoying and could so easily be remedied.
+I *just* realized the purpose of 3D-touching the left edge of the screen to open the app switcher
+High Sierra will be last macOS release to fully support 32-bit apps
+I spent my holiday break repairing and restoring a vintage Macintosh SE/30, and now it's talking to the Internet!
+Apple’s AirPods: a Hit With 98% Customer Satisfaction
+Tim Cook says Apple Watch unit sales increased nearly 100% year over year
+Showerthought: The Apple TV 4 is so good no one complains about it on /r/apple.
+In case you haven't see it: this the Vision API, a new API developers will get to work with in iOS 11.
+Throwback to when macOS had cool intro videos when you turned on your mac for the first time
+Another underrated iOS 11 features is:
+Apple went full dad joke with the names of this year’s secret WWDC panels
+Apple’s New Campus: An Exclusive Look Inside the Mothership
+Apple Releases iOS 10.3.1 With Bug Fixes
+Hold ALT + SHIFT while clicking the green “maximize” button to make the window large without fullscreen
+Pro Tip: Significantly Improve Bluetooth Audio Quality in Mac OS
+Samsung reportedly building the world’s largest OLED production plant as it chases more Apple orders
+ColorWare just announced that they can now color AirPods
+Apple Music needs to separate artists' material better
+Are you enjoying your AirPods?
+Monument Valley 2 topped U.S. App Store four times faster than the original
+iPhone 8 Predicted to Cost $999 For 128GB And $1,099 For 256GB, With No 32GB Model
+Instagram finally fixed the constant app refreshing and status bar in app switcher for iOS!
+Great new addition in iOS 11 beta 2: disable auto join on known networks!
+iOS 10.3 apps can use different icons that are user selectable
+When the Mac was introduced 33 years ago, people thought graphical user interfaces were a real problem
+Tim Cook falls from #8 to #53 in employee ratings of CEOs but remains popular
+There is no WhatsApp 'backdoor'
+"I was not sure that my 2004 Mac still works. So I called Tim Cook to check it out. And it works"
+So Apple charged me 14 lots of Apple Music 12 month subscriptions today
+2017 MacBook Pro is Up to 20% Faster Than Last Year's Model in Benchmarks
+iPhone wireless charging reports continue as rumored supplier sees share price surge
+It seems that Google Photos OCR's your images to send ultra-specific and personal ads.
+Test finds Apple's MacBook and MacBook Pro only laptops to match or beat advertised battery claims
+What are some good Mac apps everybody should have on their Macs?
+It's time to admit Apple Watch is a success
+Group FaceTime, Peer-to-Peer Apple Pay, and more coming this Fall
+TIL iOS has built-in screen sharing for AppleCare support
+iMac Target Display Mode is seriously so good.
+Google keeps improving Apple's Live Photos
+Apple Launches App Development Curriculum for U.S. High School and College Students
+How a Home Button and Function Bar Could Work on the 'iPhone 8'
+Apple takes stand against Trump on transgender rights
+iOS 10.3: App Store no longer requires password to post review
+iPhone 6 plus touching itself
+It's been 2.22 years since the Mac Mini was last updated :(
+iOS 11 enables customizable separate L/R controls for Airpods!
+Drake’s More Life shatters streaming records with 89.9 million streams on Apple Music in 24 hours
+As Google Neglects Tablets, Microsoft and Apple Push the Envelope
+MacBook Pro Touch Bar banned from multiple state bar exams
+Exclusive: Apple just promised to give US manufacturing a $1 billion boost
+The newest Sierra beta warns you if your display brightness is a significant battery draw
+I was sold a stolen Apple Pencil by CEX (WeBuy) - Please avoid CEX for Apple Products.
+Taken with my iPhone 7+ (Lost Mine Trail, Big Bend National Park)
+Still using iOS 9.3.5? It now has 50+ known security vulnerabilities
+Airpods are the first tech product in a while that feels magical
+macOS essential apps
+Best Buy doing non Touchbar MacBook Pro for $1274 on their Deal of the Day
+Apple to open multi-level Mexican flagship store after initial success
+How can I get Safari on macOS to PERMANENTLY trust a website with my current location? I hate having to keep selecting 'remember for one day.'
+As a programmer, after 3 months, I still have not adjusted to the new MacBook Pro (rant)
+Apple AirPods should allow different actions when tapping L and R sides
+No, Apple Isn't Working on a Vape
+Apple Begins Selling Refurbished Apple Pencil for $85
+Apple increases app size restriction for tvOS apps from 200MB to 4GB
+Why is there still no Amazon prime video app for Apple TV?
+The new Siri voice is the most natural sounding and human voice of all digital assistants
+EveryAppleVideo 2.0
+It's just like Retina. ProMotion has has ruined me for lesser displays.
+Tim Cook Confirms Apple Will Make Global Fund Donations From Sales of Red iPhone 7 in China
+After using the new iPads, apple better bring true tone display and 120hz to the next iPhone…
+Drag and drop on iOS is more powerful than it's ever been on the desktop
+Should Apple enable third party apps in iOS to set as default?
+Apple is America’s richest company that isn’t a bank, with nearly $250 billion in cash
+With the iPhone rumor mill in full swing, what features are on your Apple Watch Series 3 wishlist?
+Today’s The Day... UPS literally DROPPED by new iMac at my door
+BeatsX Wireless vs Apple AirPods - Jonathan Morrison
+The iPhone 8 leak today (Friday) with the TouchID on the rear is fake, according to Benjamin Geskin
+macOS used by even more devs than 2015. Ahead of Linux. Windows below 50% next year? (Stack Overflow survey)
+Despite more powerful competition, iPhone SE tops new customer satisfaction survey
+The new Mac Pro: The audacity to say “Yes” in a design culture of “No”
+NASDAQ: AAPL up 3.24%
+"The Genius of Apple’s New iPad Pro Commercial? Masterful Transitions"
+APFS is coming soon: iOS 10.3 will automatically upgrade your filesystem
+Apple gifts WWDC ’17 attendees custom Levi’s jackets &amp; pins
+Hey Apple, your IOS News app is amazing and absolutely gorgeous. Can we please have it for Mac too?
+A Swiss watchmaker just created a $26,900 timepiece that looks exactly like an Apple Watch
+TIL: Long-pressing '+' in iOS Safari brings up recently closed tabs
+[Video] MKBHD - iPhone 7 review: 4 months later
+TIL that someone at Apple is in charge of that tab you peel off on their packaging
+OS X Dooms Apple (2000)
+Touch Bar integration coming soon to Word, PowerPoint and Excel for Mac, available to try it today
+Apple Paid $500,000 for Exclusive Access to Chance the Rapper's 'Coloring Book' Mixtape
+Just plugged my Apple TV remote in to charge for the first time.
+The most underrated think about OSX/Mac OS or MBP. Not having to really shutdown often, and sometimes ever.
+Amazon may finally cave, bring Prime Video to Apple TV this summer
+Apple Supplier Says U.S. Workers Are too Unskilled for Production
+PSA - With iOS 10.3, there is now a full device manager in the account screen in Settings
+Just over 24 hours until WWDC 2017 Keynote! Who's hyped?
+How many want user-generated playlists on Apple Music?
+My Chat with Brandon from Apple Support
+The original iPhone design team reunited for the 10 year anniversary of the launch
+Growing number of 15″ MacBook Pro users report ‘popping’ sound coming from their laptop
+GarageBand for Mac now syncs your projects with iOS | Cult of Mac
+Steve Jobs Thought Genius Bar Was 'Idiotic' Idea at First, Said 'It'll Never Work'
+Is Apple ever going to implement .GIF support in Photos.app?
+Apple contractors' employees arrested in China for selling user data
+Does anyone else use Google photos instead of paying for more iCloud storage?
+You no longer have to wait for UI animation to finish before it registers input in iOS 11!
+Anyone else think that Super Mario Run could have been the Apple TV's "killer app"
+Apple Nixes Facebook and Twitter Integration in iOS 11
+Report: New iMacs to launch in Q3 and ‘server-grade’ iMac with Xeon CPU, ECC RAM, new GPU at end of 2017
+Verizon announces new unlimited data plan
+Apple Rumored To Discontinue iPad Mini
+Apple's iPhone 8 Said to Feature 'Water Drop Design' in Homage to Original iPhone
+How to enable power chime on MacBooks like when plugging an iPhone to power
+Just got scammed by a photo editing app
+Project IINA - The modern macOS video player
+Apple Has at Least Five Different Groups Working on Wireless Charging Ahead of iPhone 8
+Daring Fireball: The 2017 iPad Pros
+App developers will soon be able to respond to customer reviews
+Leaked recording: Inside Apple's global war on leakers
+I don't know why I thought iPhones were so horrible for so long
+Tim Cook, CEO of Apple, says the end of the cable-TV bundle is coming
+Second consumer-test organization finds MacBook Pro battery life exceeds Apple's claims
+AirPods are restocking like crazy in the US right now
+Four iOS 11 Changes That Reveal iPhone 8 Design
+"iPhone 8" Prototype leaker releases mockup based off of his leaked schematics
+Apple invests $200 million in Gorilla glass maker Corning
+Why is low power mode not a toggle in control center?
+The secret origin story of the iPhone
+Is anyone else looking forward to Homepods?
+TIL how to AirDrop the original (240 fps) slow-mo video on iOS-to-iOS you need to edit and remove all the slow parts
+Former Apple engineer: Tim Cook made Apple a 'boring operations company'
+My girlfriend received these notifications her iPhone tonight. Are they legitimate or is this a scam?
+Does Apple usually operate like this?
+Another 'iPhone 8' Design Schematic Shows Vertical Dual Camera and Touch ID on Back of Aluminum Casing
+TIL Apple Has Price Protection
+KGI: Apple developing new biometric sensors to replace existing Touch ID tech, including face recognition
+New Charging Sound Discovered in iOS 11, Perhaps for iPhone 8 Inductive Wireless Charging Functionality
+Show hidden files on MacOS Sierra using Cmd+Shift+.
+iPad Pro - A new kind of power
+Apple seeks to position Metal as part of new 3D graphics standard for web
+Iphone 7 Snapchat users - Cool Haptic feedback Easter egg
+Giving the iPad a full-time job
+The volume overlay is the single worst part of iOS
+STILL WORKS: Apple swapped my 2012 rMBP for a 2015 model
+‪Rumor claims Apple TV to add multi-user login and Picture-in-Picture video with tvOS 11‬
+Apple 'finalizing' design of apparent Amazon Echo rival based on Siri
+'Sega Forever' Plans to Debut Free Classic Sega Games on iOS Each Month
+Apple WWDC2017 Conference Scholarship Recipient Denied Entry to the US
+The Beginner’s eGPU Setup Guide for Mac
+Apple pulls New York Times apps from Chinese App Store by China's request
+I love my 7+ but you should be able to 3D touch from either side to get to the multitask screen, not just from the far left where you have to stretch your bones to get there, and have no force to be able to press at all
+Nvidia releases beta Mac drivers for Pascal GPUs like the GTX 1080
+macOS Sierra 10.12.3 released
+YouTube app no longer leaves media controls in Control Centre!
+Accidentally spilt soda on bosses macbook he is back in office tomorrow, PLEASE HELP
+Delayed BeatsX earphones will finally be available February 10
+PSA: If a website is behind a 'paywall', and you can't view it, you likely still can. Just press the "Reader View" button in Safari (left-most end of the address bar), and the full story will probably show up.
+Just found an old stock of iPhone 4S.
+Apple Music quietly added a $99 annual subscription plan
+Taking a look back at the "cheese grater" Mac Pro
+Come join the lovely folks at /r/android for the Galaxy S8 event!
+Currently borrowing a friend's iPhone 5. The design of this thing is beautiful.
+What are the chances that Apple will integrate 120hz screens to their phones, macbooks, imacs, and external monitors?
+The Guardian pulls out of Apple News
+iMessage on the Mac needs to catch up with iOS
+What do you guys wanna see in iOS 11?
+Let's take a moment to appreciate Apple, and WWDC
+A 'brand new' Google Earth will arrive April 18th (hopefully with a 64-bit iOS app)
+The wide colour gamut displays on Apple's newer devices are quite a nice feature.
+Pornhub launches TrickPics for iOS, an AR photo filter for censoring nude selfies
+My wishlist for macOS 10.13
+Who’s still got an @mac.com email address?
+iOS 11 wishlist?
+Illustrated history of iOS
+Apple Clock
+PSA: The 3 month free trial of Apple Music converts into a $30 iTunes gift card if you have Apple Music already.
+Apple has the greatest hold music I've ever heard
+iPhone 8 Said to Have Separate Wireless Charger, No Headphone Jack Adapter or USB-C Cable in Box
+Apple Denies Breach Allegations of 600 Million iCloud Accounts
+LinusTechTips reviews the LG5K and explains why the MBP can run 5K through TB3 but no windows machine can
+Apple Music reportedly strikes deal with popular social media app Musical.ly
+Apple Releases New Firmware Update for AirPods
+I just need to take a moment and praise the new typing sounds in iOS 10. They are so pleasant.
+iOS 11 removes system-level social media sharing integration.
+Having a 480p Webcam on the Macbook 2016 and a 720p Webcam on the MacBook Pro 2016 is unacceptable
+The speakers on the 2016 MacBook Pro are fantastic.
+TIL you don't need to wake your iPhone to use Apple Pay, just simply hold it up to the reader and it will wake itself, open the Wallet app and ask for your fingerprint. Neat!
+The touch bar would be much more exciting with force touch and haptic feedback.
+Revisiting Apple's iPhone OS 1 ten years later
+How I discovered my left AirPod was bad
+Apple will sell students $630 of professional software for just $200. Package includes Final Cut Pro, Logic Pro X, Motion, Compressor, and MainStage 3.
+TIL "CMD + ~" allows you to switch back and forth between open windows of the same application
+Meet the new iPhone 8 courtesy of @onleaks
+KGI: Upcoming OLED iPhone Will Include 'Revolutionary' Front Camera With 3D Sensing Abilities
+Just realized you can teach Siri to pronounce your contact's names!
+Can we just take a moment to remember the 4th gen iPod Nano?
+Gene Munster Predicts Apple Will Eventually Earn More From AirPods Than Apple Watch
+iPhone 8 creating worldwide shortage of DRAM &amp; NAND chips, says report
+I think it's time Apple remove the cellular data limit
+Apple will still be here in 2075, says Woz
+The irony is strong in this one...
+iOS 11 now supports GIFs in Photos app!
+New photos claim to reveal final design of 'real iPhone 8'
+Apple iMac Pro 2017 model launches later this year; No touchscreen display on board
+Judge: No, feds can’t nab all Apple devices and try everyone’s fingerprints. “Such Fourth Amendment intrusions are [not] justified based on the facts articulated.”
+YouTube.com no longer supports 4K video playback in Safari
+Who else wants an Apple Watch but is holding out for a refresh?
+Do you remember that time in 2002 Steve Jobs held a funeral for Mac OS 9?
+Lengthy iOS 10.3 install time likely due to conversion to new Apple File System
+Anybody else more excited for WWDC than their birthday?
+Steve Jobs Quotes
+Official iOS 11 to iOS 10 Downgrade Guide by Apple
+I wish Siri could give simple, non-verbose answers for commands
+I made some iPhone/iPad/Mac wallpapers based on Apple's WWDC17 announcement
+Starcraft Broodwar has been patched to run on MacOS Sierra, is now free.
+TIL that in India, a university student Apple Music membership costs just $0.99 per month
+Ex-Apple designer &amp; former Twitter engineer launch Halide, a premium iPhone camera app
+What if you could REALLY customize your Touch Bar? A small guide to using BTT it's new Touch Bar additions
+'Twas the night before DubDub...
+Beats X are not for the gym
+The Apple TV should have a small button on the back that when clicked, plays a blinking sound from the remote
+ProTip: If your Mac is getting bulkier and slower each time, open a new account in your computer. If the new account is blazing fast, then your mac is slow because of the clutter the other account has
+I thought you guys might like to see a piece of Apple history I've had in my closet for years.
+TIL you can delete the last typed number in the Calculator app by simply swiping left to right across the numbers you've already typed. This saves clearing the whole number and starting again.
+LPT: Apple TV/AirPod users, you can press the Siri button and say "Connect to my AirPods" to instantly switch to them!
+Apple AirPod Charger Teardown and Reverse Engineering
+It's been five years, and Siri still can't read multiple messages from the same person
+Impressed with iPhone 7's water resistance-it went for an ocean swim
+How to creep out total strangers who leave their airdrop on
+Does Apple no longer sell the complete power cord with laptops?
+TIL there is screen sharing capability in MacOS's iMessage app.
+Here's why new Apple products are usually "too expensive" at launch, followed by a price drop after a year or so.
+When Apple is 2 years behind you, put your things in order
+Apple will now let hobbyists build their own HomeKit devices
+Apple Sued for Choosing Not to 'Lock-Out' iPhones Behind the Wheel to Prevent Texting and Driving
+Senator Reveals FBI Paid $900K for Hacking Tool Used to Open San Bernadino Shooter's iPhone
+How to track online orders and shipments with Deliveries for iOS
+Apple hires Jonathan Zdziarski, an active forensics consult &amp; security researcher in the iOS community
+If Foxconn leak is legit- "Apple Iris" smartglasses were a Google Glass competitor
+iPhone 7 Plus is Most Popular 'Plus' Model Apple Has Released
+Apple closes at an all-time high of $148.98
+New iMacs With Up to Xeon E3 Processors, 64GB RAM, AMD Graphics, and Thunderbolt 3 Rumored for Late October
+If you say "Hey Siri" it will choose the closest device and dismiss the rest of them.
+One thing I haven't seen mentioned: macOS High Sierras buttery animations
+Why does the reminders app still suck so hard?
+Apple's Siri vs. Google Assistant on iPhone: Siri just can't keep up
+Opinion on Tim Cook as CEO after 5 years
+Tested: The truth behind the MacBook Pro's 'terrible' battery life
+Coachella thief caught by ‘Find My iPhone’ after stealing 100 phones
+Apple has finally added a "lock screen" keyboard shortcut in Mac OS 10.13.
+Why can't macOS display all of your phone's notifications?
+Reactions on MacRumors to the first iPad
+The little-known iPhone feature that lets blind people see with their fingers
+TIL Apple's first WWDC event was held at San Jose Convention Center in 1989 to 2002. Today's event will be heading back to San Jose after 15yrs!
+New released CIA Vault 7 Apple-related hacks
+PSA: Dropped an Airpod in the ocean, and it still works fine
+Apple to Dismantle Iconic Glass Cube at Fifth Avenue Store
+Birth of the iPhone: How Apple turned clunky prototypes into a truly magical device
+Apple said to be planning just 2 new iPhones for 2017
+Anyone here frustrated with the Facebook app sending random push notifications for random and irrelevant notifications?
+WWDC 17 VLC url
+Apple: Perspective. Not sure how I've never seen this video before, but it's beautiful.
+Interesting AirPod use case
+Why Right to Repair matters
+Push Gmail in iOS 11 Mail app works!
+every time apple announces a product, there's tons if negativity but after some small period everyone changes their mind. was there actually a product that was an exception, a product that was equally hated afterwards?
+Apple's Mac mini an 'important product,' staying in lineup
+iPhone 7 Plus vs Galaxy S8 Speed test!: Not even close.
+The OnePlus 5 looks like a blatant copy of the iPhone 7 Plus
+Latest Twitter redesign is a good example of third party apps matching Apple in its design language
+Overcast 3: Design walkthrough
+2016 MacBook 12 from a Developers Perspective
+The notification center is still a joke.
+Changed from Android to IOS. Facing some Issues. Please help.
+Reddit Enhancement Suite for Safari is now EOL
+APT: In iOS 10 you can't set timers for seconds in the app, but you can through Siri. I don't know what all devices this works for, but I just thought it'd be helpful to know.
+Core Spotlight is coming to MacOS
+Bloomberg Interview: Tim Cook on Donald Trump, the HomePod, and the Legacy of Steve Jobs
+Apple's new iMac Pro costs $5000, but is it overpriced? Spoiler: No.
+‪Apple now upgrading iPad 4th gen replacements to newer iPad Air 2 as stock dwindles‬
+Obligatory warning: Non-developer iPhone users, please do not put developer beta software on iOS device!
+How many of you actually use Spotlight Search?
+Jay Z’s catalog has been pulled from Spotify (It's back on Apple Music)
+AirPods + Tunity
+Relax, Apple isn’t introducing another new connector
+Firmware update 3.5.1 for AirPods is now available
+Local grocery store won't allow Apple Pay?
+New LG 5K UltraFine Display models work properly near wireless access points including routers
+Would you like to see Apple News come to macOS?
+The not-so-common reason I fell in love with Apple products.
+Samsung reportedly spending $21B to expand OLED capacity for 'iPhone 8,' future devices
+Apple reportedly starting iPhone 8 production early
+Apple needs to integrate a fingerprint reader in the Magic Keyboard like Microsoft has done here
+New Chinese New Year Easter Egg in iMessage
+Tip: while in a call hold the mute button to put a call on hold
+Touchscale - Use your 3D Touch Device as a scale!
+Scrolling Changes Coming to Mobile Safari in Future Update
+LPT: Use "Reader view" in Safari to never look at ads again
+Apple Readies iPhone Overhaul for Smartphone's 10th Anniversary
+Apple Watch FINALLY makes sense because...
+AirPods, are they worth their price tag?
+Does anyone else find that pressing "stop" doesn't get rid of the alarm?
+Dutch Court Rules Apple May Not Use 'Remanufactured' iPads for Warranty Replacements
+PSA: If you bought the new MacBook Pro at release, remember to use price protection (if your credit card offers it) before it expires
+Apple releases new 'Earth' commercial featuring Carl Sagan
+ARKit is a game changer
+Apple Seeds First Beta of iOS 10.3 to Developers
+Google Maps On iOS Now Remembers Where You Parked Your Car
+PSA: Find My Mac Has a Serious Security Vulnerability | Remember to set a firmware password to keep Find My Mac from being inadvertently disabled
+IAMA recently ex-Apple Store employee! AMA!
+If Apple expects use to use Siri on AirPods or Apple Watch, they need to release more than 5 action types a year.
+Earpods - can also double as earplugs! Who knew... #optusfail
+Apple Reports Second Quarter Results
+Apple and Valve Have Worked Together for Nearly a Year to Bring VR to MacOS
+Apple acquires popular Apple Watch &amp; iOS sleep tracking platform Beddit
+Does anyone else think copy/paste feature is very buggy?
+iPhone market share grows 6.4% in USA, takes share from Android in most markets
+Tomorrow is the last day to get discounted USB-C accessories from Apple
+TIL Macbook Touch ID can be used for fast user switching...
+Alleged iPhone 8 Schematic Depicts Dual-Lens Vertical Rear Camera, Hints at Wireless Charging
+The early 10.5-inch iPad reviews are in, and the verdict is expensive but near perfect
+Three generations of 15" Macbook Pros - Still digging the last gen
+iOS 11 turns your iPad into a completely different machine
+One-Handed Typing iOS 11
+Apple Music will now notify you when your favorite artists release new music.
+How to convert entire iMessage conversation to a searchable pdf without having to scroll back months?
+Apple to halt royalty payments to Qualcomm until end of ongoing legal battle
+~24 hours until WWDC and no software leaks!
+Apple introduces spec-bumped versions of the current Mac Pro and confirms it is working on a "completely rethought" Mac Pro with Apple-branded pro displays that will launch at some point beyond this year.
+This seems legit...
+A little more than 1 month till WWDC...Where are the iOS 11 rumors from the usual sources?
+Exploit that caused iPhones to repeatedly dial 911 reveals grave cybersecurity threat, say experts
+What is the oldest part of the Apple site you can find that is still active?
+Chris Lattner Refutes Claim He Left Apple Over 'Openness'
+iOS 11 is coming at WWDC! What features should we expect?
+The Talk Show from WWDC 2017 with Phil Schiller and Craig Federighi is up
+[Question] Wife wants me to make a "sex tape" with iMovie on my MacBook Pro ... I'm concerned about the footage getting hacked off the Mac ... should I be?
+With the latest update of Pages you can add LaTex equations!
+Just noticed 12" Macbooks can be configured to 16GB of RAM now!
+Apple reveals it was served a secret national security letter
+It's almost halfway through the month, is Apple even going to have a Keynote this month?
+Imagine if the next iPads come in Matte Black and Jet Black
+Leaker of the iPhone 8 dummy answers questions; 7.1mm thick, metal frame will be black not silver
+Apple officially launches ‘Today at Apple’ with special events at all 495 stores worldwide [Gallery]
+Chinese Police arrest Chinese Apple employees for selling customer data stolen from Apple's internal system
+iOS 10.3.3 Beta has new wallpapers on iPad Pro?
+Apple Store told my Mom that because her iPhone battery can't be replaced, they'll give her a new phone for the $79 service charge. Is that right?
+Is Refurbished The Way To Go For Macs?
+Does anyone else remember when the Music app was called iPod?
+PSA: Overcast 3.0.3 brings back swipe-to-delete
+Zotac unveils two Thunderbolt 3 enclosures to attach external GPUs to Apple's MacBooks
+Apple Will Fight 'Right to Repair' Legislation
+Does Apple use Amazon web services? Because Amazon and Apple are having serious issues right now.
+With native HEVC/h.265 support in iOS 11 and macOS High Sierra, you can bet 4K movies are on the horizon for iTunes.
+TIL 'Siri' means 'beautiful woman who guides you to victory' in Norwegian
+Vanilla—hide Mac menu bar icons for free
+Possible Leak Suggests Next iPhone SE or iPhone 7s Could Have Strengthened Ion-X Glass Display
+Apple Seeds Second Beta of iOS 10.3 to Developers
+iOS 11: iPad Wishes and Concept Video (MacStories)
+WWDC 2017 | Live Thread
+Wouldn't it be great to really clear iOS notifications with a swipe?
+Apple Music Subscribers Are 'Well Past' 20 Million, Says Eddy Cue
+Ikea's smart lighting will soon work with HomeKit
+PSA: Don't put your 2016 Macbook Pro on magnetic surfaces
+So I was snowboarding with my AirPods...
+iOS 11 Maps has greatly improved.
+LPT: Add a ".hushlogin" file to your home directory to remove the "Last login" string from each new tab in Terminal, as well as improve the login time for each new session.
+Why is the dashboard still in macOS?
+The Size of iPhone’s Top Apps Has Increased by 1,000% in Four Years
+56 new emojis; Unicode v10
+Apple is about to report $250 billion in the bank, keeps 93 percent offshore
+Apple is reportedly reinventing the iPhone's fingerprint reader
+Apple releases three new ads tempting Android users to switch to iPhone [Video]
+Removing AirPods
+Mass production of next-gen iPhones underway, glass chassis for both iPhone 7s and OLED iPhone 8
+Apple Watch + AirPods
+Anyone want to see the Music app overhauled?
+Apple, please bring the News app to Canada
+All Three 2017 iPhones Predicted to Have 3GB of RAM and Lightning Connectors With Faster Charging
+There's apparently a hidden VR-Mode for Apple Maps in iOS 11
+KGI Says 10.5 inch iPad Pro and Siri Speaker Coming at WWDC
+New MacBook Pro Display vs 2013 MacBook Air
+AAPL price crushes old record, cruises past $1,000 pre-split per-share price
+Apple Names its New Campus Auditorium 'Steve Jobs Theater'
+AirDrop is crazy fast
+How the apple watch saved my life
+Two years in, what has Apple ResearchKit accomplished?
+Apple denies imminent iPhone 6 battery exchange program in the works
+Surprised no one is talking about "screenshots"!
+Apple: stop routing idiots over a closed mountain pass
+the iPod Hi-fi
+Just switched from Galaxy Tab to 2017 iPad
+iOS 11 can automatically delete apps you don't use
+Apple finally admits it has an office in Cambridge, England, reportedly home to Siri researchers
+T-Mobile calls DirecTV Now 'barely watchable,' offers switchers from AT&amp;T a free year of Hulu
+Apple's April Fools
+Apple Investigating Issue With AirPods Randomly Disconnecting During Calls
+Apple to start its online store in India during Diwali 2017
+Force pressing the refresh icon in Safari gives you the option to request desktop site
+TIL you can stop an alarm by pressing the home button.
+With iOS 11 on my iPad, I now have all my apps in the dock
+PSA: Genius Bar Replacements are not refurbished
+Apple Seeds First Beta of macOS High Sierra to Public Beta Testers
+Apple - Home App - Welcome Home
+Apple acquires AI company Lattice Data, a specialist in unstructured ‘dark data’, for $200M
+What are some free apps that every macOS user should take advantage of?
+iPad Pro 10.5 - First impressions
+Would you guys support/use a built in VPN selector in iOS?
+Built in password manager in iOS 11!
+Pet Peeve - When card readers don't show that they take Apple Pay until after the transaction has started.
+Watched my 7+ get run over about 10x yesterday.
+Why is the touchpad of the Macbooks so good?
+MacOS Malware Linked to Russian Hackers Steals Passwords, iPhone Backups
+Apple investors shrug off Samsung Galaxy S8 event, send stock upward
+It'd be nice if my frequently used emojis synced across all of my devices.
+Someone Recreated Apple's Legal Terms and Conditions Into a Graphic Novel
+Supply Chain Evidence Mounts for Advanced 3D Sensing Abilities Coming to iPhone 8
+WWDC Housekeeping
+PSA: For users of iCloud Photo Library and on Windows, the Photos web app has been significantly revamped, and more closely mirrors the macOS app. Also, much faster
+Do you guys pay for icloud?
+I just changed my iPhone 5 battery, and I fall in love with it just like first time!
+Apple rolling out iOS 10.3 beta 3 for iPhone and iPad
+Apple Allegedly Partnering With Carl Zeiss for Augmented Reality Glasses
+How have AirPods changed your audio lifestyle?
+Narwhal 2.11 update adds support for alternate app icons for iOS 10.3 and above!
+Purported iPhone 8 schematics show ‘bezel-less’ front, rear Touch ID, same thinness as iPhone 7
+Watch Steve Jobs introduce the iPhone 10 years ago today
+Hackers Threaten to Remotely Wipe 300 Million iPhones Unless Apple Pays Ransom
+Apple CEO Tim Cook tapped to advise President Trump's 'Office of American Innovation'
+Finally joined the 64-bit iOS world (SE) from iPhone 5 + iPad 4. Gaming graphics are noticeably improved and framerate is double. Here's some screenshots showing the graphics difference in Jurassic World.
+Don't be fooled - the i5 and i7 on the MacBooks are rebranded m5 and m7's
+Absolutely love how quiet the 2016 MBPs are
+Chris Lattner (creator of Swift and LLVM) is leaving Apple
+At $153.45, Apple now has a market cap of $800.05 billion
+Five States Are Considering Bills to Legalize the 'Right to Repair' Electronics
+Apple is in talks to launch its own Venmo
+Apple CEO Tim Cook: Why we’re withholding royalties owed to Qualcomm
+Apple granted patent for Touch ID sensor in power button as uncertainty remains over iPhone 8 approach
+Something creepy and weird just happened with my iPhone 6
+PSA: New phishing email going around.
+Apple permits iPhone app chronicling US drone strikes to return to App Store
+So I finally bought some Bluetooth headphones...fair to say the hate on here is massively overblown.
+Apple, other tech giants will support transgender student's case
+Chuck Thacker, lead designer of the Xerox Alto – which inspired the Macintosh – dies
+In app Keychain support in iOS 11.
+Apple patented a pizza box, for pizzas
+Jeff Goldblum Nearly Became The Voice Of Apple's Siri
+iOS 11 public beta is coming this week, here’s how to prepare
+Apple Loses Fourth Place to Xiaomi in Booming China Smartphone Market
+iOS 11 Notification Center, do you love it or hate it?
+Does anyone else want W-1 Bluetooth speakers from Apple?
+PSA: Apple is removing their limitations on price matching
+Are there any good 'learn to draw' apps that take advantage of Apple Pencil? I haven't found any!
+WikiLeaks reveals CIA malware that "targets iPhone, Android, Smart TVs"
+PSA: The app Colorfy tries to trick you into a $13/week subscription. That's right, per WEEK.
+Google’s blob emoji are great and no one will convince me otherwise
+@MKBHD : "What I wanted to be a trend in 2017 smartphones: Big batteries . What is actually a trend: Dropping headphone jacks"
+Verizon Announces Plans to Install Spyware on All Its Android Phones
+Google plans to block ads natively in Chrome (mobile &amp; desktop)
+/u/andrewk77, the guy who won an LG G6 from Android Authority on March 5, finally received it today - Just 5 days after making the Reddit post that got to the front page
+Google’s Android Overtakes Windows as the World’s Number 1 Operating System
+There's a home screen for everyone. #myAndroid
+Dear World, Please Copy Twitter and Add a Night Mode to Your Apps | Droid Life
+Android Authority doesn't ship "giveaways" meanwhile using your social media accounts to market their website for free
+Samsung will use Google Play Music as the default music app on its devices
+Netflix now supports downloads to SD Cards with latest update!
+Samsung has Removed the Ability to Remap the Bixby Button on the Galaxy S8/S8+
+WhatsApp backdoor allows snooping on encrypted messages
+Sorry, Apple, the headphone jack isn’t going anywhere
+Samsung including a free 256GB microSD card with each Galaxy S7 purchase
+OK, Google: Don't put ads in the Google Assistant
+Google Play now considers user engagement, not just downloads, in ranking games
+Android O is here
+TIL Google keeps a recording of every single voice command you've ever spoken to your phone, and you can play them back months later
+Google: Later this year, consumer Gmail content will not be used or scanned for any ads personalization
+Google Home Is 6 Times More Likely to Answer Your Question Than Amazon Alexa
+Marques Brownlee: First one that makes an app to remap the Bixby button on the Galaxy S8 to Google Assistsnt wins my $$$
+Introducing Google Gnome
+Firefox Focus New to Android, blocks annoying ads and protects your privacy – The Mozilla Blog
+Google Allo drops off the top 500 apps chart on the Play Store
+A 'brand new' Google Earth will arrive April 18th
+REAL WORLD comparison of Android Auto vs Apple CarPlay
+Samsung's Galaxy S8 will reportedly have both a headphone jack and a desktop dock
+Google says to developers, "Implement filters to improve search usability". Meanwhile, Google Play Store has never supported search filtering or even sorting results.
+Netflix confirms it is blocking rooted/unlocked devices using Google's Widevine DRM
+PSA: Don't install the Meitu photo app, its sending IMEIs to some srvers in China.
+Nintendo Switch Joy-Con controllers work natively on Android
+Exclusive: This is the Essential Phone
+Samsung chief Lee Jae-yong arrested on charges of bribery
+Spotify and Waze partner to play music and navigate seamlessly
+Google says it fixed a lot of the security holes the CIA exploited
+Google’s “Fuchsia” smartphone OS dumps Linux, has a wild new UI
+It's still difficult to just buy a Google Pixel today, and that's insane
+Instagram launches selfie filters, copying the last big Snapchat feature
+My app stolen by reverse engineering tools and re_published on google play
+Snapchat has a huge problem with Android, and it's causing investors to worry
+Official: The Google Assistant is coming to more Android phones
+Google Maps Introduces Location Sharing
+Totally CLEAR Galaxy S8 - Worlds FIRST!!
+Confirmed: OnePlus 5's Display is Upside-Down - Likely Causes Jelly Scrolling
+Excessive Lag Time Between Device Announcement and Release is Killing Excitement
+Google to stop absorbing cost of Play Store refunds outside of 48 hours, will deduct funds from developer payouts
+A lack of alternatives to Qualcomm is hurting the ecosystem
+Exclusive: Nova Launcher finally gets Google Now integration [APK Download]
+Opinion: Even if you can, you probably shouldn't buy a Google Pixel anymore
+Samsung announces McAfee security software comes pre-installed on Galaxy S8 smartphones
+This spoof Apple site illustrates the sophistication of today’s phishing attacks (works on Android Chrome, Firefox, Chromium but not LineageOS browser)
+Pixel 'demand is exceeding supply' at Verizon stores: Wave7 | FierceWireless
+The Essential Phone will have an unlockable bootloader
+Google Voice gets a new look for its first major update in years
+How is apps like this even legal?
+SMS support for Hangouts officially ends today, excluding Project Fi subscribers
+Ikea to launch google home compatible smart home devices.
+HTC 10 owner with the pink tint issue considering going to consumer court after HTC refused to acknowledge the issue
+Google’s new experiment Triangle lets you block individual apps from using mobile data (currently being tested in the Philippines)
+Serverside problems with Facebook and Messenger were likely responsible for recent battery drain issues.
+Why are apps like these allowed on Play Store? I got this suggestion from Trending section.
+A Year of Google Maps &amp; Apple Maps
+Difference in the smartphone culture in India and the US.
+Android is the only thing stopping Samsung from achieving Apple like control
+"In order to streamline our efforts further, we will be retiring the Google+ Hangouts API." Apps that rely on Google Hangouts won't work after April 25th
+Samsung is beating Microsoft in the battle to turn a phone into a PC
+Why do so many people dislike the blob emojis?
+Samsung concludes Note 7 investigation, will share its findings this month
+Google’s New AI Is Better at Creating AI Than the Company’s Engineers
+How to Remap the Bixby Button on the Galaxy S8/S8+ to Launch Google Assistant
+Welcome home to the new Google Earth
+Stephen Hall: "Waterproofing definitely coming with next Pixel device."
+Pocket Casts on Twitter: "Random pro tip: Asking Google Assistant to ‘Open Pocket Casts’ doesn’t work, but ‘Open Casts’ does. No idea why ¯\_(ツ)_/¯"
+Google Talk is dead, Hangouts is the new Slack, Project Fi users are screwed and everyone hates Allo
+OnePlus finally confirms no Nougat update for the OnePlus 2
+Secure messenger Signal testing end-to-end encrypted video calling in new Android beta, iOS beta to follow soon
+Nexus devices are getting Google Assistant in future update.
+Google Hangouts is getting a major overhaul to take on Slack
+WARNING to all Wileyfox owners: your location data and WiFi information is being sold
+Google pushed developers to fix security flaws in 275,000 Android apps
+Have phones become too expensive?
+The Essential phone being used on public transportation.
+Google is making OEM support of Android's directly reply and notification bundling features mandatory
+The OnePlus hype needs to die
+Google Assistant, four months later: Still fragmented, still unfinished, still the best
+While Android Leaps Forward, Samsung's Software Still has Trouble Catching Up to its Hardware
+David Foster, Head of the Google Pixel Division, Leaves Google to go back to Amazon
+Touching OnePlus5 with just one finger causes the 5GHz WiFi to cut out completely
+NoPhone Durability Test
+Google Play Store adds Free App of the Week Section!
+Not on my watch: Huawei CEO sees no future for wearable smart devices
+Shuttle Music Player is now open source!
+Game developer's code is so bad it breaks the app sandbox and actually manages to corrupt data as a non-root access.
+Super Mario Run Revenue ‘Did Not Meet Our Expectations’: Nintendo
+Samsung says two separate battery issues were to blame for all of its Galaxy 7 Note problems
+Phone startup Nextbit has stopped production and is selling its assets to Razer
+Google, please bring back Google Play Edition devices!
+Snapchat now requires location for all basic filters.
+Samsung Electronics to Release Galaxy Note 8 after Revealing Results of Galaxy Note7 Fire Investigation
+Kotlin on Android. Now official
+YouTube's mobile app will soon adapt any videos to fill the screen
+Comparing Android N &amp; iOS10
+Verizon to stop outgoing calls from remaining Galaxy Note 7's
+Google Allo is coming to Desktop soon
+Dear Samsung! - MKBHD
+This goes to show some of the most horrendous problems we have in Android right now
+Nova Launcher 5.2 is rolling out
+Samsung will soon let you unlock any Windows 10 PC using a Galaxy fingerprint reader. - The Verge
+APKUpdater, the open source tool for updating your apps quickly without an app store, has reached version 1.5 and can now update, search and install from the Google Play Store and now uses APKMirror's official API.
+How the Android O emoji would look if it were flat.
+Samsung Galaxy S8 and S8 Plus (top to bottom) in black sky, orchid grey and arctic silver
+I really like the consistent icons in Android O
+Hey Moto, how does it take 9 months to roll out Android Nougat? | AndroidAuthority
+Verizon is Reportedly Sending Pixel Owners a Free Daydream View Headsets to Apologize for Shipment Delays
+Here comes Treble: A modular base for Android
+It seems Huawei are trying to dodge their 2 year warranty obligations in Australia.
+Galaxy S8 camera can capture 1000fps videos, iris sensor gets an upgrade too
+Snapchats new update is great
+VLC for Android adds picture-in-picture support for Android O in latest beta update
+Pixel C, the latest tablet from Google, is still missing HDMI support since day 1
+Google has a new way to call out poorly made Android apps
+Android Can’t Compete With iMessage. Google Is Changing That
+Netflix was just the start: Google Play Console lets developers exclude app availability for devices that don't pass SafetyNet
+[Update: New behavior] Chrome Beta Now Asks If You Want To Replace Downloads Rather Than Clutter Your Device With Dupes
+Black market Blackphones get sent a kill message that bricks them [Updated] | Ars Technica
+HTC U Ultra Rant: Skip this One!
+Sony develops first smartphone sensor capable of shooting super slow motion at 1,000fps
+Two months after the Google Home's release, it still can't perform many basic tasks
+LG G6+ with 6GB RAM and 128GB storage is now official, facial recognition coming next month
+If Apple made some hardware changes, would you be tempted to switch?
+DisplayMate reviews Galaxy S8′s display, crowns it as the best smartphone display
+Next wave of cheap smartphones should cost $30: Google CEO Sundar Pichai
+Malware found preinstalled on 38 Android phones used by 2 companies
+In an 18:9 world, we need a new way to quantify screen size
+Google offers at least $880 million to LG display for OLED investment: Electronic Times
+Will 'bezel-less' be the big smartphone design trend of 2017?
+Android Pay set to launch in Canada on May 31st
+Latest Google Play Music v7.9.4920 is crashing on launch for a lot of users
+Google Maps updates it Local Guides program with a new points system and more levels
+Totally CLEAR LG G6 - JerryRigEverything
+Oh my god the Google Maps avatar finally points in the direction the car is going rather than which direction your phone is pointed in the car.
+Sources: Google's second-gen Pixel XL, muskie, has been cancelled - probably to be replaced by even larger phone
+Rumor: Android O to feature revamped notifications, picture-in-picture, smart text selection toolbar w/ Assistant, more
+PSA: Google says ‘production of the Pixel has not stopped’ despite erroneous Telus email | 9to5Google
+Update: Our tipster says ‘budget Pixel’ not necessarily a Pixel, but is ‘being developed alongside the Pixel 2’
+Sony's patent indicates using NFC to wirelessly recharge your smartphone battery using another smartphone in its vicinity
+Fragmentation Isn’t Android’s Fault, It’s the Manufacturers’
+First look at Nokia 6 Official Video
+Huawei reportedly made less profit last year despite selling 30% more phones
+Bluetooth 5.0: Explained!
+WhatsApp adds GIF search through Giphy, raises maximum media sharing limit from 10 to 30
+Alleged Galaxy S8 front panel leaked
+Google Home/Amazon Echo Easter Egg!
+How to Get Google Play on a Kindle Fire and Install Any Android App You Want
+Google Play Music redesign
+Samsung confirms its new artificial intelligence virtual assistant will be called Bixby
+Qualcomm Blocked Samsung from Selling Exynos to Others
+Opinion: Google should fix its erratic reminder system
+Google plugs severe Android vulnerability that exposed devices to spying
+Google Maps starts showing parking availability for some users
+New Android Messages adds ability to add people mid-chat.
+Galaxy S8 battery test. 8 hours 4 minutes. The phone is set at max resolution, max brightness, and playing YouTube videos the entire time.
+Hell No. PEEL remote just gave me a popup ad mid text message.
+Phonograph is now open source.
+Nokia confirms to release its new smartphones by the end of June
+Galaxy S8 pictured next to iPhone 7 and Galaxy S7 Edge
+Do NOT Trust OnePlus 5 Benchmarks in Reviews - How OnePlus Cheated
+Google Allo 11 prepares for Google Duo integration, adds group QR codes, more.
+Android O will Improve SMS Authentication for Apps
+Source: Pixel 2 ‘walleye’ and ‘taimen’ Specifications Revealed
+SanDisk's new 256GB microSD card drastically improves app loading times, but you'll pay $199 to shave seconds on those loading times.
+RIP Blobs: Google Redesigns Emojis
+Why don't Google and Android engineers care about scrolling?
+Oppo’s new camera lets you zoom in 5x further with no loss in quality
+Samsung galaxy s5 remains Samsung's most popular device.
+Samsung Galaxy S8 and S8 Plus dimensions show compact phones with huge screens
+Galaxy Note 8 to reportedly miss out on in-screen fingerprint reader as well
+64GB Samung Galaxy S8 Unlocked Smartphone $425, S8+ $525 w/ Any Smartphone Trade-in
+The Tor Project just released the ooniprobe Mobile App for Android to measure Internet Censorship &amp; Performance
+Nexus 5 Is Still Surviving Despite Its Lack Of Software Updates
+Trademark confirms that Galaxy S8's nearly bezel-less display will be called ‘Infinity Display’
+Tomato, tomahto. Google Home now supports multiple users
+Users of MX Player have been complaining about the fullscreen ads it recently added and version 1.8.16 has finally removed them.
+Burger King's annoying ad that activated Google Home just won a industry award
+Google Photos: Give and get the photos you care about
+Relay for Reddit 8.1.0 beta rolling out now with a new interface for comments - Material transitions, Auto draft saving, Image uploading to Imgur, and more
+Android Wear has made it trivially easy for fashion companies to 'make' tech products
+Galaxy S8 camera is amazing: Here are the first photos and video samples
+Google will bring drag-and-drop feature in Android OS with machine learning
+I/O keynote stream
+Francisco Franco (Franco Kernel device) asks OnePlus to release Nougat kernel sources for OP3/T
+Google Hires Apple’s Key SoC Architect to Make Its Own Mobile Chips
+An old smartphone is a time capsule you never knew you were filling
+Xiaomi Mi Mix 2 Said To Come With In-Display Fingerprint, Launching In The Second Half of 2017
+Am I crazy or has Google Keyboard gotten worse?
+Google ruins the Assistant’s shopping list, turns it into a big Google Express ad | Ars Technica
+Refresh button for Play Store updates is now in testing
+OnePlus is doing everything right lately
+It's here. Meet your Google Assistant.
+Anyone else have a old phone because they cant find one worth the upgrade?
+Google Play app revenue up 82% in Q4 2016
+Refurbished Note 7 variants passes through FCC.
+Google Contacts 2.0 for Android redesigns the people view, account switcher, more
+Google shuts down Burger King's cunning TV ad
+The Essential Phone doesn’t consider a headphone jack essential
+4GB Ram Upgrade for Nexus 5X possible. • r/nexus5x
+How Dash Charge Works ft. Emily Ratajkowski - YouTube
+Google Music 4921 is out to solve crashing.
+Who actually prefers a fingerprint scanner on the back rather than the front?
+Xiaomi enters North America with Redmi Note 4 launch in Mexico
+LG G6 officially confirmed to scrap modular design, launching ‘in the very near future’
+OnePlus 5 official launch event announced. June 20 12 PM EDT.
+This case is literally an entire Android phone that you attach to your iPhone
+OnePlus 5 beats the Samsung Galaxy S8 and the Sony Xperia XZ Premium at Geekbench
+Erica Griffin Galaxy S8 &amp; S8+ In-depth review.
+Samsung’s Galaxy S8 has no ugly carrier logos to detract from its wonderful design
+20+ Apps that use and augment Android Nougat's Quick Settings Tiles
+I modified the Recent Apps Animation to Be More Of Material Design
+Android 7.1.2 beta 2 separates the 'R' roaming indicator from your data connection, allowing you to see what type of data connection you're on
+Dear Google, It's Time to Let me Choose my Own Damn Emoji
+Burger King’s new ad forces Google Home to advertise the Whopper
+Samsung Galaxy S8 and S8+: Official Introduction
+Stock icons look amazing if all developers actually implement adaptive icons. Consistency is awesome.﻿
+[Humor] XKCD comic accurately representing chat apps and why SMS isn't going away for a while
+Attention amoled phone users! I have created a subreddit for backgrounds optimized for amoled screens! Submissions welcome
+For those who love icon packs, here's a list of ones that have gone on sale for free
+Telus first Canadian carrier for Essential Phone
+Nokia is back from the dead with a trio of pure Android phones
+OnePlus to discontinue its 5-month-old smartphone, OnePlus 3T
+OGYouTube Just Received Its Last Update Ever - Support Forcibly Shut Down For Good (x-post from /r/androidapps)
+Chrome Beta 57 adds full tab controls to Chrome Custom Tabs
+Pixel C gets the Pixel Launcher, Pixel-style nav buttons, and more in 7.1.2 beta 2
+Yesterday OnePlus said the OP5 jelly effect is normal. Today they inform they will fix it with a software update.
+Can we all agree to stop linking to sites like this?
+KGI: Galaxy Note 8 to feature dual-camera design w/ 3x zoom, Galaxy S8 selling better than expected
+High-res Galaxy S8 Plus leak shows more of Samsung's new software
+Whatever happened to Instant Apps?
+Nova Google Companion 1.1: Adds support for Lollipop
+8 GB RAM in smartphones: Massive step forward or unreasonable hardware race?
+I have an LG G6. AMA
+[Android Police] Google will discontinue Google Now Launcher in the coming weeks
+Evleaks: I've been seeing this misreported quite a bit, so, just to clarify: Galaxy S8 - 5.8" QHD, Galaxy S8 Plus - 6.2" QHD. Both displays are, ofc, SAMOLED
+Galaxy S7 display defaults to Full HD after Nougat update, but you can switch back
+Tell Google you want those Stereo Speakers back in the Pixel 2. Here is the official Pixel feedback thread in googles product forum.
+Google Messenger renamed to Android Messages
+Rumor: The Galaxy S8 will have a headphone jack after all
+Half-naked girls get thousands of upvotes, how many for our boy in blue?
+New video show off working Galaxy S8 unit
+Android O feature spotlight: Downloads of system updates can now be paused
+WhatsApp is rolling out sharing of all file types (slow roll out for some users, stable and beta)
+‘State trojans’: New German law enables police to hack into encrypted messengers(WhatsApp, Telegram etc.)
+OnePlus 5 official wallpapers are available to download
+Samsung Galaxy S8/S8+ with more than 5 times the S7 pre-orders in South Korea.
+Google closed the Android System battery drain bug reported in Android N saying things are working as expected
+Google Home is coming to Canada June 26th, along with Assistant in Canadian French and English
+Xperia XZ Premium Official Video
+Andy Rubin teasing new phone.
+Source: Google’s Pixel 2 to feature improved camera, CPU, higher price, but ‘budget’ Pixel also in works
+Android Device Manager renamed to "Find My Device" with new UI!
+Amazon Aims to Put Fire Phone Nightmare Behind With 'Ice' Smartphones
+Xiaomi stops disclosing annual sales figures as CEO admits the company grew too fast | TechCrunch
+Rick Osterloh: Hey all, Google's own Chromebooks aren't "dead" as has been reported. They will live on, we just have *no plans to share at this time* ;)
+How Android Pay works if your card is cloned
+Samsung's UI Fluidity Problem Needs Fixing
+[App] Team Troll: Add your LEAST favorite teams, receive notifications when they are losing
+Motorola seems to have lost it with their new ad
+Swiping down on the fingerprint scanner now opens up the notifications in Nexus 5x in 7.1.2
+Google is making release notes compulsory for every new release of the app versions • r/androiddev
+Thank you, Google Photos.
+Defying all expectations, the ZTE Axon 7 becomes one of the first non-Google phones to get Android 7.1.1
+Study: hundreds of apps in Google Play Store that help users connect to PCs via Wi-Fi leave some ports open and poorly secured, exposing the device to hackers
+Google app finds relevant part of video in results
+Vertu Constellation: The $6000 Phone
+Google Assistant for every phone was the best move Google will make in 2017
+CyanogenMod Theme Engine is dead, LineageOS to find replacement
+Google Photoscan patch v2 — resolution increased to 12 MP (4000x3000 px)
+Google's not-so-secret new OS
+Snapdragon 835 will debut on the Galaxy S8, LG G6 to use Snapdragon 821 instead
+Allo: New features rolling out today. Chat backup/restore, incognito mode for groups and link preview
+Bloons TD 5 is currently free!
+[PSA] The google app's latest update is broken. When you swipe off a card, it crashes.
+Android O confirmed for Nokia 6, 5 and 3
+So... I saw an actual Note 7 in the wild yesterday.
+Your original NVIDIA Shield Android TV isn't being left behind | Android Central
+Android 7.1.1 running on the 7 year old Samsung Galaxy S (GT-i9000)
+Galaxy S8 case leaks, showing 3.5mm headphone jack and USB-C port
+Samsung S8 ad: Ostrich
+Gboard 6.1 adds quick access to Google Translate, redesigned theme picker, more
+Giant 18.4" Nokia tablet running Nougat.
+OnePlus is silent about Nougat for the OnePlus 2 and OnePlus X, and owners are pissed
+Sync for Reddit v14 is going live on Play Store
+Google Home is playing audio ads for Beauty and the Beast
+Google Git has a page for Nexus 6 Android O test builds
+Ever wondered how many different unlock patterns are possible?
+LG to update G4, V10 with new operating system (Android 7.0)
+Samsung Galaxy S8 schematics surface, shows a rear-mounted fingerprint sensor
+Until we have an Apple Watch of our own, no one is going to take Android Wear seriously (opinion)
+OnePlus Service Center asks Water Damaged OnePlus 3 Owner Rs 48,000 to Fix the Rs 28,000 Phone
+120Hz adaptive refresh displays - future or gimmick?
+Android Experiments - The goal is to push the limits of what's possible on phones, watches and beyond using the unique capabilities of the Android!
+Android O introduces a gorgeous new look for media art in notification controls
+All Fossil watches are getting Android Wear 2.0 in March
+Nova Launcher 5.1 rolling out
+How to Force 'OK Google' Hotword Detection to work when the Screen is Off on any Device [Root]
+Google makes ADB and Fastboot Binaries Available for Download Separately
+Changes to our rules
+Forget Apple. Xiaomi CEO Now Wants to Be More Like Costco
+Nova Launcher 5.1 Beta 1 Adds Dynamic App Badges - Badge icons with content from their notifications
+Galaxy S8 and Galaxy S8+ full specs and price leaked ahead of launch
+Elder Scrolls Legends Launches On Steam, Android Tablets
+Do you want the GPM app to get an overhaul?
+What happened with the Samsung Galaxy Note 7 - Official Samsung Video
+283 Android VPN apps analysed - 18% do not encrypt traffic, 84% leak information, 2 out of 3 use third party tracking libraries
+Reminder that the CEO of Snapchat owes us better support
+Facebook Messenger can insert GIFs from Google's Gboard
+Fake reviews: Somebody is buying thousands of 5-star Google Play reviews for WhatsApp
+Moto and Huawei are replacing the Android keys with a touchpad, and I like it
+Snapchat (finally) adds bundled notifications!
+Google Home and Wifi arrive in the UK
+What is the point of a future proof phone if updates are only 2 years?
+OnePlus Reveals OnePlus5 Design
+Fossil announces a slew of branded hybrid analog and Android Wear watches at Baselworld 2017
+Class action lawsuit targets LG over legendary G4, V10 bootloop issues
+Zagg responds to JerryRigEverything scratch test
+YouTube now formally lets you opt in for Material Design on the web
+Google Play Services v10.2 is out. Gingerbread is deprecated, more health data types for Google Fit among other changes
+Bootloops and battery issues ruined the Nexus 6P and are definitely cause for a lawsuit
+Galaxy S8 facial recognition can be bypassed with a Photo
+Lots of reports of people getting signed out of Google Play Services tonight. Discuss.
+My S7 Edge battery blew up!
+The US International Trade Commission has agreed to investigate LG, MediaTek, Sigma Designs and Vizio for allegedly violating AMD's graphics patents
+Evan Blass: Snapdragon 835 Info
+ZUK Mobile is shutting down, all new devices will be named Lenovo Moto - GSMArena
+Samsung will sell refurbished Galaxy Note 7 with a 3000~3200㎃h battery, said Korean site.
+Googler's comic pokes fun at Nexus and Pixel smartphone shortages
+Galaxy S7 edge wins Best Smartphone award at MWC 2017
+@HTC : "HTC U11 camera has been ranked the highest DxOMark of 90"
+Nokia 8 new images
+Evan Blass: OnePlus 5 powered by 2.35GHz octa-core Snapdragon 835 processor and 8GB of RAM will release on 22 June 2017
+Google Photos Prepares to Allow for Editing the Date and Time of a Photo
+OnePlus 5 - so what exactly does that "telephoto" lens do again?
+Stephen Hall: Andromeda was shelved
+An incredibly fast search widget is coming to Chrome for Android, here’s how to try it now
+Google released a patch for Gboard that eliminates all the lag issues
+Rootless pixel launcher that support Iconpack, App renaming, App Hiding, Adaptive theming, App tray transparency, Changing Icon size, Changing grid size, Save scrolling position in apps tray and Notification badges
+LG will extend the G6's warranty to 2 years for free
+Top 5 Google I/O 2017 Recap!
+Nope, T-Mobile isn’t rolling out support for Google’s RCS offering in Messenger | 9to5Google
+Anybody miss IR blasters on flagship Android phones?
+The issue of security in LineageOS
+Google Maps morphs into Ms. Pac-Man for April Fools’ Day. Brace yourselves, it’s already April Fools’ in some parts of the world
+LG posts its best quarterly profit in almost 8 years
+Delivering RCS messaging to Android users worldwide
+Exclusive: This is the OnePlus 5
+Smart assistants are the new Android skins, everyone is building one and most are still pretty useless
+Pixel boss Rick Osterloh: Pixel 2 is coming this year and staying premium
+Snapdragon 450 On The Way: 14nm, Octa-Core Cortex-A53 Chipset
+Galaxy S8 Official Case leaked, confirms Rear fingerprint sensor
+Google Officially Adopts the Payment Request API, Allowing you to Pay with 3rd-Party Apps in Chrome
+OEMs need to stop promising updates they can't deliver
+New Phones with Old Android Versions: Why Security Patches &amp; Feature Updates Lessen the Downsides.
+Graphics drivers can be updated from the Play Store in Android O
+Samsung’s biggest challenge now is Google software, not Apple hardware
+Thoughts after owning a Pixel for 5 months
+[Opinion] Google desperately needs a simple messaging strategy
+Rootless Pixel Launcher Port
+Want to completely disable/uninstall those pesky bloatware apps that carriers load onto our Android devices? One simple ADB command will take care of it for you on any Android device running 5.0 or higher!
+What are some of the lesser known strong points of your phone?
+LG bootloop defect lawsuit expands to cover G5, V20, and Nexus 5X devices
+Samsung announces Exynos 9 lineup with support for 1Gbps LTE speeds and 4K video recording at 120fps
+Google Daydream does not work on the Galaxy S8
+Asus ZenFone 3 Zoom Officially launched - Dual cameras, SD 625, 5000mah battery
+We Seriously Need The Way Apple Has Planned To Make App Review Prompts Less Annoying
+Galaxy S8 vs LG G6: MrMobile vs MKBHD!
+[NSFW] A very WTF test of the HTC U 11's edge sense
+We need to seriously talk about TouchWiz lag.
+I really like the consistent icons in Android O (when using a launcher that supports it)
+Google photos lost the ability to backup only while charging
+Google's Fuchsia OS project started 1 year ago. It has an 8 person team. It's something you should start thinking about in 2020. Maybe.
+Google Play is running a $.99 movie rental deal through July 7th
+Gboard v6.2 Adds Cursor Control, Cut/Copy/Paste Buttons, and Prepares for Handwriting Support
+Android Malware Secretly Downloads and Purchases Apps from Google Play Store
+PSA: Unofficial, ad-filled version of F-Droid on Google Play. Be careful
+Google Pixel Mac transfer problems due to ancient Android File Transfer software
+This is the OnePlus 5
+Hey r/Android. I had been using the Galaxy S8 as my daily for a couple of weeks, but somehow, I decided to ditch it. Don't get me wrong, Samsung made an amazing futuristic phone, but handing and holding it is a nightmare. What do you guys think? Did anyone have a similar experience?
+I received a different text in Messenger from what my girlfriend sent to me. (Link and description in album)
+Google Carrier Services update
+Anyone else wish more phones had an IR blaster?
+Users can finally start a Duo call from inside an Allo chat starting today
+Microsoft to launch a major revamp of Skype, beginning with Android
+What are the most beautifully designed Android apps?
+Google Play Store 7.8.15 Prepares for Instant Apps Support
+Samsung Galaxy S7 edge battery life on Android 7.0 Nougat
+Google Assistant will use more than one device to improve accuracy of voice commands
+Top 5 Smartphone Cameras: The Blind Test!
+Nokia Wants To Make Its Android Phones The New Nexus Phones
+Google Photos v2.13 adds video stabilization, hints at possible Google+ integration [APK Download + Teardown]
+Pixel performance engineer on OnePlus 5 cheating
+Pixel Launcher rickrolls users in the App Screenshots
+Issue 230848 - android - Bootloop of death bricking Thousands of Nexus 6P - Android Open Source Project - Issue Tracker
+7.1.1 image for Nexus 6 now available
+Leak reveals Snapdragon 835 SoC and 6GB RAM for HTC 11
+Nova Launcher 5.2-beta1 adds Android O notification badge style and round search bar
+Introducing Google Play for Pets
+Google keeps radio silence as botnets flood Play Store with fake reviews
+Used a Galaxy S8+ briefly tonight
+For those with Samsung Pay, Google Play gift cards are currently 20% off
+PSA: I already see people misunderstanding 'downloadable fonts' in O; it DOES NOT mean you can download your own fonts to use
+OnePlus 5 doesn't have 2x Lossless Optical Zoom it's actually 1.33x
+Google disables location sharing in Google+ before enabling it for everyone in Google Maps
+Google May Finally Enable Custom Themes Built on Sony's RRO Framework
+Cheetah Mobile has created the cringiest ad for their launcher
+Google Duo's new audio calling feature now available worldwide
+Android O feature spotlight: There's now a progress bar for installing APKs
+Fire Emblem Heroes is now available for Android
+(X-post from Google) Your already purchased HD movies WILL NOT play in 4k if they are compatible.
+Samsung neglects updating S7 &amp; S7 Edge Unlocked US Models...users receiving updates at a pace slower than Carriers....
+We've got some exciting news! (Razer bought Nextbit)
+HTC | Save the Date
+Google Camera 4.3 adds a setting to disable shutter clicks and other sounds
+According to Les Numeriques, the touch latency of Galaxy S8 is 89ms, the same as Oneplus 3T (90ms) was heavily criticized for having last year
+Play store should force apps (at least popular ones) to write useful changelogs
+Google is doing a terrible job at shipping its Pixel smartphones
+How to set up an Android phone for your kid
+Exclusive: Moto’s new entry-level phones, Moto C and Moto C Plus revealed
+Google killed the shopping list feature from going to keep where it's handy and available to a webpage that it's cumbersome and hard to get to. Why do they kill useful features?
+[RUMOR] Apparently Google is seeking anti-tamper/DRM technology to use on the Play Store apps
+Long time Android user, who watched WWDC
+Francisco Franco about Android O and the future of Pixel Phones
+David Ruddock on Twitter: What if I told you Google will announce the launch of Assistant for all Android 6.0+ devices today?
+I've owned every iPhone since the 3G, and now I have a Google Pixel.
+Boost for reddit is back in Google Play
+Keyboard typing is already rolling out in Google Assistant
+Google have incorrectly used the Lira symbol '₤' for their Pound '£' emoji in Android O
+Google Play Turns 5 Today!
+Open Whisper Systems:There is no WhatsApp 'backdoor'
+Music teams from YouTube and Google Play combine
+Get a sneak peek at Android Nougat 7.1.2
+Exclusive: Hands-on with Google’s Visual Search for Android
+Experimental Nighttime Photography with Nexus and Pixel
+Leaked logo confirms Samsung will use the name “Galaxy S8+”
+BlackBerry KEYone Unboxing and First Impressions!
+Google Pixel 2 (Taimen) spotted on Geekbench with 4GB RAM, runs Android O
+Paranoid Android returns with Android 7.1.2 Builds: Pie Controls, Color Engine, and More!
+New Google Search UI (Beta 6.14.17.21)
+Google Spaces To Be Shutdown April 17th
+On Whatsapp beta 2.17.163 you can "pin chats" to the top!
+Spigen accuses Andy Rubin's company Essential Products of trademark infringement, Essential responds with ��(ಠ_ಠ)��
+GS8 Image via @evleaks
+Fact Check now available in Google Search and News around the world
+Anyone remember the Nexus Live Wallpaper from Gingerbread? Well, with this app, you can get it on any version, root-free!
+PhD archaeologists have received $900k to bring ancient sites back to life in virtual reality - Free app on Play Store
+Just got an update email from Google: no more carrier texting from Hangouts
+LG hits record phone market share in US
+Latest update to xposed on Nougat progess, Rovo explains why it's taking so long
+CRTC puts an end to locked cellphones and unlocking fees [Canada]
+User Pipataki has UNLOCKED the bootloader for Amazon Firephone and posted a test file for Lollipop! Never knew this day would ever come.
+Google finally address the wakelocks​ battery drain issue and how they will fix it in Android O.
+Super Mario Run hits Android on 3/23!
+From XDA: Oneplus 2 is NOT getting Nougat, according to an email from customer support
+Official Blackberry KeyOne
+Qualcomm sued by US regulators for anti-competitive practices
+[GALAXY S8] Samsung sets shipment target of 60m for Galaxy S8
+evleaks: The Moto Z2 Force won't be a Verizon exclusive this time around; T-Mobile will carry it, for instance.
+How can chinese companies offer great specs at such low prices?
+New Google Voice About to Launch?
+Francisco Franco's Opinion Regarding Galaxy S8: "With the S8 everything changed. It's the first device since One Plus One that made me forget about the iPhone."
+If Android O does wind up being called "Oreo", it would be the perfect time for Google to integrate a full theme engine.
+[Hands-On] Google Contacts web rolls out a better looking Material Design interface to everyone
+HTC U11 has sold better than its predecessors, the M10 and the M9, after already 1 week.
+MrMobile: Samsung Galaxy S8 Review: Redemption In Glass
+My Icon Pack is now FREE for today only.
+Be wary of fake "leaks," especially from Twitter accounts like @VenyaGeskin1
+Huawei Executive Says 4GB of RAM is Enough, 6GB/8GB RAM is a Waste
+Fresh Galaxy S8 renders highlight design
+After the OnePlus 2 Update Trainwreck, Software Support is Paramount to OnePlus’ Success
+Is OnePlus even relevant anymore at their current price range?
+The OnePlus 5 will arrive this summer
+Chromebooks will get new Android O features before phones do
+Google Allo 9.0 suggests its desktop chat client will work just like WhatsApp
+Opinion: Google, why can’t you just let people backorder the unlocked Pixel?
+2 years ago, I decided to learn Android development and here is my journey of becoming an Android indie dev
+Tasker new interface is coming soon
+The Galaxy S8 launches March 29 in New York
+Nokia confirms US availability of its Android phones
+As Google Neglects Tablets, Microsoft and Apple Push the Envelope
+Google Nexus 6P Battery Early Shutoff and Bootlooping– Class Action Investigation - Chimicles &amp; Tikellis LLP
+Google app v7.6 beta points to the return of "What's this song?" in Assistant
+[Megathread] Google I/O 2017
+Android "O"reo ?
+Exclusive: This is the Galaxy S8
+Samsung Galaxy S8: Times Square Takeover
+Pete Lau confirms OnePlus 3 and 3T will get Android O
+@Android on Twitter : Clean &amp; simple look: ✔️ The latest updates: ✔️ Nougat: ✔️ There’s a lot to ❤️ with @Nokia &amp; #Android. Welcome to the fam! #AndroidMWC
+I made a 3-minute video overview of how to make a simple Android counter app
+Oreo collaborates with Google on Google Earth mobile game - Launches today
+CEO Sundar Pichai recalls Google job interview, 'I thought Gmail was a joke'
+Doogee MIX is official with a 5.5" FHD Super AMOLED display on a bezel-less body.
+It’s settled: The LG G6 will have a “full-metal” body
+Updated: Do NOT Trust OnePlus 5 Benchmarks in Reviews
+Google providing the option to turn off Cast media control notifications for a Chromecast or Google Home device
+How have you "repurposed" your old phones?
+Samsung predicts biggest profits in three years, just three months after Note 7 recall
+Apparently you can remap the bixby button with a 3rd party app
+HTC’s Ocean Note will reportedly use the same camera sensor as the Google Pixel with added software tweaks.
+Google's Inconsistent Messaging Space Complicates Sticking with One Service
+Megathread: Google Unveils First Android O Developer Preview
+Hilarious article from April 2009 : "Has Android already failed?"
+LineageOS 14.1 (Android 7.1.2) running on the 5 year old Samsung Galaxy S3 mini (GT-I8190)
+Oracle refuses to let Java copyright battle die - another appeal filed in war against Google
+Android Pay can now be downloaded/setup from the Play Store in Canada
+Android O is Breaking Apps that Overlay on top of the Status Bar
+Samsung's Galaxy S7 Edge is still a great phone, and now great value thanks to the S8
+Tech Sony filed a patent application for a wireless battery power transfer. Theoretically this would enable you charge your phone wirelessly from things like your refrigerator, TV, computer or even your washing machine
+Google prevents using android hotspot with chromecast.
+No, Google Isn't Eavesdropping on You for Ads and Predictions
+I wasn't pleased with 3D live wallpapers on the Play Store, so I made my own collection! Check it out!
+TIL the brands OnePlus, Oppo &amp; Vivo are all subsidiaries of one 'BBK Electronics Corporation'
+Google confirms to us that the wider Assistant rollout will not reach tablets
+Why don't more manufacturers do "Double Tap To Wake"?
+Google App 7.1 beta is testing a search bar in the notification panel and may begin showing pollen counts [APK Teardown]
+Samsung says Bixby voice assistant won't ship with Galaxy S8
+Google Pixel long-term review: Still the best smartphone I've ever used
+What features would iOS have to include for you to consider switching?
+What’s New in Android: O Developer Preview 2 &amp; More
+Google Assistant 7.2.23.21 now has IFTTT-like functionality
+Spotify set to restrict certain albums to paid users only
+Xiaomi India Introduces End of Life Product Take back and Recycling Program
+Which Android manufacturer updates its phones the fastest?
+Nintendo's Fire Emblem Heroes will arrive on Android first (Feb 2)
+Pokémon GO Has Grossed $1 Billion Worldwide Since Launch
+Google May Have Third, Larger Phone in the Works Under Codename "Taimen"
+Hands-on with Google’s new Fuchsia OS and the ‘Armadillo’ UI [Video]
+"This is LG's G6 smartphone, coming February 26th" The Verge
+Google Pixel 2 - Wishful thinking/a quick mockup of the phone I'd like to see.
+I find it very bizarre that Google Assistant doesn't support typing.
+HTC’s U Ultra is a compendium of bad ideas
+Please don’t spend $50 on a screen protector for Samsung’s Galaxy S8
+Nav Bar Customization was Hidden in Stock Nougat All Along...and it never needed Root
+Qualcomm Snapdragon 835 slides
+Google Assistant doesn't work well with Google Allo. The irony.
+New photo of Essential Phone!
+TWRP v3.1.0 will Bring Support for Backing up Directly to your PC
+This is the Samsung Galaxy S8, launching March 29 | VentureBeat | Mobile
+Sundar Pichai just hinted at how Google will make money from maps, and it sounds like lots of ads
+Benchmark Cheating Strikes Back: How OnePlus and Others Got Caught Red-Handed, and What They’ve Done About it
+Best way to request a tiny feature from Android/Google?
+Samsung Left Millions Vulnerable to Hackers Because It Forgot to Renew a Domain, Researchers Say
+Google Sells 1 Million Pixels In Eight Months
+The Play store should allow you to hide apps.
+[Meta] Links to APKMirror have been Suspended by Reddit
+[Rumor] OnePlus 5 to release with 3600mAh battery and frontfaced fingerprint reader in early June
+T-Mobile Introduces New Network Technology to Protect Customers from Phone Scams | T-Mobile Newsroom
+Should the google assistant voice take breaths?
+Signal can now be used without Google Play Services
+TIL: Long press in Google Camera locks focus.
+Redesigned Adaptive Icons
+NVIDIA SHIELD (2017) review: Still the king for a reason
+OnePlus pushes OP5 ad/notification on OP3/T phones
+Galaxy Note 8 shown off in leaked render (+more details in comments)
+LG G6 battery capacity revealed: "more than 3,200 mAh"
+Express yourself with Gboard for Android's newest features
+Samsung Galaxy S8+ screen replacement to cost $275/€250
+Chrome 57 will have DRM enabled permanently
+Security researchers call for Guardian to retract false WhatsApp “backdoor” story
+LineageOS on Twitter: "Builds should be going out soon! "
+Remember when Motorola developed a "password pill" that, when ingested, would give you instant access to your devices? Yeah.
+Long time contributor and app packager, krt, leaves F-Droid
+Qualcomm S7 Engineering boot images leaked; root is now possible
+Difference in touch latency between Google Pixel and OnePlus 3T
+"That said we'll plan to build a Tor Browser for Mobile (Android) later this year which will supersede Orfox. It should get as regular updates as the Tor Browser for desktop (and should have feature parity as well). So, stay tuned. :)"
+Some people are unhappy that Google lens is just improved google goggles. I think this comic sums up the complexity of it.
+Textra Update (3.34) finally adds support for Nougat notifications, as well as Pin to Top and auto-theming!
+Google has a built in Fidget Spinner
+Google Play Music Stops Playing at Random Points
+Samsung Galaxy S8 Plus renders hint at dual camera, no stereo speakers
+Facebook and Instagram are updating themselves outside of Play store
+Samsung Confirms a Galaxy Note 8 for Release in 2017
+OPINION: 2015 was the worst year for android smartphones.
+Typing into Google Assistant feels like some kind of strangely retro-futuristic command line interface.
+Photo of the Essential phone in hand
+Introducing WhatsApp Status
+Moto z play unlocked price reduction to 399.99
+Nokia 6 Android 7.1.1 update now rolling out!
+Sony Xperia XZ Premium slow motion is a BURST of 960 FPS goodness
+Nick Fox on Twitter: "First ever cross-carrier RCS interconnect is live! Now Sprint and Rogers users can message each other over RCS. Many more to come!"
+Benson Leung responds to "USB-C needs to get smarter before it gets better"
+Nougat kernel sources for OP3/T now available
+PSA: Samsung will set your default browser page to Samsung.com with a system update.
+Google's next Pixel phones are likely codenamed 'muskie' and 'walleye'
+T-Mobile is rolling out Feb. 2017 security patches to the Galaxy S4 and Tab 3, their first updates since 2015
+I made an app to use a big phone with one hand by utilizing the screen edge's gesture. Support navigation, recent, favorite, last apps, quick settings, shortcut. To celebrate the biggest update with new Material design and more customizable I made Pro version FREE to download in 1 day from tomorrow
+Note to Shazam Users: If you enable the Auto Shazam tile in your quick tiles (available in 7.0+) it breaks Google Now and Google Assistant, even if you toggle it back off. A reboot will fix it.
+Netflix places limits on how many times you can download certain content
+Finally, live TV made for you
+This Is The New BlackBerry | Michael Fisher
+Big Surprise: The Galaxy S7 is the most popular Samsung handset in the world
+Deal: A Dark Room is on sale for free (normally $0.99)
+Huawei admits buying a P10 or P10 Plus is a bit of a lottery - Android Authority
+Samsung: Over 96% of Galaxy Note7 phones returned to date
+Deal: Game of Thrones Season 5 (SD) is free on Google Play
+Next Magisk version is already going to support Android O
+Android users will surpass Apple users in app spending in 2017, report says
+Saying ‘OK Google’ is awful, but Google may be open to changing it
+Super Mario Run now available to download!
+Carbon ROM (Android 7.1.1) nightlies out for Xiaomi MI2, Xperia Z3, Xperia Z5, Nexus 6 &amp; Pixel
+Samsung Pay quietly enables support for Discover cards
+Is ES File Explorer basically malware these days?
+Pavel Durov on Twitter: The source code of Telegram for iOS and Android is open and free. Enjoy!
+OnePlus 3T 128 GB not discontinued, new stock on the way
+Snapchat IPO filing: "we will need to prioritize development of our products to operate on smartphones with Android"
+Evan Blass: "Mark your calendar: Android Wear 2.0 launches on February 9th."
+If Android Oreo needs one thing...
+Boost for Reddit still suspended after five days
+Nexus and Pixel Devices Migrate to SDCardFS in Android O
+A new generation of Chromebooks, designed to work with millions of apps
+Samsung starts rolling out Android Nougat to the Galaxy S7 and Galaxy S7 edge
+Google Allo Is Losing Steam In The World’s Largest Smartphone Market
+Samsung loses top spot in worldwide smartphone share to Apple in Q4 | 9to5Google
+The P10 Hardware Lottery Exemplifies the Kind of Decision-Making That’s Holding Huawei Back.
+I just had the worst customer service experience of my life with LG customer service.
+Samsung Galaxy S8+ spec @evleaks
+Android O DP3 is out!
+Find your next job, with Google
+Lineage OS 14.1 has been Ported to the Ancient Samsung Galaxy S i9000
+Android Pro Tip: One click scans with Google Drive
+Taking aim at annoying page jumps in Chrome
+Update: Google says it ‘has not made any revisions to the Pixel or Pixel XL hardware
+G Suite Update Alerts: Gmail no longer supporting Chrome Browser version 53 and below
+Almost all phones come with gyroscopes now. So why don't manufacturers utilize it to stabilize videos?
+Google home now supports multiple users
+This is why Sony phones in the U.S. don't have fingerprint sensors | Android Central
+LG switching to OLED, abandoning LCD on its future flagship phones-- LG V30 and LG G7
+PSA for Fleksy users: The servers are finally down.
+Android Phones Are Safer Than You Think, Says Google's Head Of Android Security.
+Expanded replies in the YouTube app are improved, no longer minimize videos
+The Play Store seriously needs a better rating display
+Millions of apps could soon be purged from Google Play Store
+Google Play Music now allows you to set the download quality and quality when streamed over WiFi
+Taking and Sharing Screenshots Returns to Google Assistant
+Samsung Exynos 9 Series (8895) Processor is now Official
+Nokia 6 Entirely Sold out in Just a Minute in First Flash Sale
+Google patent suggests phone packaging that doubles as a VR headset
+Samsung Singapore forcing owners to sign NDA before getting a phone exchange.
+Fuchsia OS video preview
+How to Use Snapseed: An In-Depth Tutorial Guide
+Hugo Barra has left Xiaomi
+Google Voice app to get VoIP calling on Android, possibly signaling move away from Hangouts
+Consumerist article about LG Nexus 5X bootlooping issues
+Google's messaging mess is about money, not making your life easier (opinion)
+Exactly 1 year ago Fleksy was acquired by Pinterest and promised to go open source
+Samsung patents a thinner dual camera system
+What LastPass Users Can Expect in Android O
+I did a test on every single USB cable I own - here are the results
+Google app v6.10 beta prepares to add a "search gesture" and enable keyboard input for Google assistant [APK Teardown]
+Google should also have a dark theme for everything
+XDA-Developers Urges OnePlus to Comply with GPLv2 and Release Kernel Sources
+Facebook moves to a bottom navigation bar on Android.
+Google Photos rolling out suggestions for photos to archive
+Remap Bixby Button - New Solution (x-post r/GalaxyS8)
+Joaquim Vergès (Falcon Pro) is leaving Twitter to join Twitch Android team
+LineageOS: Update &amp; Build Prep
+BlackBerry awarded $814.9m in royalties case against Qualcomm
+Audio Calls on Google Duo rolling out worldwide now
+An Introduction to Effective Theming for new Android Users
+Samsung Flow now unlocks any windows via fingerprint and have seamless notification sync
+LG G6 has upgraded Quad DAC over V20
+HTC's 2016 revenue hits an 11-year low but Huawei is growing faster than the industry average.
+Let Google Know what you think about ALLO!
+New Play store UI in testing
+Google Map Maker is dead
+Samsung to launch new wireless noise cancelling headphones alongside the Galaxy S8
+Evan Blass: "Those bemoaning the dearth of branding on the S8 will be pleased to learn that the top 1/4" of screen will be hard-coded to display SAMSUNG."
+Galaxy S8 shows off its almost bezel-less display, through screen protector
+Samsung Galaxy S8/S8+ Review Megathread
+Google is moving to a new issue tracker, currently only used for Android O
+Report: LG to Unveil its Next Flagship, V30, at IFA 2017
+Hi /r/Android! Join us over at /r/apple for Apple's annual WWDC!
+6 months ago, I decided to learn Android app development on a whim and made an app. Here's my journey.
+New ways to pay with Android Pay and PayPal
+Effectively using Android without Google Play Services with gplayweb in Docker
+Android O APIs are final, get your apps ready!
+Xiaomi just announced the SurgeS1 (all A53 cores) their first SoC developed in-house
+Android Messages will be new default texting app Google wants you to use
+Why OnePlus Will Not (and Really Should Not) Drop The Headphone Jack Anytime Soon
+Why are apps like fb/ Messenger getting too big? Xpost from r/apple
+Making the OnePlus 5
+Making email safer with anti-phishing security checks in Gmail on Android
+What phone upgrade did you make that made you really go "Whoa! This is a proper upgrade!"
+Brush up on Gboard’s latest tips and tricks
+Deal: Sprint permanently discounts HTC 10 to $240 | AndroidAuthority
+Check out the Evie Launcher if you haven't!
+@OnLeaks: Size comparison between GS6, GS7, Note 7, GS8, and GS8+
+How WhatsApp is fighting spam after its encryption rollout
+Xiaomi Set to Launch Its Own Processor "Pinecone" SoC on 28th February
+Google Play Music is testing an Autoplay option that resumes playback when you launch the app
+F-Droid: A new UX 6 years in the making
+You can now upload Instagram photos from its mobile website
+Samsung Galaxy S8/S8+ Coverage Round-Up MegaThread
+Huawei quietly removes mention of UFS 2.1 on Mate 9 product page
+Samsung to completely disable Galaxy Note 7 battery charge
+Samsung opens US preorders for unlocked Galaxy S8 and S8 Plus
+Telegram 4.0 - Video Messages and Telescope, payment and more
+Actually, Android IS optimized - Gary explains
+Opinion: After Many Updates and Growing Pains, OxygenOS is Now a Class-Leading OEM ROM
+Pixel 2 on gfxbench, 5.6 display, SD835, 4GB ram
+Target ad shows Galaxy S8 and S8+ preorders beginning April 2
+Xiaomi Redmi Note 4X Hatsune Miku Special Edition announced
+Opinion: Qualcomm, once a driving force behind Android, is now slowing it down.
+Android Distribution Update for June 2017: Nougat Hits 9.5%
+24-hour test: Well, hot-diggity-damn, BlackBerry's KEYone is one hell of a comeback (El Reg).
+Xiaomi Mi MIX 2 may have curved AMOLED display, taking up to 93% of front area
+Bug report suggests that LG is manufacturing rumored Pixel XL successor ‘taimen’
+A Look at What Makes the OnePlus 3 &amp; 3T Excellent Performers
+Android Police: Why you shouldn't buy the Huawei Honor 6X
+Google Play Store Update (v8.0) is now showing Change Logs In-Line For Me
+Google Play Music powered alarm clock coming soon.
+The Galaxy S8 costs about $83 more to build than the iPhone 7
+Share your trips and real-time location from Google Maps
+What Do You Think of Bezel-Less Smartphones in 2017?
+New Motorola phone with Snapdragon 835 SoC, and Android 7.1.1 spotted on Geekbench
+Chainfire XDA on Twitter: "I have basic root on Android O Developer Preview 1, but there are still some issues to be worked out."
+Top 5 Dying/Rare Android features that should be revived.
+Coming soon: Your Google Assistant on Android TV and more
+Google Phone 9.0 prepares to add Android O's Notification Channels, picture messaging, post-call messages, and more [APK Teardown]
+Buy the LG G6 now and get a Google Home on LG
+Google's unique update process is one of the best parts of owning a Pixel
+The dream of Ara: Inside the rise and fall of the world's most revolutionary phone | VentureBeat | Mobile
+Samsung releases kernel sources for the Exynos-powered Galaxy S8 and Galaxy S8+
+ShareIt app is reporting all app install/uninstalls on your device to, seemingly, chinese server
+Instagram on Android gets offline mode
+So, what are you using Assistant for? Let's share tips.
+Google Play Music Bug Discovered That May Drain Your Battery If You Use Adblock
+New Android Beta update today (NPG47I)
+@OnLeak: I guess this is our closest look at what #Samsung #GalaxyS8 might look like... Dat Damn Sexy Beast!... �� https://t.co/v6m4fsovlz
+It seems like most Exynos S8 devices seem to have UFS2.1 whereas with Snapdragon devices it's a mixed bag with many having only UFS2.0
+Inbox v1.41 prepares to intelligently choose snippets from emails and allow sorting [APK Teardown]
+Hey Google, if a user *manually* signs up to beta test new features, then that user should immediately be enrolled to beta test. These are your enthusiast users who are willing to help, don't babysit them with your server-side switches!﻿
+Google Allo 9.0 prepares for chat backups to Google Drive &amp; external storage [APK Teardown]
+The Samsung Chromebook Plus might be the best place to try new Android features
+How Google plans to tackle power consumption even more aggressively in Android
+Neural Network-Generated Illustrations in Allo
+Blu is still outfitting phones with Android Marshmallow (from 2015) in 2017
+How to get Google Assistant on your Windows, Mac, or Linux Machine
+Best apps not on the Google Play Store?
+The Honor 6X is official: Metal body, fingerprint sensor and dual cameras for $249
+Google photos 3.0 rolling out with Suggested Sharing and Shared Libraries
+Bixby Rapping Again
+I made a concept for what the Google Search Bar might look like in the notification center!
+LiveStream: Two google home systems talking to each other
+[Carrier Deal] T-Mobile now offering to pay off your Pixel/Pixel XL when you switch from Verizon
+Imagine a world where every Android phone has the Google Pixel’s camera
+Google Play Music All Access finally goes live in India, starts at just ₹89 ($1.40) per month
+Galaxy S8 UAG official cases leaked on company website, available for pre-order
+dbrand already has skins for the S8 and S8+
+Xiaomi phones will come to the US by 2019
+YouTube TV is now live
+Firefox can no longer play YouTube on background
+Could Google be avoiding it's own single integrated Messenger because of antitrust suits?
+PSA: Google Allo's new Assistant button is now rolling out for everyone
+Samsung Galaxy S8 front-camera to have AF and iris recognition
+Need to measure shit? Don't like permissions? Use Measure! (Now with metric units!)
+LineageOS stats - 515,000 active installs
+Ever since Google switched to Google assistant, I stopped using it to search for things.
+Google Assistant Rollout
+Play Store testing new My Apps screen with separate Updates tab and different sorting methods
+OnePlus says ‘jelly’ scrolling effect on OnePlus 5 is normal - The Verge
+The Google Play adware apps that just won’t die
+Exclusive: Moto Z2 Force revives the headphone port (new renders and video)
+Ron Amadeo: A re-review of Google Home, 7 months in.
+Headphone jack likely to remain on Sony Xperia devices (for now)
+OnePlus 5 Review!
+We All Need More of What Moto and the Snapdragon 625 are Cookin'
+USB-C needs to get smarter before it gets better
+Don't expect Allo web client release today
+Qualcomm Details Snapdragon 835: Kryo 280 CPU, Adreno 540 GPU, X16 LTE
+Samsung says Galaxy S8 preorders were its best ever and promises software fixes
+Galaxy S8 Durability Test - Scratch, Burn, and BEND tested
+Rumor: Note 8 to sport a 6.3-inch screen and dual-camera setup
+I made an app to turn your old tablet or phone into a smart mirror interface
+Netflix finally adds ability to play/pause with headphone controls
+Introducing the Google Assistant SDK
+The Galaxy S8's misplaced fingerprint scanner was probably a last-minute change
+Google Pixel XL - Hidden Feature
+Samsung Q4 earnings jump 50% despite Note woes
+Rogers regarding RCS "Android customers have been looking for a similar service to Apple’s iMessage, which didn’t exist until now."
+Xiaomi reportedly wants to build its own SoCs, break free from Qualcomm
+Gigabit LTE is live in Australia: The future is here, and it’s amazing | Qualcomm
+LeEco cuts 70 percent of its US workforce as its lofty goals couldn't match the reality of a tough market.
+Got an Easter Easter egg in my Android Settings (7.1.2)
+Galaxy S8 After 60 Days: What My Review Got Wrong And Right
+I made an open-source app to browse the reddit poems of /u/Poem_for_your_sprog (1196 poems right now)! Read the poems with their parent comments, sort them by date/score/gold, and search the full text.
+Google Tracker 2017—All the stuff Google has in the works ahead of Google I/O
+Official OnePlus 3 (3T) Android 7.0 Nougat!
+The Qualcomm Snapdragon 835 Performance Preview
+A much needed feature: Bluetooth device battery life indicator.
+Comment: Better performance or not, ARKit on iOS 11 is already destroying Google’s Tango
+I'm an indie Science Fiction and Fantasy author and am tired of seeing kindle dominated by heavy romance and erotica. So I made an android app that announces a free book each day from other genres.
+Variety: Essential registered a shell company dubbed “Henry’s Products LLC,” named after one of the company’s office dogs, to keep the product and its plans from prying eyes
+OnePlus price evolution has made its smartphones less competitive
+Unshackle your Device from the Google Play Store with APKUpdater [XDA Spotlight]
+Nova Launcher 5.3 released. Google Now integration and other fixes
+VIVO smartphone with finger print sensor under screen
+iPhone's high 'failure rate' gives Android the edge on reliability
+Counterclockwise: the most popular phones through the years
+Why don't we care to re-lock all doors after rooting our phones?
+Edge Moto Mod Concept Adds RGB Notification Lighting to the Moto Z Family
+Samsung Galaxy S8 Plus most clear look!
+Nokia 9 appears on Geekbench with Snapdragon 835 and 8GB of RAM
+Google just fixed an annoying freezing bug with its Pixel phone [The Verge]
+All six original Mega Man games are now on the Play Store, and yup, they're terrible
+Making the Internet safer and faster: Introducing reCAPTCHA Android API
+OnePlus working with DxO Labs to improve OnePlus 5's camera
+Samsung to produce 4.7 million Galaxy S8 units this month, 7.8 million in April
+Galaxy S6 and S6 edge users on T-Mobile are finally getting Android 7.0
+Ringing in 2017 with updates to our Google Voice apps
+Samsung’s DeX is the closest thing we have to using our phones as PCs
+Android Nougat’s Freeform Window Mode: What It Is and How Developers Can Utilize It
+Google is doing a great job showing everyone why slow app rollouts suck
+Galaxy S8 interface revealed: a new minimalist look for Samsung
+Android O feature spotlight: Enabling developer options requires your device's passcode
+battery level of connected Bluetooth devices on android
+Android O is All But Confirmed to be Android 8.0
+Samsung reclaims spot as worlds largest smartphone maker
+Gboard for Android gets new languages and tools
+Time to stop blaming Google for not bringing new operating systems to 3 year devices.
+Info on that nasty ad provider that we started seeing recently on sites even with adblock enabled, extremely hard to block (impossible?)
+Crystal clear new Galaxy S8 and Galaxy S8+ pictures
+Google Maps v9.54 prepares to add saved locations for your school and gym, notification channels, and what looks like a task list [APK Teardown]
+Google's first-ever storewide Play Store sale is now underway!
+Samsung press conference: 26th Feb
+Samsung to Expand its RCS (Rich Communication Services) Messaging Service
+TASKER - Material Design new screenshots available.
+MaruOS: Android with a full Linux Desktop over HDMI
+Bluetooth Based 2-Factor Authentication Key For Google Accounts Shows Up on Chrome OS
+Samsung Galaxy S8 And S8 Plus "Real Review"
+OxygenOS 4.1.0 (Android 7.1.1) rolling out for OnePlus 3 and 3T
+HTC U Ultra Review
+Android O’s Autofill Framework will Finally Resolve a Long-Standing Lag Issue with Password Managers.
+MKBHD- Top 5 Future Smartphone Features!
+Let's talk about flasgship prices
+Android O feature spotlight: Persistent notifications are more compact
+Samsung's Galaxy S8 teaser envelope
+Magisk dev responds on why Magisk was pulled from Play Store (because of Magisk module Repo)
+PayPal Update Brings Android Pay Integration
+Twitter Adfree, an Xposed module to remove Twitter promoted posts
+@evleaks: Here's the HTC Vive-branded phone
+A Galaxy S8+ review from someone who isn't a fan of Samsung.
+Automatically Avoid Tolls in Google Maps with Tasker
+Google Assistant's shopping list is moving out of Keep and into the Home app on April 10
+1Password demonstrates how Android O's Autofill Framework works [video]
+Android Wear 2.0 coming early February
+Google and Samsung will be rivals more than ever in 2017 (opinion)
+If all smartphone manufacturers were reading this thread, what would you want to say to them?
+Why Enthusiast Brands will Betray You
+Galaxy S8 headphones are not made by AKG
+CopperheadOS - There's no substance to BlackBerry's privacy and security claims
+Nova Launcher 5.0.2 beta 3 adds "app shortcuts" to the app drawer!
+OnePlus teases the OnePlus 5, might be smaller than OP3T
+What a difference 4 years makes to camera image quality!
+Android Distribution Report for May 2017: Nougat reaches 7.1%. Gingerbread jumps up to 1%
+First Android Wear 2.0 devices revealed: Google and LG's Watch Sport and Watch Style | VentureBeat | Mobile
+Microsoft is selling its own Samsung Galaxy S8 Microsoft Edition - The Verge
+First Official LineageOS build out for Nexus 5X
+Moto’s Z Play is the phone I just can’t quit
+People with devices 4+ years old, what would it take you to switch?
+Galaxy S8 coming week beginning April 17, report suggests
+Google Play Music teams up with Samsung to deliver the right music for you
+Hacking the Samsung Galaxy S8 Irisscanner
+What do you love about Tim Cook?
+PSA: Google Assistant is now more widely rolling out to non-Pixel Android devices
+Just released the Android version of my Windows 10 UWP app "Connected Devices". Looking for testers/feedback
+‘Designed with our friends at Google’ might be the Nexus brand’s de facto replacement
+Android Studio Could Be Coming To Chromebooks
+Moto G5 Plus Is Only 7% Slower Than Google Pixel XL In Speed Test Comparison
+Source: LG Will Ditch Its Signature Secondary Display for the V30
+Every angle of the LG G6
+The OnePlus 5 is official!
+The Galaxy Note 7 had two separate battery defects
+[MrMobile] Jelly: The Smallest Smartphone I've Ever Held
+Google says 'Android Wear is not a hobby'
+Xperia XZ Premium officially named "Best New Smartphone at MWC 2017"
+Beta sign up available for Gboard and Google Play Services
+Galaxy S8 Change screen resolution
+Is OnePlus trolling us about the OnePlus 5's design? Maybe
+Even Blass on Twitter: LG G6.
+Persona 5 texting app! Barebones for what it is, but incredibly stylish.
+A more advanced guide to total Android customization
+A Closer Look at Google's Material Design Components Library
+I did a thing.
+Is it time to dispense with "OK Google"?
+TIL you can use a completely black GBoard theme with your amoled screen (xpost from r/androidapps)
+Android's Emoji Problem
+Samsung takes 13% of global smartphone profits in Q1, 2017, but Apple is still dominating
+Samsung commits to monthly updates for unlocked Galaxy phones in US
+Google will now Require OEMs to Prompt before Silently Uninstalling Applications
+Sharp will launch a pair of completely bezeless devices on the 17th of July
+Android O will see the introduction of an animated clock icon in launchers
+Edge Mod adds RGB to your smartphone
+Nexus 9 Vulnerability Allowed Attack Through Headphone Port, Fixed in March Update
+Apple Music updated to 2.0.0 with all new design
+Google fixed the bug that causes unfortunately com.android.systemui has stopped message
+Speculation around Google's Fuchsia OS and Andromeda is creating confusion and misinformation
+Deeply Integrated Progressive Web Apps (WebAPKs) are Live for Chrome on Android
+Google Photos v2.13 video stabilisation works wonders!
+New Samsung Galaxy S8 (comparatively) HQ video
+Battery became worse? Take a look at this! (x-post from /r/oneplus)
+Moto X 2017 will be called Moto X4
+Suicide Prevention tools added to Facebook Live &amp; Messenger
+Leaked images reportedly show refurbished Galaxy Note 7 with 3,200 mAh battery
+Netflix mobile HDR and Dolby Vision coming in Version 5.0
+Kodi v17.0 (Krypton) has just been released in the play store
+Only a Few Rough Edges Hinder the Pixel from Luring the Apple Mainstream.
+Boost for reddit has been suspended from Google Play (x-post /r/BoostForReddit)
+OnePlus 5 Review Mega-Thread
+WhatsApp brings back text Status it replaced with Stories
+Samsung reportedly invested a lot of money to develop an on-screen fingerprint reader for Galaxy S8
+OnePlus AMA - OnePlus 5 Edition
+Google Assistant on Nvidia’s Shield TV won’t require repetitive ‘Ok Google’ commands [Video] | 9to5Google
+Nokia 8: Android flagship to launch in June with Snapdragon 835
+Google Rejects XDA Feed Updates for "Unauthorized" Use of XDA's Own Copyright
+The SPUD is a collapsible 24-inch screen for your Android that opens up like an umbrella
+Open GApps can now optionally install Google Assistant
+Samsung Galaxy S8 first to get rip-roaring wireless speeds
+Finally switched from iOS to Android, kindly guide me through this transition
+NVIDIA Shield Tablet Nougat Update (Upgrade 5.0)
+Android Go has a new Recents view as System UI aims to reduce latency, memory usage
+Samsung Galaxy S8 launch date will be officially announced on February 27
+Android O feature spotlight: Pixel Launcher gets a new teardrop icon shape
+YouTube Android App Update (bottom navigation tabs now official)
+Are Free VPN Apps Worth the Risk? Experts Say 'No'
+Gmail, Messenger and WhatsApp spark Google Play fake review conspiracy
+If HMD Does Deliver a Nokia Flagship with Stock Android and Fast Updates, They Have My Money
+Magisk v13.0 Beta Updated to Fix SafetyNet Issues
+Xperia XZ Premium vs S8, speed test
+evleaks: 2017 Moto lineup
+G Suite Update Alerts: Receive emails of up to 50MB in Gmail
+Tip: You can scan a QR code by opening the Camera app, focusing on the QR code, then activating Now On Tap
+Official LineageOS 14.1 Builds Now Available for the HTC 10
+Pixel Launcher reaches 1M installs
+Android platform distibution - February 2017; Nougat on &gt;1% of devices
+OnePlus 5 leaked sketches reveal dual front-facing cameras, ceramic back plate
+Google Assistant on the Pixel can now command smart devices with ‘Home control’ | 9to5Google
+Eric Schmidt referring to Andy Rubin's Essential phone: Phenomenal new choices for Android users coming very soon.
+Two-click downloads of Youtube videos straight from the Youtube app. No youtube red or shady, ad-filled apps required.
+Watching this review on my first Android phone from 6 years ago made me realize how fast technology evolves!
+The LG G6 User Experience Proves 18:9 Has a Long Way to Go Before It's a Worthy Replacement
+Head of Allo and Duo confirms Hangouts isn't going away for consumers
+Samsung and Intel file amicus briefs against Qualcomm
+Pixel Launcher may be replacing Google Now Launcher on Nexus devices.
+Paranoid Android is back!... again
+Google is offering new Google Play Music subscribers four free months
+Dish unveils a 4K Android TV streaming box with Netflix, Sling TV, and local channels
+Jide’s new OS is like an Android version of Windows 10’s Continuum
+Pavel Durov confirmed Telegram calls and themes
+OnePlus 5 Gets TWRP and Root
+Samsung Galaxy Feel announced with 4.7-inch display, Android Nougat
+Android N was first announced one year ago today, with an early dev preview. Do you think we'll get a similar early look at O, or will we be waiting until I/O to hear anything?
+PSA: Toggling 'Avoid Tolls' in Google Maps now stays selected when searching other routes.
+Crowdfunded Moto Z mod would put a shortwave radio messenger into your smartphone
+I made an open-source app to browse the reddit poems of /u/Poem_for_your_sprog (1268 poems right now)! Read the poems with their parent comments, sort them by date/score/gold, and search the full text. Now with notifications for new poems, saving your favorites, and statistics.
+S8/S8 Plus Chinese version are all 6GB RAM with 64/128GB ROM
+Google Carrier Services gets another RCS update
+Refurbished Note 7 Coming to Korea for $250 Cheaper
+Allow for rearranging YouTube cast queue just like the queue for songs in Google Play Music.
+The official OTA to Android O for Pixel will likely drop in the first week or two of August. A bit earlier than Nexuses / Nougat last year.
+I found a free open source alternative to Titanium Backup
+In case you were wondering, The Galaxy S8’s Always-on home button won’t burn-in
+Samsung will reveal the cause of the Galaxy Note 7’s exploding battery this Sunday
+May Factory and OTA Images for Nexus and Pixel Devices ---- Now available!
+Free: KWGT Kustom Widget Pro Key (x-post r/googleplaydeals)
+Do you still use NFC tags? if yes, what do you use them? [2017]
+Artist who worked on Pixar's Brave giving Google AI 'personality'
+Exynos 8895 Galaxy S8 hits GeekBench, outscores Snapdragon 835 version
+OnePlus 5 About screen shows off 8GB of RAM and 128GB storage
+Evan Blass on Twitter: "Update: the launch of both the watches and the platform have been moved up a day, to February 8th. *checks dumbwatch* Hey, that's soon! https://t.co/dzG6YPc4kp"
+The Moto G5 Plus in all its glory!
+Google App v6.16 Prepares for Phone Authentication for Assistant Payments, Creating IFTTT Actions, and Screenshot Crop/Edit
+Google Voice 5.0 APK download from APKMirror
+This could be our first true look at the Galaxy S8′s design
+SlimRoms steals Substratum code
+Google assistant available in spanish (Allo for now)
+Top 5 LG G6 Features!
+Nexus 6 and Nexus 9 Won't Get 7.1.2 Update, But Will Still See Security Patches
+Sony Mobile reports full year profit; expects sales growth next year
+Warning to those that choose to buy the $45 Verizon glass screen protector for the S8 Plus.
+Google has discovered hardware is, well, hard
+A new Pixel Launcher design is showing up for some users
+Premium smartphones take up less than 30 pct of Samsung's phone sales
+My Google app has screenshot crop and drawing tools
+Google Voice is FINALLY a complete messaging system for me- now let's just hope they don't kill it off!
+TIL: You can finally change the "feature picture" for people in your Google Photos.
+S Health changes to Samsung Health - You can now have online doctors visits 24/7
+Google Home v1.21 enables access to alarms and timers set on Google Home, confirms multi-user profiles are underway [APK Download + Teardown]
+A bunch of information on RCS to try to help stop the confusion and misinformation I'm seeing. Please spread the word! RCS could be monumental for Android!
+Meet the Snapdragon 835: a next-gen processor made for power users | Qualcomm
