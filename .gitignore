@@ -7,3 +7,4 @@ __pycache__
 /docs/.ipynb_checkpoints
 /docs/textgenrnn_texts.txt
 /docs/hn_weights.hdf5
+*.pyc
