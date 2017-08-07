@@ -30,7 +30,7 @@ My startup to the security the startup from the passed and the startup from the 
 A developer of the new to the passenger in the developer of the passing the passed to the back of the privation from the private to be and in the control and and the developer of the back of the str
 ```
 
-The model weights are extremely small (845 KB on disk), and they can easily be saved and loaded into a new textgenrnn instance. As a result, you can create models which have been trained on hundreds of passes through the data.
+The model weights are very small (845 KB on disk), and they can easily be saved and loaded into a new textgenrnn instance. As a result, you can play with models which have been trained on hundreds of passes through the data.
 
 ```python
 textgen_2 = textgenrnn('hacker_news_500_epochs.hdf5')
@@ -70,9 +70,9 @@ You can view a demo of common features in [this Jupyter Notebook](/docs/textgenr
 
 textgenrnn is based off of the [char-rnn](https://github.com/karpathy/char-rnn) project by [Andrej Karpathy](https://twitter.com/karpathy) with a few optimizations, such as the ability to work with very small text sequences.
 
-textgenrnn takes in an input of up to 40 characters, converts each character to a 100D character embedding vector, and feeds those into a 128-cell long-short-term-memory layer. That output is mapped to probabilities for up to [346 different characters](/textgenrnn/textgenrnn_vocab.json) that they are the next character in the sequence, including uppercase characters, lowercase, punctuation, and emoji.
+textgenrnn takes in an input of up to 40 characters, converts each character to a 100D character embedding vector, and feeds those into a 128-cell long-short-term-memory layer. That output is mapped to probabilities for up to [394 different characters](/textgenrnn/textgenrnn_vocab.json) that they are the next character in the sequence, including uppercase characters, lowercase, punctuation, and emoji.
 
-The model weights included with the package are trained on hundreds of thousands of text documents, from Reddit submissions ([via BigQuery](http://minimaxir.com/2015/10/reddit-bigquery/)) and Facebook Pages ([via my Facebook Page Post Scraper](https://github.com/minimaxir/facebook-page-post-scraper), from a very *diverse* variety of subreddits/Pages. The network was also trained in such a way that the `rnn` layer is decontextualized in order to both improve training performance and mitigate authorial bias.
+The model weights included with the package are trained on hundreds of thousands of text documents, from Reddit submissions ([via BigQuery](http://minimaxir.com/2015/10/reddit-bigquery/)) and Facebook Pages ([via my Facebook Page Post Scraper](https://github.com/minimaxir/facebook-page-post-scraper)), from a very *diverse* variety of subreddits/Pages. The network was also trained in such a way that the `rnn` layer is decontextualized in order to both improve training performance and mitigate authorial bias.
 
 When fine-tuning the model on a new dataset of texts, all layers are retrained. However, since the original pretrained network has a much more robust "knowledge" initially, the new textgenrnn trains faster and more accurately in the end, and can potentially  learn new relationships not present in the original dataset (e.g. the [pretrained character embeddings](http://minimaxir.com/2017/04/char-embeddings/) include the context for the character for all possible types of modern internet grammar).
 
@@ -80,7 +80,7 @@ Additionally, the retraining is done with a momentum-based optimizer and a linea
 
 ## Notes
 
-* **RESULTS WILL VARY GREATLY BETWEEN DATASETS**. Because the RNN is relatively small (128 cells), it cannot store as much data as other publicized RNNs. For best results, use a dataset with atleast 2,000-5,000 documents. If a dataset is smaller, you'll need to train it for longer by setting `num_epochs` higher when calling a training method. Even then, there is currently no good heuristic for determining a "good" model, and I hope to update this module with a more robust training regimen.
+* **RESULTS WILL VARY GREATLY BETWEEN DATASETS**. Because the RNN is relatively small (128 cells), it cannot store as much data as RNNs typically flaunted in blog posts. For best results, use a dataset with atleast 2,000-5,000 documents. If a dataset is smaller, you'll need to train it for longer by setting `num_epochs` higher when calling a training method. Even then, there is currently no good heuristic for determining a "good" model, and I hope to update this module with a more robust training regimen.
 
 * textgenrnn is less effective when training on/predicting longer sequences (> 200 characters). Likewise textgenrnn is less effective when training on/predicting texts with very disparate grammatical styles. If a source dataset has *both*, it may lead to unexpected results.
 
@@ -102,4 +102,4 @@ Max Woolf ([@minimaxir](http://minimaxir.com))
 
 ## Credits
 
-Andrej Karpathy for the original proposal of the char-rnn via the blog post [The Unreasonable Effectiveness of Recurrent Neural Networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/)
+Andrej Karpathy for the original proposal of the char-rnn via the blog post [The Unreasonable Effectiveness of Recurrent Neural Networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/).

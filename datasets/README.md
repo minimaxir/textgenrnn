@@ -1,6 +1,6 @@
 # textgenrnn Datasets
 
-Here are a few datasets for experimenting with textgenrmm:
+Here are a few datasets for experimenting with textgenrnn. All datasets are obtained by inputing the given query into [BigQuery](https://cloud.google.com/bigquery/)
 
 ## Hacker News
 
