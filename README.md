@@ -15,7 +15,7 @@ The confirmed the #Cubs to the Seattle Community and the most of the world of th
 The model can easily be trained on new texts, and can generate appropriate text *even after a single pass of the input data*.
 
 ```python
-textgen.train_from_file('hacker-news-2000.txt', num_epochs=1)
+textgen.train_from_file('hacker_news_2000.txt', num_epochs=1)
 textgen.generate(5)
 ```
 ```
@@ -53,7 +53,7 @@ A Starts Science [pdf]
 textgenrnn can be installed [from pypi](https://pypi.python.org/pypi/textgenrnn) via `pip`:
 
 ```
-sudo pip3 install textgenrnn
+pip3 install --user textgenrnn
 ```
 
 You can view a demo of common features in [this Jupyter Notebook](/docs/textgenrnn-demo.ipynb). (full documentation coming soon)
