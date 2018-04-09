@@ -1,12 +1,13 @@
-from keras.layers import Input, Embedding, Dense, LSTM
 from keras.callbacks import LearningRateScheduler
 from keras.models import Model, load_model
 from keras.preprocessing import sequence
 from keras.preprocessing.text import Tokenizer
+from keras import backend as K
 import numpy as np
 import json
 import h5py
 from pkg_resources import resource_filename
+from .model import textgenrnn_model
 
 
 class textgenrnn:
@@ -23,7 +24,8 @@ class textgenrnn:
             vocab_path = resource_filename(__name__,
                                            'textgenrnn_vocab.json')
 
-        with open(vocab_path, 'r') as json_file:
+        with open(vocab_path, 'r',
+                  encoding='utf8', errors='ignore') as json_file:
             self.vocab = json.load(json_file)
 
         self.tokenizer = Tokenizer(filters='', char_level=True)
@@ -103,24 +105,6 @@ class textgenrnn:
                 f.write("{}\n".format(text))
 
 
-def textgenrnn_model(weights_path, num_classes, maxlen=40):
-    '''
-    Builds the model architecture for textgenrnn and
-    loads the pretrained weights for the model.
-    '''
-
-    input = Input(shape=(maxlen,), name='input')
-    embedded = Embedding(num_classes, 100, input_length=maxlen,
-                         trainable=True, name='embedding')(input)
-    rnn = LSTM(128, return_sequences=False, name='rnn')(embedded)
-    output = Dense(num_classes, name='output', activation='softmax')(rnn)
-
-    model = Model(inputs=[input], outputs=[output])
-    model.load_weights(weights_path, by_name=True)
-    model.compile(loss='categorical_crossentropy', optimizer='nadam')
-    return model
-
-
 def textgenrnn_sample(preds, temperature):
     '''
     Samples predicted probabilities of the next character to allow
@@ -132,7 +116,7 @@ def textgenrnn_sample(preds, temperature):
     if temperature is None or temperature == 0.0:
         return np.argmax(preds)
 
-    preds = np.log(preds + 1e-12) / temperature
+    preds = np.log(preds + K.epsilon()) / temperature
     exp_preds = np.exp(preds)
     preds = exp_preds / np.sum(exp_preds)
     index = -1
@@ -198,7 +182,7 @@ def textgenrnn_texts_from_file(file_path, header=True, delim='\n'):
     Retrieves texts from a newline-delimited file and returns as a list.
     '''
 
-    with open(file_path, 'r', encoding="utf-8") as f:
+    with open(file_path, 'r', encoding='utf8', errors='ignore') as f:
         if header:
             f.readline()
         texts = [line.rstrip(delim) for line in f]

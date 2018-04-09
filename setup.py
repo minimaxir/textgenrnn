@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 setup(
     name='textgenrnn',
     packages=['textgenrnn'],  # this must be the same as the name above
-    version='0.1.1',
+    version='1.0',
     description='Pretrained character-based neural network for ' \
     'easily generating text.',
     author='Max Woolf',
@@ -13,5 +13,5 @@ setup(
     classifiers=[],
     license='MIT',
     include_package_data=True,
-    install_requires=['tensorflow', 'keras', 'h5py']
+    install_requires=['keras>=2.1.5', 'h5py']
 )
