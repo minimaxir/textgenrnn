@@ -20,6 +20,7 @@ class textgenrnn:
         'max_words': 10000,
         'dim_embeddings': 100
     }
+    default_config = config.copy()
 
     def __init__(self, weights_path=None,
                  vocab_path=None):
@@ -36,11 +37,13 @@ class textgenrnn:
                   encoding='utf8', errors='ignore') as json_file:
             self.vocab = json.load(json_file)
 
-        self.tokenizer = Tokenizer(filters='', char_level=True)
+        self.tokenizer = Tokenizer(filters='', char_level=True,
+                                   oov_token='<OOV>')
         self.tokenizer.word_index = self.vocab
         self.num_classes = len(self.vocab) + 1
-        self.model = textgenrnn_model(weights_path, self.num_classes,
-                                      cfg=self.config)
+        self.model = textgenrnn_model(self.num_classes,
+                                      cfg=self.config,
+                                      weights_path=weights_path)
         self.indices_char = dict((self.vocab[c], c) for c in self.vocab)
 
     def generate(self, n=1, return_as_list=False, **kwargs):
@@ -49,6 +52,7 @@ class textgenrnn:
             gen_text = textgenrnn_generate(self.model,
                                            self.vocab,
                                            self.indices_char,
+                                           maxlen=self.config['max_length'],
                                            **kwargs)
             if not return_as_list:
                 print("{}\n".format(gen_text))
@@ -59,7 +63,8 @@ class textgenrnn:
     def train_on_texts(self, texts,
                        batch_size=128,
                        num_epochs=50,
-                       verbose=1):
+                       verbose=1,
+                       **kwargs):
 
         # Encode chars as X and y.
         X = []
@@ -79,7 +84,7 @@ class textgenrnn:
         X = sequence.pad_sequences(X, maxlen=self.config['max_length'])
         y = textgenrnn_encode_cat(y, self.vocab)
 
-        base_lr = 2e-3
+        base_lr = 4e-3
 
         # scheduler function must be defined inline.
         def lr_linear_decay(epoch):
@@ -88,6 +93,38 @@ class textgenrnn:
         self.model.fit(X, y, batch_size=batch_size, epochs=num_epochs,
                        callbacks=[LearningRateScheduler(lr_linear_decay)],
                        verbose=verbose)
+
+    def train_new_model(self, texts, name='textgenrnn', **kwargs):
+        self.config = self.default_config.copy()
+        self.config.update(**kwargs)
+        print("Training new model w/ {}-layer, {}-cell {}LSTMs".format(
+            self.config['rnn_layers'], self.config['rnn_size'],
+            'Bidirectional ' if self.config['rnn_bidirectional'] else ''
+        ))
+
+        # Create text vocabulary for new texts
+        self.tokenizer = Tokenizer(filters='',
+                                   char_level=True)
+        self.tokenizer.fit_on_texts(texts)
+        self.tokenizer.word_index[self.META_TOKEN] = len(
+            self.tokenizer.word_index) + 1
+        self.vocab = self.tokenizer.word_index
+        self.num_classes = len(self.vocab) + 1
+        self.indices_char = dict((self.vocab[c], c) for c in self.vocab)
+
+        # Create a new, blank model w/ given params
+        self.model = textgenrnn_model(self.num_classes,
+                                      cfg=self.config)
+
+        # Save the files needed to recreate the model
+        with open('{}_vocab.json'.format(name), 'w') as outfile:
+            json.dump(self.tokenizer.word_index, outfile, ensure_ascii=False)
+
+        with open('{}_config.json'.format(name), 'w') as outfile:
+            json.dump(self.config, outfile, ensure_ascii=False)
+
+        self.train_on_texts(texts, **kwargs)
+        self.save(weights_path="{}_weights.hdf5".format(name))
 
     def save(self, weights_path="textgenrnn_weights_saved.hdf5"):
         self.model.save_weights(weights_path)
@@ -101,11 +138,15 @@ class textgenrnn:
                               'textgenrnn_weights.hdf5'),
             self.num_classes)
 
-    def train_from_file(self, file_path, header=True, delim="\n", **kwargs):
+    def train_from_file(self, file_path, header=True, delim="\n",
+                        new_model=True, **kwargs):
         texts = []
         texts = textgenrnn_texts_from_file(file_path, header, delim)
         print("{} texts collected.".format(len(texts)))
-        self.train_on_texts(texts, **kwargs)
+        if new_model:
+            self.train_new_model(texts, **kwargs)
+        else:
+            self.train_on_texts(texts, **kwargs)
 
     def train_from_largetext_file(self, file_path, **kwargs):
         self.train_from_file(file_path, delim="\n\n", **kwargs)

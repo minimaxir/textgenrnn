@@ -4,7 +4,7 @@ from keras.models import Model
 from .AttentionWeightedAverage import AttentionWeightedAverage
 
 
-def textgenrnn_model(weights_path, num_classes, cfg,
+def textgenrnn_model(num_classes, cfg, weights_path=None,
                      optimizer=RMSprop(lr=4e-3, rho=0.99)):
     '''
     Builds the model architecture for textgenrnn and
@@ -27,7 +27,8 @@ def textgenrnn_model(weights_path, num_classes, cfg,
     output = Dense(num_classes, name='output', activation='softmax')(attention)
 
     model = Model(inputs=[input], outputs=[output])
-    model.load_weights(weights_path, by_name=True)
+    if weights_path is not None:
+        model.load_weights(weights_path, by_name=True)
     model.compile(loss='categorical_crossentropy', optimizer=optimizer)
     return model
 
