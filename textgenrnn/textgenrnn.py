@@ -12,6 +12,14 @@ from .model import textgenrnn_model
 
 class textgenrnn:
     META_TOKEN = '<s>'
+    config = {
+        'rnn_layers': 2,
+        'rnn_size': 128,
+        'rnn_bidirectional': 0,
+        'max_length': 40,
+        'max_words': 10000,
+        'dim_embeddings': 100
+    }
 
     def __init__(self, weights_path=None,
                  vocab_path=None):
@@ -31,7 +39,8 @@ class textgenrnn:
         self.tokenizer = Tokenizer(filters='', char_level=True)
         self.tokenizer.word_index = self.vocab
         self.num_classes = len(self.vocab) + 1
-        self.model = textgenrnn_model(weights_path, self.num_classes)
+        self.model = textgenrnn_model(weights_path, self.num_classes,
+                                      cfg=self.config)
         self.indices_char = dict((self.vocab[c], c) for c in self.vocab)
 
     def generate(self, n=1, return_as_list=False, **kwargs):
@@ -47,7 +56,10 @@ class textgenrnn:
         if return_as_list:
             return gen_texts
 
-    def train_on_texts(self, texts, batch_size=128, num_epochs=50, verbose=1):
+    def train_on_texts(self, texts,
+                       batch_size=128,
+                       num_epochs=50,
+                       verbose=1):
 
         # Encode chars as X and y.
         X = []
@@ -64,7 +76,7 @@ class textgenrnn:
         y = np.array(y)
 
         X = self.tokenizer.texts_to_sequences(X)
-        X = sequence.pad_sequences(X, maxlen=40)
+        X = sequence.pad_sequences(X, maxlen=self.config['max_length'])
         y = textgenrnn_encode_cat(y, self.vocab)
 
         base_lr = 2e-3
@@ -129,7 +141,7 @@ def textgenrnn_sample(preds, temperature):
 
 
 def textgenrnn_generate(model, vocab,
-                        indices_char, prefix=None, temperature=0.2,
+                        indices_char, prefix=None, temperature=0.5,
                         maxlen=40, meta_token='<s>',
                         max_gen_length=200):
     '''
