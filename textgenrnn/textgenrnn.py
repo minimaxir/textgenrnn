@@ -23,7 +23,8 @@ class textgenrnn:
     default_config = config.copy()
 
     def __init__(self, weights_path=None,
-                 vocab_path=None):
+                 vocab_path=None,
+                 config_path=None):
 
         if weights_path is None:
             weights_path = resource_filename(__name__,
@@ -33,12 +34,16 @@ class textgenrnn:
             vocab_path = resource_filename(__name__,
                                            'textgenrnn_vocab.json')
 
+        if config_path is not None:
+            with open(vocab_path, 'r',
+                      encoding='utf8', errors='ignore') as json_file:
+                self.config = json.load(json_file)
+
         with open(vocab_path, 'r',
                   encoding='utf8', errors='ignore') as json_file:
             self.vocab = json.load(json_file)
 
-        self.tokenizer = Tokenizer(filters='', char_level=True,
-                                   oov_token='<OOV>')
+        self.tokenizer = Tokenizer(filters='', char_level=True)
         self.tokenizer.word_index = self.vocab
         self.num_classes = len(self.vocab) + 1
         self.model = textgenrnn_model(self.num_classes,
