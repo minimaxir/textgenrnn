@@ -1,10 +1,12 @@
 from keras.optimizers import RMSprop
-from keras.layers import Input, Embedding, Dense, LSTM, CuDNNLSTM, concatenate
+from keras.layers import Input, Embedding, Dense, LSTM
+from keras.layers import CuDNNLSTM, concatenate, Reshape
 from keras.models import Model
 from .AttentionWeightedAverage import AttentionWeightedAverage
 
 
-def textgenrnn_model(num_classes, cfg, weights_path=None,
+def textgenrnn_model(num_classes, cfg, context_size=None,
+                     weights_path=None,
                      optimizer=RMSprop(lr=4e-3, rho=0.99)):
     '''
     Builds the model architecture for textgenrnn and
@@ -23,14 +25,32 @@ def textgenrnn_model(num_classes, cfg, weights_path=None,
 
     seq_concat = concatenate([embedded] + rnn_layer_list, name='rnn_concat')
     attention = AttentionWeightedAverage(name='attention')(seq_concat)
-
     output = Dense(num_classes, name='output', activation='softmax')(attention)
 
-    model = Model(inputs=[input], outputs=[output])
-    if weights_path is not None:
-        model.load_weights(weights_path, by_name=True)
-    model.compile(loss='categorical_crossentropy', optimizer=optimizer)
+    if context_size is None:
+        model = Model(inputs=[input], outputs=[output])
+        if weights_path is not None:
+            model.load_weights(weights_path, by_name=True)
+        model.compile(loss='categorical_crossentropy', optimizer=optimizer)
+
+    else:
+        context_input = Input(
+            shape=(context_size,), name='context_input')
+        context_reshape = Reshape((context_size,),
+                                  name='context_reshape')(context_input)
+        merged = concatenate([attention, context_reshape], name='concat')
+        main_output = Dense(num_classes, name='context_output',
+                            activation='softmax')(merged)
+
+        model = Model(inputs=[input, context_input],
+                      outputs=[main_output, output])
+        if weights_path is not None:
+            model.load_weights(weights_path, by_name=True)
+        model.compile(loss='categorical_crossentropy', optimizer=optimizer,
+                      loss_weights=[0.8, 0.2])
+
     return model
+
 
 '''
 Create a new LSTM layer per parameters. Unfortunately,

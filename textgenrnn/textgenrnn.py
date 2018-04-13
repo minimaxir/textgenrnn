@@ -3,6 +3,7 @@ from keras.models import Model, load_model
 from keras.preprocessing import sequence
 from keras.preprocessing.text import Tokenizer
 from keras import backend as K
+from sklearn.preprocessing import LabelBinarizer
 import numpy as np
 import json
 import h5py
@@ -65,29 +66,38 @@ class textgenrnn:
         if return_as_list:
             return gen_texts
 
-    def train_on_texts(self, texts,
+    def train_on_texts(self, texts, context_labels=None,
                        batch_size=128,
                        num_epochs=50,
                        verbose=1,
+                       new_model=False,
                        **kwargs):
 
         # Encode chars as X and y.
         X = []
+        X_context = []
         y = []
 
-        for text in texts:
+        for i, text in enumerate(texts):
             subset_x, subset_y = textgenrnn_encode_training(text,
                                                             self.META_TOKEN)
-            for i in range(len(subset_x)):
-                X.append(subset_x[i])
-                y.append(subset_y[i])
+            for j in range(len(subset_x)):
+                X.append(subset_x[j])
+                y.append(subset_y[j])
+                if context_labels is not None:
+                    X_context.append(context_labels[i])
 
         X = np.array(X)
+        X_context = np.array(X_context)
         y = np.array(y)
 
         X = self.tokenizer.texts_to_sequences(X)
         X = sequence.pad_sequences(X, maxlen=self.config['max_length'])
         y = textgenrnn_encode_cat(y, self.vocab)
+
+        if context_labels is not None:
+            X_context_lb = LabelBinarizer().fit(context_labels)
+            X_context = X_context_lb.transform(X_context)
 
         base_lr = 4e-3
 
@@ -95,9 +105,30 @@ class textgenrnn:
         def lr_linear_decay(epoch):
             return (base_lr * (1 - (epoch / num_epochs)))
 
-        self.model.fit(X, y, batch_size=batch_size, epochs=num_epochs,
-                       callbacks=[LearningRateScheduler(lr_linear_decay)],
-                       verbose=verbose)
+        if context_labels is None:
+            self.model.fit(X, y, batch_size=batch_size, epochs=num_epochs,
+                           callbacks=[LearningRateScheduler(lr_linear_decay)],
+                           verbose=verbose)
+        else:
+            weights_path = resource_filename(__name__,
+                                             'textgenrnn_weights.hdf5')
+
+            if new_model:
+                weights_path = None
+
+            self.model = textgenrnn_model(self.num_classes,
+                                          cfg=self.config,
+                                          context_size=X_context.shape[1],
+                                          weights_path=weights_path)
+
+            self.model.fit([X, X_context], [y, y],
+                           batch_size=batch_size, epochs=num_epochs,
+                           callbacks=[LearningRateScheduler(lr_linear_decay)],
+                           verbose=verbose)
+
+            # Keep the text-only version of the model
+            self.model = Model(inputs=self.model.input[0],
+                               outputs=self.model.output[1])
 
     def train_new_model(self, texts, name='textgenrnn', **kwargs):
         self.config = self.default_config.copy()
@@ -128,7 +159,7 @@ class textgenrnn:
         with open('{}_config.json'.format(name), 'w') as outfile:
             json.dump(self.config, outfile, ensure_ascii=False)
 
-        self.train_on_texts(texts, **kwargs)
+        self.train_on_texts(texts, new_model=True, **kwargs)
         self.save(weights_path="{}_weights.hdf5".format(name))
 
     def save(self, weights_path="textgenrnn_weights_saved.hdf5"):
@@ -144,8 +175,8 @@ class textgenrnn:
             self.num_classes)
 
     def train_from_file(self, file_path, header=True, delim="\n",
-                        new_model=True, **kwargs):
-        texts = []
+                        new_model=False, context_labels=None, **kwargs):
+
         texts = textgenrnn_texts_from_file(file_path, header, delim)
         print("{} texts collected.".format(len(texts)))
         if new_model:
