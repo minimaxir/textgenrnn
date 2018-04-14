@@ -2,12 +2,12 @@
 
 Generate text using a pretrained neural network with a few lines of code, or easily train your own text-generating neural network of any size and complexity.
 
-textgenrnn is a Python 3 module on top of [Keras](https://github.com/fchollet/keras)/[TensorFlow](https://www.tensorflow.org) for generating text using recurrent neural networks, with many cool features:
+textgenrnn is a Python 3 module on top of [Keras](https://github.com/fchollet/keras)/[TensorFlow](https://www.tensorflow.org) for creating [char-rnn](http://karpathy.github.io/2015/05/21/rnn-effectiveness/)s, with many cool features:
 
 * A modern neural network architecture which utilizes new techniques as attention-weighting and skip-embedding to accelerate training and improve model quality.
 * Able to train the model using contextual labels, allowing it to learn much faster and produce better results.
 * Able to configure RNN size, the number of RNN layers, and whether to use bidirectional RNNs.
-* Able to train models on a GPU and use them with a CPU.
+* Able to train models on a GPU and then use them with a CPU.
 * Able to utilize a powerful CuDNN implementation of RNNs when trained on the GPU, which massively speeds up training time as opposed to normal LSTM implementations.
 
 ## Examples
@@ -81,7 +81,9 @@ Additionally, the retraining is done with a momentum-based optimizer and a linea
 
 ## Notes
 
-* **RESULTS WILL VARY GREATLY BETWEEN DATASETS**. Because the pretrained neural network is relatively small (128 cells), it cannot store as much data as RNNs typically flaunted in blog posts. For best results, use a dataset with atleast 2,000-5,000 documents. If a dataset is smaller, you'll need to train it for longer by setting `num_epochs` higher when calling a training method. Even then, there is currently no good heuristic for determining a "good" model.
+* **You will not get quality generated text 100% of the time**, even with a heavily-trained neural network. That's the primary reason viral [blog posts](http://aiweirdness.com/post/170685749687/candy-heart-messages-written-by-a-neural-network)/[Twitter tweets](https://twitter.com/botnikstudios/status/955870327652970496) utilizing NN text generation often generate lots of texts and curate the best/funniest ones afterward.
+
+* **Results will vary greatly between datasets**. Because the pretrained neural network is relatively small (128 cells), it cannot store as much data as RNNs typically flaunted in blog posts. For best results, use a dataset with atleast 2,000-5,000 documents. If a dataset is smaller, you'll need to train it for longer by setting `num_epochs` higher when calling a training method. Even then, there is currently no good heuristic for determining a "good" model.
 
 * textgenrnn is less effective when training on/predicting longer sequences (> 200 characters). Likewise textgenrnn is less effective when training on/predicting texts with very disparate grammatical styles. If a source dataset has *both*, it may lead to unexpected results.
 
@@ -94,6 +96,8 @@ Additionally, the retraining is done with a momentum-based optimizer and a linea
 * A web-based implementation using tensorflow.js (works especially well due to the network's small size)
 
 * A way to visualize the attention-layer outputs to see how the network "learns."
+
+* Supervised text generation mode: allow the model to present the top *n* options and user select the next char/word ([reference](https://fivethirtyeight.com/features/some-like-it-bot/))
 
 * A mode to allow the model architecture to be used for chatbot conversations (may be released as a separate project)
 
@@ -113,4 +117,4 @@ Andrej Karpathy for the original proposal of the char-rnn via the blog post [The
 
 MIT
 
-Attention-layer code used from [DeepMoji](https://github.com/bfelbo/DeepMoji) (MIT Licensd)
+Attention-layer code used from [DeepMoji](https://github.com/bfelbo/DeepMoji) (MIT Licensed)
