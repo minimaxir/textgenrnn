@@ -73,6 +73,7 @@ class textgenrnn:
                        verbose=1,
                        new_model=False,
                        gen_epochs=1,
+                       prop_keep=1.0,
                        **kwargs):
 
         # Encode chars as X and y.
@@ -84,10 +85,11 @@ class textgenrnn:
             subset_x, subset_y = textgenrnn_encode_training(text,
                                                             self.META_TOKEN)
             for j in range(len(subset_x)):
-                X.append(subset_x[j])
-                y.append(subset_y[j])
-                if context_labels is not None:
-                    X_context.append(context_labels[i])
+                if np.random.rand() < prop_keep:
+                    X.append(subset_x[j])
+                    y.append(subset_y[j])
+                    if context_labels is not None:
+                        X_context.append(context_labels[i])
 
         X = np.array(X)
         X_context = np.array(X_context)
