@@ -9,6 +9,7 @@ import json
 import h5py
 from pkg_resources import resource_filename
 from .model import textgenrnn_model
+import csv
 
 
 class textgenrnn:
@@ -169,20 +170,24 @@ class textgenrnn:
         self.model = textgenrnn_model(weights_path, self.num_classes)
 
     def reset(self):
-        self.model = textgenrnn_model(
-            resource_filename(__name__,
-                              'textgenrnn_weights.hdf5'),
-            self.num_classes)
+        self.__init__()
 
     def train_from_file(self, file_path, header=True, delim="\n",
-                        new_model=False, context_labels=None, **kwargs):
+                        new_model=False, context=None, **kwargs):
 
-        texts = textgenrnn_texts_from_file(file_path, header, delim)
+        context_labels = None
+        if context:
+            texts, context_labels = textgenrnn_texts_from_file_context(
+                file_path)
+        else:
+            texts = textgenrnn_texts_from_file(file_path, header, delim)
+
         print("{} texts collected.".format(len(texts)))
         if new_model:
-            self.train_new_model(texts, **kwargs)
+            self.train_new_model(
+                texts, context_labels=context_labels, **kwargs)
         else:
-            self.train_on_texts(texts, **kwargs)
+            self.train_on_texts(texts, context_labels=context_labels, **kwargs)
 
     def train_from_largetext_file(self, file_path, **kwargs):
         self.train_from_file(file_path, delim="\n\n", **kwargs)
@@ -274,8 +279,27 @@ def textgenrnn_texts_from_file(file_path, header=True, delim='\n'):
     with open(file_path, 'r', encoding='utf8', errors='ignore') as f:
         if header:
             f.readline()
-        texts = [line.rstrip(delim) for line in f]
+        texts = [line.rstrip(delim).strip('"') for line in f]
+
     return texts
+
+
+def textgenrnn_texts_from_file_context(file_path, header=True):
+    '''
+    Retrieves texts+context from a two-column CSV.
+    '''
+
+    with open(file_path, 'r', encoding='utf8', errors='ignore') as f:
+        if header:
+            f.readline()
+        texts = []
+        context_labels = []
+        reader = csv.reader(f)
+        for row in reader:
+            texts.append(row[0])
+            context_labels.append(row[1])
+
+    return (texts, context_labels)
 
 
 def textgenrnn_encode_cat(chars, vocab):
