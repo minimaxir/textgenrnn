@@ -79,6 +79,12 @@ class textgenrnn:
         if return_as_list:
             return gen_texts
 
+    def generate_samples(self, n=3, temperatures=[0.2, 0.5, 1.0], **kwargs):
+        for temperature in temperatures:
+            print('#'*20 + '\nTemperature: {}\n'.format(temperature) +
+                  '#'*20)
+            self.generate(n, temperature=temperature, **kwargs)
+
     def train_on_texts(self, texts, context_labels=None,
                        batch_size=128,
                        num_epochs=50,
@@ -391,10 +397,7 @@ class generate_after_epoch(Callback):
 
     def on_epoch_end(self, epoch, logs={}):
         if self.gen_epochs > 0 and (epoch+1) % self.gen_epochs == 0:
-            for temperature in [0.2, 0.5, 1.0]:
-                print('#'*20 + '\nTemperature: {}\n'.format(temperature) +
-                      '#'*20)
-                self.textgenrnn.generate(3, temperature=temperature)
+            self.textgenrnn.generate_samples()
 
 
 class save_model_weights(Callback):
