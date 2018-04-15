@@ -68,8 +68,8 @@ def new_rnn(cfg, layer_num):
     if has_gpu:
         if cfg['rnn_bidirectional']:
             return Bidirectional(CuDNNLSTM(cfg['rnn_size'],
-                                           return_sequences=True,
-                                           name='rnn_{}'.format(layer_num)))
+                                           return_sequences=True),
+                                 name='rnn_{}'.format(layer_num))
 
         return CuDNNLSTM(cfg['rnn_size'],
                          return_sequences=True,
@@ -78,8 +78,8 @@ def new_rnn(cfg, layer_num):
         if cfg['rnn_bidirectional']:
             return Bidirectional(LSTM(cfg['rnn_size'],
                                       return_sequences=True,
-                                      recurrent_activation='sigmoid',
-                                      name='rnn_{}'.format(layer_num)))
+                                      recurrent_activation='sigmoid'),
+                                 name='rnn_{}'.format(layer_num))
 
         return LSTM(cfg['rnn_size'],
                     return_sequences=True,
