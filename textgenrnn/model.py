@@ -1,5 +1,5 @@
 from keras.optimizers import RMSprop
-from keras.layers import Input, Embedding, Dense, LSTM
+from keras.layers import Input, Embedding, Dense, LSTM, Bidirectional
 from keras.layers import CuDNNLSTM, concatenate, Reshape
 from keras.models import Model
 from keras import backend as K
