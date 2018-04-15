@@ -1,4 +1,4 @@
-from keras.callbacks import LearningRateScheduler
+from keras.callbacks import LearningRateScheduler, Callback
 from keras.models import Model, load_model
 from keras.preprocessing import sequence
 from keras.preprocessing.text import Tokenizer
@@ -72,6 +72,7 @@ class textgenrnn:
                        num_epochs=50,
                        verbose=1,
                        new_model=False,
+                       gen_epochs=1,
                        **kwargs):
 
         # Encode chars as X and y.
@@ -108,7 +109,8 @@ class textgenrnn:
 
         if context_labels is None:
             self.model.fit(X, y, batch_size=batch_size, epochs=num_epochs,
-                           callbacks=[LearningRateScheduler(lr_linear_decay)],
+                           callbacks=[LearningRateScheduler(lr_linear_decay),
+                                      generate_after_epoch(self, gen_epochs)],
                            verbose=verbose)
         else:
             weights_path = resource_filename(__name__,
@@ -124,7 +126,8 @@ class textgenrnn:
 
             self.model.fit([X, X_context], [y, y],
                            batch_size=batch_size, epochs=num_epochs,
-                           callbacks=[LearningRateScheduler(lr_linear_decay)],
+                           callbacks=[LearningRateScheduler(lr_linear_decay),
+                                      generate_after_epoch(self, gen_epochs)],
                            verbose=verbose)
 
             # Keep the text-only version of the model
@@ -225,13 +228,16 @@ def textgenrnn_sample(preds, temperature):
 def textgenrnn_generate(model, vocab,
                         indices_char, prefix=None, temperature=0.5,
                         maxlen=40, meta_token='<s>',
-                        max_gen_length=200):
+                        max_gen_length=300):
     '''
     Generates and returns a single text.
     '''
 
     text = [meta_token] + list(prefix) if prefix else [meta_token]
     next_char = ''
+
+    if len(model.input) > 1:
+        model = Model(inputs=model.input[0], outputs=model.output[1])
 
     while next_char != meta_token and len(text) < max_gen_length:
         encoded_text = textgenrnn_encode_sequence(text[-maxlen:],
@@ -313,3 +319,16 @@ def textgenrnn_encode_cat(chars, vocab):
                        for i, char in enumerate(chars)])
     a[rows, cols] = 1
     return a
+
+
+class generate_after_epoch(Callback):
+    def __init__(self, textgenrnn, gen_epochs):
+        self.textgenrnn = textgenrnn
+        self.gen_epochs = gen_epochs
+
+    def on_epoch_end(self, epoch, logs={}):
+        if self.gen_epochs > 0 and (epoch+1) % self.gen_epochs == 0:
+            for temperature in [0.2, 0.5, 1.0]:
+                print('#'*20 + '\nTemperature: {}\n'.format(temperature) +
+                      '#'*20)
+                self.textgenrnn.generate(3, temperature=temperature)
