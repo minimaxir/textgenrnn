@@ -28,7 +28,10 @@ class textgenrnn:
 
     def __init__(self, weights_path=None,
                  vocab_path=None,
-                 config_path=None):
+                 config_path=None,
+                 name="textgenrnn"):
+
+        self.config.update({'name': name})
 
         if weights_path is None:
             weights_path = resource_filename(__name__,
@@ -54,6 +57,8 @@ class textgenrnn:
                                       cfg=self.config,
                                       weights_path=weights_path)
         self.indices_char = dict((self.vocab[c], c) for c in self.vocab)
+
+        self.default_config.update({'name': self.config['name']})
 
     def generate(self, n=1, return_as_list=False, prefix=None,
                  temperature=0.5, max_gen_length=300):
@@ -133,7 +138,7 @@ class textgenrnn:
             self.model.fit(X, y, batch_size=batch_size, epochs=num_epochs,
                            callbacks=[LearningRateScheduler(lr_linear_decay),
                                       generate_after_epoch(self, gen_epochs),
-                                      save_model_weights()],
+                                      save_model_weights(self.config['name'])],
                            verbose=verbose)
         else:
             weights_path = resource_filename(__name__,
@@ -151,15 +156,15 @@ class textgenrnn:
                            batch_size=batch_size, epochs=num_epochs,
                            callbacks=[LearningRateScheduler(lr_linear_decay),
                                       generate_after_epoch(self, gen_epochs),
-                                      save_model_weights()],
+                                      save_model_weights(self.config['name'])],
                            verbose=verbose)
 
             # Keep the text-only version of the model
             self.model = Model(inputs=self.model.input[0],
                                outputs=self.model.output[1])
 
-    def train_new_model(self, texts, name='textgenrnn',
-                        context_labels=None, **kwargs):
+    def train_new_model(self, texts, context_labels=None, num_epochs=50,
+                        gen_epochs=1, batch_size=128, **kwargs):
         self.config = self.default_config.copy()
         self.config.update(**kwargs)
         print("Training new model w/ {}-layer, {}-cell {}LSTMs".format(
@@ -191,14 +196,20 @@ class textgenrnn:
                                       cfg=self.config)
 
         # Save the files needed to recreate the model
-        with open('{}_vocab.json'.format(name), 'w') as outfile:
+        with open('{}_vocab.json'.format(self.config['name']),
+                  'w') as outfile:
             json.dump(self.tokenizer.word_index, outfile, ensure_ascii=False)
 
-        with open('{}_config.json'.format(name), 'w') as outfile:
+        with open('{}_config.json'.format(self.config['name']),
+                  'w') as outfile:
             json.dump(self.config, outfile, ensure_ascii=False)
 
-        self.train_on_texts(texts, new_model=True, **kwargs)
-        # self.save(weights_path="{}_weights.hdf5".format(name))
+        self.train_on_texts(texts, new_model=True,
+                            context_labels=context_labels,
+                            num_epochs=num_epochs,
+                            gen_epochs=gen_epochs,
+                            batch_size=batch_size,
+                            **kwargs)
 
     def save(self, weights_path="textgenrnn_weights_saved.hdf5"):
         self.model.save_weights(weights_path)
@@ -387,8 +398,11 @@ class generate_after_epoch(Callback):
 
 
 class save_model_weights(Callback):
+    def __init__(self, weights_name):
+        self.weights_name = weights_name
+
     def on_epoch_end(self, epoch, logs={}):
         if model_input_count(self.model) > 1:
             self.model = Model(inputs=self.model.input[0],
                                outputs=self.model.output[1])
-        self.model.save_weights("weights.hdf5")
+        self.model.save_weights("{}_weights.hdf5".format(self.weights_name))
