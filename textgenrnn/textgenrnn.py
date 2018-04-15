@@ -1,7 +1,7 @@
 from keras.callbacks import LearningRateScheduler, Callback
 from keras.models import Model, load_model
 from keras.preprocessing import sequence
-from keras.preprocessing.text import Tokenizer
+from keras.preprocessing.text import Tokenizer, text_to_word_sequence
 from keras import backend as K
 from sklearn.preprocessing import LabelBinarizer
 import numpy as np
@@ -10,6 +10,7 @@ import h5py
 from pkg_resources import resource_filename
 from .model import textgenrnn_model
 import csv
+import re
 
 
 class textgenrnn:
@@ -17,10 +18,11 @@ class textgenrnn:
     config = {
         'rnn_layers': 2,
         'rnn_size': 128,
-        'rnn_bidirectional': 0,
+        'rnn_bidirectional': False,
         'max_length': 40,
         'max_words': 10000,
-        'dim_embeddings': 100
+        'dim_embeddings': 100,
+        'word_level': False
     }
     default_config = config.copy()
 
@@ -53,14 +55,19 @@ class textgenrnn:
                                       weights_path=weights_path)
         self.indices_char = dict((self.vocab[c], c) for c in self.vocab)
 
-    def generate(self, n=1, return_as_list=False, **kwargs):
+    def generate(self, n=1, return_as_list=False, prefix=None,
+                 temperature=0.5, max_gen_length=300):
         gen_texts = []
         for _ in range(n):
             gen_text = textgenrnn_generate(self.model,
                                            self.vocab,
                                            self.indices_char,
-                                           maxlen=self.config['max_length'],
-                                           **kwargs)
+                                           prefix,
+                                           temperature,
+                                           self.config['max_length'],
+                                           self.META_TOKEN,
+                                           self.config['word_level'],
+                                           max_gen_length)
             if not return_as_list:
                 print("{}\n".format(gen_text))
             gen_texts.append(gen_text)
@@ -76,6 +83,9 @@ class textgenrnn:
                        prop_keep=1.0,
                        **kwargs):
 
+        is_words = self.config['word_level']
+        max_length = self.config['max_length']
+
         # Encode chars as X and y.
         X = []
         X_context = []
@@ -83,7 +93,10 @@ class textgenrnn:
 
         for i, text in enumerate(texts):
             subset_x, subset_y = textgenrnn_encode_training(text,
-                                                            self.META_TOKEN)
+                                                            is_words,
+                                                            self.META_TOKEN,
+                                                            max_length)
+
             for j in range(len(subset_x)):
                 if np.random.rand() < prop_keep:
                     X.append(subset_x[j])
@@ -95,8 +108,15 @@ class textgenrnn:
         X_context = np.array(X_context)
         y = np.array(y)
 
-        X = self.tokenizer.texts_to_sequences(X)
-        X = sequence.pad_sequences(X, maxlen=self.config['max_length'])
+        # Remake the tokenizer to avoid reprocessing word tokens
+        if is_words:
+            new_tokenizer = Tokenizer(filters='', char_level=True)
+            new_tokenizer.word_index = self.vocab
+        else:
+            new_tokenizer = self.tokenizer
+
+        X = new_tokenizer.texts_to_sequences(X)
+        X = sequence.pad_sequences(X, maxlen=max_length)
         y = textgenrnn_encode_cat(y, self.vocab)
 
         if context_labels is not None:
@@ -138,7 +158,8 @@ class textgenrnn:
             self.model = Model(inputs=self.model.input[0],
                                outputs=self.model.output[1])
 
-    def train_new_model(self, texts, name='textgenrnn', **kwargs):
+    def train_new_model(self, texts, name='textgenrnn',
+                        context_labels=None, **kwargs):
         self.config = self.default_config.copy()
         self.config.update(**kwargs)
         print("Training new model w/ {}-layer, {}-cell {}LSTMs".format(
@@ -146,9 +167,18 @@ class textgenrnn:
             'Bidirectional ' if self.config['rnn_bidirectional'] else ''
         ))
 
+        # If training word level, must add spaces around each punctuation.
+        # https://stackoverflow.com/a/3645946/9314418
+
+        if self.config['word_level']:
+            punct = '!"#$%&()*+,-./:;<=>?@[\]^_`{|}~'
+            for i in range(len(texts)):
+                texts[i] = re.sub('([{}])'.format(punct), r' \1 ', texts[i])
+                texts[i] = re.sub('\s{2,}', ' ', texts[i])
+
         # Create text vocabulary for new texts
         self.tokenizer = Tokenizer(filters='',
-                                   char_level=True)
+                                   char_level=(not self.config['word_level']))
         self.tokenizer.fit_on_texts(texts)
         self.tokenizer.word_index[self.META_TOKEN] = len(
             self.tokenizer.word_index) + 1
@@ -168,7 +198,7 @@ class textgenrnn:
             json.dump(self.config, outfile, ensure_ascii=False)
 
         self.train_on_texts(texts, new_model=True, **kwargs)
-        self.save(weights_path="{}_weights.hdf5".format(name))
+        # self.save(weights_path="{}_weights.hdf5".format(name))
 
     def save(self, weights_path="textgenrnn_weights_saved.hdf5"):
         self.model.save_weights(weights_path)
@@ -177,6 +207,7 @@ class textgenrnn:
         self.model = textgenrnn_model(weights_path, self.num_classes)
 
     def reset(self):
+        self.config = self.default_config.copy()
         self.__init__()
 
     def train_from_file(self, file_path, header=True, delim="\n",
@@ -232,6 +263,7 @@ def textgenrnn_sample(preds, temperature):
 def textgenrnn_generate(model, vocab,
                         indices_char, prefix=None, temperature=0.5,
                         maxlen=40, meta_token='<s>',
+                        word_level=False,
                         max_gen_length=300):
     '''
     Generates and returns a single text.
@@ -251,7 +283,10 @@ def textgenrnn_generate(model, vocab,
             temperature)
         next_char = indices_char[next_index]
         text += [next_char]
-    return ''.join(text[1:-1])
+
+    collapse_char = ' ' if word_level else ''
+
+    return collapse_char.join(text[1:-1])
 
 
 def textgenrnn_encode_sequence(text, vocab, maxlen):
@@ -264,18 +299,24 @@ def textgenrnn_encode_sequence(text, vocab, maxlen):
     return sequence.pad_sequences([encoded], maxlen=maxlen)
 
 
-def textgenrnn_encode_training(text, meta_token='<s>', maxlen=40):
+def textgenrnn_encode_training(text,
+                               word_level=False,
+                               meta_token='<s>', max_length=40):
     '''
     Encodes a list of texts into a list of texts, and the next character
     in those texts.
     '''
 
-    text_aug = [meta_token] + list(text) + [meta_token]
+    if word_level:
+        text_aug = text_to_word_sequence(text, filters='')
+        text_aug = [meta_token] + text_aug + [meta_token]
+    else:
+        text_aug = [meta_token] + list(text) + [meta_token]
     chars = []
     next_char = []
 
     for i in range(len(text_aug) - 1):
-        chars.append(text_aug[0:i + 1][-maxlen:])
+        chars.append(text_aug[0:i + 1][-max_length:])
         next_char.append(text_aug[i + 1])
 
     return chars, next_char
