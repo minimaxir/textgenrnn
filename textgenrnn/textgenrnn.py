@@ -110,7 +110,8 @@ class textgenrnn:
         if context_labels is None:
             self.model.fit(X, y, batch_size=batch_size, epochs=num_epochs,
                            callbacks=[LearningRateScheduler(lr_linear_decay),
-                                      generate_after_epoch(self, gen_epochs)],
+                                      generate_after_epoch(self, gen_epochs),
+                                      save_model_weights()],
                            verbose=verbose)
         else:
             weights_path = resource_filename(__name__,
@@ -127,7 +128,8 @@ class textgenrnn:
             self.model.fit([X, X_context], [y, y],
                            batch_size=batch_size, epochs=num_epochs,
                            callbacks=[LearningRateScheduler(lr_linear_decay),
-                                      generate_after_epoch(self, gen_epochs)],
+                                      generate_after_epoch(self, gen_epochs),
+                                      save_model_weights()],
                            verbose=verbose)
 
             # Keep the text-only version of the model
@@ -236,7 +238,7 @@ def textgenrnn_generate(model, vocab,
     text = [meta_token] + list(prefix) if prefix else [meta_token]
     next_char = ''
 
-    if len(model.input) > 1:
+    if model_input_count(model) > 1:
         model = Model(inputs=model.input[0], outputs=model.output[1])
 
     while next_char != meta_token and len(text) < max_gen_length:
@@ -321,6 +323,13 @@ def textgenrnn_encode_cat(chars, vocab):
     return a
 
 
+def model_input_count(model):
+    if isinstance(model.input, list):
+        return len(model.input)
+    else:   # is a Tensor
+        return model.input.shape[0]
+
+
 class generate_after_epoch(Callback):
     def __init__(self, textgenrnn, gen_epochs):
         self.textgenrnn = textgenrnn
@@ -332,3 +341,11 @@ class generate_after_epoch(Callback):
                 print('#'*20 + '\nTemperature: {}\n'.format(temperature) +
                       '#'*20)
                 self.textgenrnn.generate(3, temperature=temperature)
+
+
+class save_model_weights(Callback):
+    def on_epoch_end(self, epoch, logs={}):
+        if model_input_count(self.model) > 1:
+            self.model = Model(inputs=self.model.input[0],
+                               outputs=self.model.output[1])
+        self.model.save_weights("weights.hdf5")
