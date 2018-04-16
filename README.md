@@ -119,6 +119,10 @@ Additionally, the retraining is done with a momentum-based optimizer and a linea
 
 * FP16 for superfast training on Volta/TPUs (once Keras has good support for it).
 
+## Projects using textgenrnn
+
+* [Tweet Generator](https://github.com/minimaxir/tweet-generator) — Train a neural network optimized for generating tweets based off of any number of Twitter users
+
 ## Maintainer/Creator
 
 Max Woolf ([@minimaxir](http://minimaxir.com))
