@@ -31,8 +31,6 @@ class textgenrnn:
                  config_path=None,
                  name="textgenrnn"):
 
-        self.config.update({'name': name})
-
         if weights_path is None:
             weights_path = resource_filename(__name__,
                                              'textgenrnn_weights.hdf5')
@@ -42,9 +40,12 @@ class textgenrnn:
                                            'textgenrnn_vocab.json')
 
         if config_path is not None:
-            with open(vocab_path, 'r',
+            with open(config_path, 'r',
                       encoding='utf8', errors='ignore') as json_file:
                 self.config = json.load(json_file)
+
+        self.config.update({'name': name})
+        self.default_config.update({'name': name})
 
         with open(vocab_path, 'r',
                   encoding='utf8', errors='ignore') as json_file:
@@ -57,8 +58,6 @@ class textgenrnn:
                                       cfg=self.config,
                                       weights_path=weights_path)
         self.indices_char = dict((self.vocab[c], c) for c in self.vocab)
-
-        self.default_config.update({'name': self.config['name']})
 
     def generate(self, n=1, return_as_list=False, prefix=None,
                  temperature=0.5, max_gen_length=300):
@@ -225,7 +224,7 @@ class textgenrnn:
 
     def reset(self):
         self.config = self.default_config.copy()
-        self.__init__()
+        self.__init__(name=self.config['name'])
 
     def train_from_file(self, file_path, header=True, delim="\n",
                         new_model=False, context=None, **kwargs):
