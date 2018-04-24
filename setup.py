@@ -12,6 +12,7 @@ setup(
     keywords=['deep learning', 'tensorflow', 'keras', 'text generation'],
     classifiers=[],
     license='MIT',
+    python_requires='>=3',
     include_package_data=True,
     install_requires=['keras>=2.1.5', 'h5py', 'scikit-learn']
 )
