@@ -220,7 +220,7 @@ class textgenrnn:
         self.model.save_weights(weights_path)
 
     def load(self, weights_path):
-        self.model = textgenrnn_model(weights_path, self.num_classes)
+        self.model = textgenrnn_model(self.num_classes, cfg=self.config, weights_path=weights_path)
 
     def reset(self):
         self.config = self.default_config.copy()
