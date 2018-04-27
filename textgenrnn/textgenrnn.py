@@ -24,7 +24,8 @@ class textgenrnn:
         'max_length': 40,
         'max_words': 10000,
         'dim_embeddings': 100,
-        'word_level': False
+        'word_level': False,
+        'single_text': False
     }
     default_config = config.copy()
 
@@ -73,6 +74,8 @@ class textgenrnn:
                                            self.config['max_length'],
                                            self.META_TOKEN,
                                            self.config['word_level'],
+                                           self.config.get(
+                                               'single_text', False),
                                            max_gen_length)
             if not return_as_list:
                 print("{}\n".format(gen_text))
@@ -97,9 +100,13 @@ class textgenrnn:
 
         if context_labels:
             context_labels = LabelBinarizer().fit_transform(context_labels)
-            
-        gen = generate_sequences_from_texts(
-            texts, self, context_labels,  batch_size)
+
+        if len(texts) == 1:
+            gen = generate_sequences_from_fulltext(
+                texts, self,  batch_size)
+        else:
+            gen = generate_sequences_from_texts(
+                texts, self, context_labels,  batch_size)
 
         # Not using list comprehension here since it's O(n) memory
         num_chars = 0
@@ -107,7 +114,7 @@ class textgenrnn:
             num_chars += (len(text) + 1)
 
         if self.config['word_level']:
-            num_char /= 6   # approximate char per word
+            num_chars = num_chars / 6   # approximate char per word
             print("Training on ~{} word sequences.".format(num_chars))
         else:
             print("Training on {} character sequences.".format(num_chars))
@@ -165,6 +172,7 @@ class textgenrnn:
                         gen_epochs=1, batch_size=128, **kwargs):
         self.config = self.default_config.copy()
         self.config.update(**kwargs)
+
         print("Training new model w/ {}-layer, {}-cell {}LSTMs".format(
             self.config['rnn_layers'], self.config['rnn_size'],
             'Bidirectional ' if self.config['rnn_bidirectional'] else ''
@@ -174,17 +182,19 @@ class textgenrnn:
         # https://stackoverflow.com/a/3645946/9314418
 
         if self.config['word_level']:
-            punct = '!"#$%&()*+,-./:;<=>?@[\]^_`{|}~'
+            punct = '!"#$%&()*+,-./:;<=>?@[\]^_`{|}~\\n\\t'
             for i in range(len(texts)):
                 texts[i] = re.sub('([{}])'.format(punct), r' \1 ', texts[i])
-                texts[i] = re.sub('\s{2,}', ' ', texts[i])
+                texts[i] = re.sub(' {2,}', ' ', texts[i])
 
         # Create text vocabulary for new texts
         self.tokenizer = Tokenizer(filters='',
                                    char_level=(not self.config['word_level']))
         self.tokenizer.fit_on_texts(texts)
-        self.tokenizer.word_index[self.META_TOKEN] = len(
-            self.tokenizer.word_index) + 1
+
+        if not self.config.get('single_text', False):
+            self.tokenizer.word_index[self.META_TOKEN] = len(
+                self.tokenizer.word_index) + 1
         self.vocab = self.tokenizer.word_index
         self.num_classes = len(self.vocab) + 1
         self.indices_char = dict((self.vocab[c], c) for c in self.vocab)
@@ -242,9 +252,9 @@ class textgenrnn:
 
         if new_model:
             self.train_new_model(
-                texts, **kwargs)
+                texts, single_text=True, **kwargs)
         else:
-            self.train_on_texts(texts, **kwargs)
+            self.train_on_texts(texts, single_text=True, **kwargs)
 
     def generate_to_file(self, destination_path, **kwargs):
         texts = self.generate(return_as_list=True, **kwargs)

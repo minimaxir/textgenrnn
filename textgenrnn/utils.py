@@ -37,12 +37,16 @@ def textgenrnn_generate(model, vocab,
                         indices_char, prefix=None, temperature=0.5,
                         maxlen=40, meta_token='<s>',
                         word_level=False,
+                        single_text=False,
                         max_gen_length=300):
     '''
     Generates and returns a single text.
     '''
 
-    text = [meta_token] + list(prefix) if prefix else [meta_token]
+    if single_text:
+        text = list(prefix) if prefix else ['']
+    else:
+        text = [meta_token] + list(prefix) if prefix else [meta_token]
     next_char = ''
 
     if model_input_count(model) > 1:
@@ -59,7 +63,11 @@ def textgenrnn_generate(model, vocab,
 
     collapse_char = ' ' if word_level else ''
 
-    return collapse_char.join(text[1:-1])
+    # strip the <s> meta_tokens
+    if not single_text:
+        text = text[1:-1]
+
+    return collapse_char.join(text)
 
 
 def textgenrnn_encode_sequence(text, vocab, maxlen):
@@ -82,7 +90,6 @@ def textgenrnn_encode_training(text,
 
     if word_level:
         text_aug = text_to_word_sequence(text, filters='')
-        text_aug = [meta_token] + text_aug + [meta_token]
     else:
         text_aug = [meta_token] + list(text) + [meta_token]
     chars = []
