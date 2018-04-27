@@ -192,6 +192,11 @@ class textgenrnn:
                                    char_level=(not self.config['word_level']))
         self.tokenizer.fit_on_texts(texts)
 
+        # Limit vocab to max_words
+        max_words = self.config['max_words']
+        self.tokenizer.word_index = {k: v for (
+            k, v) in self.tokenizer.word_index.items() if v <= max_words}
+
         if not self.config.get('single_text', False):
             self.tokenizer.word_index[self.META_TOKEN] = len(
                 self.tokenizer.word_index) + 1

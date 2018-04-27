@@ -124,22 +124,22 @@ def generate_sequences_from_fulltext(text, textgenrnn, batch_size=128):
             # print(x)
             # print(y)
             # print("---")
+            if y in textgenrnn.vocab:
+                x = process_sequence([x], textgenrnn, new_tokenizer)
+                y = textgenrnn_encode_cat([y], textgenrnn.vocab)
 
-            x = process_sequence([x], textgenrnn, new_tokenizer)
-            y = textgenrnn_encode_cat([y], textgenrnn.vocab)
+                X_batch.append(x)
+                Y_batch.append(y)
 
-            X_batch.append(x)
-            Y_batch.append(y)
+                count_batch += 1
 
-            count_batch += 1
-
-            if count_batch % batch_size == 0:
-                X_batch = np.squeeze(np.array(X_batch))
-                Y_batch = np.squeeze(np.array(Y_batch))
-                yield (X_batch, Y_batch)
-                X_batch = []
-                Y_batch = []
-                count_batch = 0
+                if count_batch % batch_size == 0:
+                    X_batch = np.squeeze(np.array(X_batch))
+                    Y_batch = np.squeeze(np.array(Y_batch))
+                    yield (X_batch, Y_batch)
+                    X_batch = []
+                    Y_batch = []
+                    count_batch = 0
 
 
 def process_sequence(X, textgenrnn, new_tokenizer):

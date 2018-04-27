@@ -8,6 +8,7 @@ import numpy as np
 import json
 import h5py
 import csv
+import re
 
 
 def textgenrnn_sample(preds, temperature):
@@ -24,12 +25,14 @@ def textgenrnn_sample(preds, temperature):
     preds = np.log(preds + K.epsilon()) / temperature
     exp_preds = np.exp(preds)
     preds = exp_preds / np.sum(exp_preds)
-    index = -1
+    probas = np.random.multinomial(1, preds, 1)
+    index = np.argmax(probas)
 
     # prevent function from being able to choose 0 (placeholder)
-    while index < 1:
-        probas = np.random.multinomial(1, preds, 1)
-        index = np.argmax(probas)
+    # choose 2nd best index from preds
+    if index == 0:
+        index = np.argsort(preds)[-2]
+
     return index
 
 
@@ -67,7 +70,14 @@ def textgenrnn_generate(model, vocab,
     if not single_text:
         text = text[1:-1]
 
-    return collapse_char.join(text)
+    text_joined = collapse_char.join(text)
+
+    # If word level, remove space before punctuation for cleanliness.
+    if word_level:
+        punct = '!"#$%&()*+,-./:;<=>?@[\]^_`{|}~\\n\\t'
+        text_joined = re.sub(' ([{}])'.format(punct), r'\1', text_joined)
+
+    return text_joined
 
 
 def textgenrnn_encode_sequence(text, vocab, maxlen):
