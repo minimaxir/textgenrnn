@@ -188,7 +188,7 @@ class textgenrnn:
         # https://stackoverflow.com/a/3645946/9314418
 
         if self.config['word_level']:
-            punct = '!"#$%&()*+,-./:;<=>?@[\]^_`{|}~\\n\\t'
+            punct = '!"#$%&()*+,-./:;<=>?@[\]^_`{|}~\\n\\t\'‘’“”’–—'
             for i in range(len(texts)):
                 texts[i] = re.sub('([{}])'.format(punct), r' \1 ', texts[i])
                 texts[i] = re.sub(' {2,}', ' ', texts[i])
