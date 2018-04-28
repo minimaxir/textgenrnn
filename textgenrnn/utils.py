@@ -48,6 +48,7 @@ def textgenrnn_generate(model, vocab,
 
     if single_text:
         text = list(prefix) if prefix else ['']
+        max_gen_length += maxlen
     else:
         text = [meta_token] + list(prefix) if prefix else [meta_token]
     next_char = ''
@@ -66,21 +67,25 @@ def textgenrnn_generate(model, vocab,
 
     collapse_char = ' ' if word_level else ''
 
-    # strip the <s> meta_tokens
-    if not single_text:
+    # if single text, ignore sequences generated w/ padding
+    # if not single text, strip the <s> meta_tokens
+    if single_text:
+        text = text[maxlen:]
+    else:
         text = text[1:-1]
 
     text_joined = collapse_char.join(text)
 
-    # If word level, remove space before punctuation for cleanliness.
-    # if word_level:
-    #     left_punct = "!%),.:;?@]_}\\n\\t'"
-    #     right_punct = "$([_\\n\\t'"
-    #     # punct = '!"#$%&()*+,-./:;<=>?@[\]^_`{|}~\\n\\t'
-    #     text_joined = re.sub(" ([{}])".format(
-    #       left_punct), r'\1', text_joined)
-    #     text_joined = re.sub("([{}]) ".format(
-    #       right_punct), r'\1', text_joined)
+    # If word level, remove spaces around punctuation for cleanliness.
+    if word_level:
+        #     left_punct = "!%),.:;?@]_}\\n\\t'"
+        #     right_punct = "$([_\\n\\t'"
+        punct = '\\n\\t'
+        text_joined = re.sub(" ([{}]) ".format(punct), r'\1', text_joined)
+        #     text_joined = re.sub(" ([{}])".format(
+        #       left_punct), r'\1', text_joined)
+        #     text_joined = re.sub("([{}]) ".format(
+        #       right_punct), r'\1', text_joined)
 
     return text_joined
 
@@ -147,13 +152,15 @@ def model_input_count(model):
 
 
 class generate_after_epoch(Callback):
-    def __init__(self, textgenrnn, gen_epochs):
+    def __init__(self, textgenrnn, gen_epochs, max_gen_length):
         self.textgenrnn = textgenrnn
         self.gen_epochs = gen_epochs
+        self.max_gen_length = max_gen_length
 
     def on_epoch_end(self, epoch, logs={}):
         if self.gen_epochs > 0 and (epoch+1) % self.gen_epochs == 0:
-            self.textgenrnn.generate_samples()
+            self.textgenrnn.generate_samples(
+                max_gen_length=self.max_gen_length)
 
 
 class save_model_weights(Callback):

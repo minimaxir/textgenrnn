@@ -96,6 +96,7 @@ class textgenrnn:
                        new_model=False,
                        gen_epochs=1,
                        prop_keep=1.0,
+                       max_gen_length=300,
                        **kwargs):
 
         if context_labels:
@@ -110,8 +111,9 @@ class textgenrnn:
         indices_list = np.block(indices_list)
 
         # If a single text, there will be 2 extra indices, so remove them
+        # Also remove first sequences which use padding
         if self.config['single_text']:
-            indices_list = indices_list[:-2, :]
+            indices_list = indices_list[self.config['max_length']:-2, :]
 
         indices_list = indices_list[np.random.rand(
             indices_list.shape[0]) < prop_keep, :]
@@ -131,24 +133,9 @@ class textgenrnn:
         def lr_linear_decay(epoch):
             return (base_lr * (1 - (epoch / num_epochs)))
 
-        if context_labels is None:
-            self.model.fit_generator(gen, steps_per_epoch=steps_per_epoch,
-                                     epochs=num_epochs,
-                                     callbacks=[
-                                         LearningRateScheduler(
-                                             lr_linear_decay),
-                                         generate_after_epoch(
-                                             self, gen_epochs),
-                                         save_model_weights(
-                                             self.config['name'])],
-                                     verbose=verbose,
-                                     max_queue_size=2
-                                     )
-        else:
-
+        if context_labels:
             weights_path = resource_filename(__name__,
                                              'textgenrnn_weights.hdf5')
-
             if new_model:
                 weights_path = None
 
@@ -157,20 +144,22 @@ class textgenrnn:
                                           context_size=context_labels.shape[1],
                                           weights_path=weights_path)
 
-            self.model.fit_generator(gen, steps_per_epoch=steps_per_epoch,
-                                     epochs=num_epochs,
-                                     callbacks=[
-                                         LearningRateScheduler(
-                                             lr_linear_decay),
-                                         generate_after_epoch(
-                                             self, gen_epochs),
-                                         save_model_weights(
-                                             self.config['name'])],
-                                     verbose=verbose,
-                                     max_queue_size=2
-                                     )
+        self.model.fit_generator(gen, steps_per_epoch=steps_per_epoch,
+                                 epochs=num_epochs,
+                                 callbacks=[
+                                     LearningRateScheduler(
+                                         lr_linear_decay),
+                                     generate_after_epoch(
+                                         self, gen_epochs,
+                                         max_gen_length),
+                                     save_model_weights(
+                                         self.config['name'])],
+                                 verbose=verbose,
+                                 max_queue_size=2
+                                 )
 
-            # Keep the text-only version of the model
+        # Keep the text-only version of the model if using context labels
+        if context_labels:
             self.model = Model(inputs=self.model.input[0],
                                outputs=self.model.output[1])
 
