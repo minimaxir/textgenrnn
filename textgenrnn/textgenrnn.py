@@ -101,25 +101,29 @@ class textgenrnn:
         if context_labels:
             context_labels = LabelBinarizer().fit_transform(context_labels)
 
-        if len(texts) == 1:
-            gen = generate_sequences_from_fulltext(
-                texts, self,  batch_size)
-        else:
-            gen = generate_sequences_from_texts(
-                texts, self, context_labels,  batch_size)
-
-        # Not using list comprehension here since it's O(n) memory
-        num_chars = 0
-        for text in texts:
-            num_chars += (len(text) + 1)
-
         if self.config['word_level']:
-            num_chars = num_chars / 6   # approximate char per word
-            print("Training on ~{} word sequences.".format(num_chars))
-        else:
-            print("Training on {} character sequences.".format(num_chars))
+            texts = [text_to_word_sequence(text, filters='') for text in texts]
 
-        steps_per_epoch = max(int(np.floor(num_chars / batch_size)), 1)
+        # calculate all combinations of text indices + token indices
+        indices_list = [np.meshgrid(np.array(i), np.arange(
+            len(text) + 1)) for i, text in enumerate(texts)]
+        indices_list = np.block(indices_list)
+
+        # If a single text, there will be 2 extra indices, so remove them
+        if self.config['single_text']:
+            indices_list = indices_list[:-2, :]
+
+        indices_list = indices_list[np.random.rand(
+            indices_list.shape[0]) < prop_keep, :]
+        num_tokens = indices_list.shape[0]
+
+        level = 'word' if self.config['word_level'] else 'character'
+        print("Training on {} {} sequences.".format(num_tokens, level))
+
+        steps_per_epoch = max(int(np.floor(num_tokens / batch_size)), 1)
+
+        gen = generate_sequences_from_fulltext(
+            texts, indices_list, self, context_labels, batch_size)
 
         base_lr = 4e-3
 
@@ -137,7 +141,8 @@ class textgenrnn:
                                              self, gen_epochs),
                                          save_model_weights(
                                              self.config['name'])],
-                                     verbose=verbose
+                                     verbose=verbose,
+                                     max_queue_size=2
                                      )
         else:
 
@@ -161,7 +166,8 @@ class textgenrnn:
                                              self, gen_epochs),
                                          save_model_weights(
                                              self.config['name'])],
-                                     verbose=verbose
+                                     verbose=verbose,
+                                     max_queue_size=2
                                      )
 
             # Keep the text-only version of the model
