@@ -134,10 +134,11 @@ class textgenrnn:
             return (base_lr * (1 - (epoch / num_epochs)))
 
         if context_labels:
-            weights_path = resource_filename(__name__,
-                                             'textgenrnn_weights.hdf5')
             if new_model:
                 weights_path = None
+            else:
+                weights_path = "{}_weights.hdf5".format(self.config['name'])
+                self.save(weights_path)
 
             self.model = textgenrnn_model(self.num_classes,
                                           cfg=self.config,
