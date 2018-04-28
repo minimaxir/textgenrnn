@@ -95,31 +95,6 @@ def textgenrnn_encode_sequence(text, vocab, maxlen):
     return sequence.pad_sequences([encoded], maxlen=maxlen)
 
 
-def textgenrnn_encode_training(text,
-                               word_level=False,
-                               meta_token='<s>', max_length=40):
-    '''
-    Encodes a list of texts into a list of texts, and the next character
-    in those texts.
-    '''
-
-    if word_level:
-        text_aug = text_to_word_sequence(text, filters='')
-    else:
-        text_aug = [meta_token] + list(text) + [meta_token]
-    chars = []
-    next_char = []
-
-    for i in range(len(text_aug) - 1):
-        if i > max_length:
-            chars.append(text_aug[i - max_length: i + 1])
-        else:
-            chars.append(text_aug[0:i + 1])
-        next_char.append(text_aug[i + 1])
-
-    return chars, next_char
-
-
 def textgenrnn_texts_from_file(file_path, header=True, delim='\n'):
     '''
     Retrieves texts from a newline-delimited file and returns as a list.
