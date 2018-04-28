@@ -120,7 +120,7 @@ class textgenrnn:
         num_tokens = indices_list.shape[0]
 
         level = 'word' if self.config['word_level'] else 'character'
-        print("Training on {} {} sequences.".format(num_tokens, level))
+        print("Training on {:,} {} sequences.".format(num_tokens, level))
 
         steps_per_epoch = max(int(np.floor(num_tokens / batch_size)), 1)
 
@@ -239,7 +239,7 @@ class textgenrnn:
         else:
             texts = textgenrnn_texts_from_file(file_path, header, delim)
 
-        print("{} texts collected.".format(len(texts)))
+        print("{:,} texts collected.".format(len(texts)))
         if new_model:
             self.train_new_model(
                 texts, context_labels=context_labels, **kwargs)
