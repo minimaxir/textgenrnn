@@ -134,7 +134,7 @@ class textgenrnn:
         def lr_linear_decay(epoch):
             return (base_lr * (1 - (epoch / num_epochs)))
 
-        if context_labels:
+        if context_labels is not None:
             if new_model:
                 weights_path = None
             else:
@@ -161,7 +161,7 @@ class textgenrnn:
                                  )
 
         # Keep the text-only version of the model if using context labels
-        if context_labels:
+        if context_labels is not None:
             self.model = Model(inputs=self.model.input[0],
                                outputs=self.model.output[1])
 
