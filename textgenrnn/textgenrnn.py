@@ -118,6 +118,7 @@ class textgenrnn:
         indices_list = indices_list[np.random.rand(
             indices_list.shape[0]) < prop_keep, :]
         num_tokens = indices_list.shape[0]
+        assert num_tokens >= batch_size, "Fewer tokens than batch_size."
 
         level = 'word' if self.config['word_level'] else 'character'
         print("Training on {:,} {} sequences.".format(num_tokens, level))

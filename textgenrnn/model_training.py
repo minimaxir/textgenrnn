@@ -73,16 +73,6 @@ def generate_sequences_from_texts(texts, indices_list,
                     context_batch = []
                     count_batch = 0
 
-        #  run if number of tokens in dataset < batch_size
-        X_batch = np.squeeze(np.array(X_batch))
-        Y_batch = np.squeeze(np.array(Y_batch))
-        context_batch = np.squeeze(np.array(context_batch))
-
-        if context_labels is not None:
-            yield ([X_batch, context_batch], [Y_batch, Y_batch])
-        else:
-            yield (X_batch, Y_batch)
-
 
 def process_sequence(X, textgenrnn, new_tokenizer):
     X = np.array(X)
