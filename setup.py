@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 setup(
     name='textgenrnn',
     packages=['textgenrnn'],  # this must be the same as the name above
-    version='1.0',
+    version='1.1',
     description='Pretrained character-based neural network for ' \
     'easily generating text.',
     author='Max Woolf',
