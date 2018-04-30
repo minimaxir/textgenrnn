@@ -7,9 +7,9 @@ Generate text using a pretrained neural network with a few lines of code, or eas
 textgenrnn is a Python 3 module on top of [Keras](https://github.com/fchollet/keras)/[TensorFlow](https://www.tensorflow.org) for creating [char-rnn](http://karpathy.github.io/2015/05/21/rnn-effectiveness/)s, with many cool features:
 
 * A modern neural network architecture which utilizes new techniques as attention-weighting and skip-embedding to accelerate training and improve model quality.
-* Able to train and predict at either the character-level or word-level.
+* Able to train on and generate text at either the character-level or word-level.
 * Able to configure RNN size, the number of RNN layers, and whether to use bidirectional RNNs.
-* Able to train on any generic input text file.
+* Able to train on any generic input text file, including large files.
 * Able to train models on a GPU and then use them with a CPU.
 * Able to utilize a powerful CuDNN implementation of RNNs when trained on the GPU, which massively speeds up training time as opposed to normal LSTM implementations.
 * Able to train the model using contextual labels, allowing it to learn faster and produce better results in some cases.
@@ -122,6 +122,8 @@ Additionally, the retraining is done with a momentum-based optimizer and a linea
 ## Projects using textgenrnn
 
 * [Tweet Generator](https://github.com/minimaxir/tweet-generator) — Train a neural network optimized for generating tweets based off of any number of Twitter users
+* [Hacker News Simulator](https://twitter.com/hackernews_nn) — Twitter bot trained on 300,000+ Hacker News submissions using textgenrnn.
+* [Internet Shit Simulator](https://twitter.com/internetshit_nn) — Twitter bot trained on thousands of Product Hunt and Kickstart blurbs using textgenrnn.
 
 ## Maintainer/Creator
 
