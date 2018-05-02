@@ -95,12 +95,15 @@ class textgenrnn:
                        verbose=1,
                        new_model=False,
                        gen_epochs=1,
-                       prop_keep=1.0,
+                       train_size=1.0,
                        max_gen_length=300,
                        **kwargs):
 
         if context_labels:
             context_labels = LabelBinarizer().fit_transform(context_labels)
+
+        if 'prop_keep' in kwargs:
+            train_size = prop_keep
 
         if self.config['word_level']:
             texts = [text_to_word_sequence(text, filters='') for text in texts]
@@ -115,8 +118,19 @@ class textgenrnn:
         if self.config['single_text']:
             indices_list = indices_list[self.config['max_length']:-2, :]
 
-        indices_list = indices_list[np.random.rand(
-            indices_list.shape[0]) < prop_keep, :]
+        indices_mask = np.random.rand(indices_list.shape[0]) < train_size
+
+        gen_val = None
+        val_steps = None
+        if train_size < 1.0:
+            indices_list_val = indices_list[~indices_mask, :]
+            gen_val = generate_sequences_from_texts(
+                texts, indices_list_val, self, context_labels, batch_size)
+            val_steps = max(
+                int(np.floor(indices_list_val.shape[0] / batch_size)), 1)
+
+        indices_list = indices_list[indices_mask, :]
+
         num_tokens = indices_list.shape[0]
         assert num_tokens >= batch_size, "Fewer tokens than batch_size."
 
@@ -157,7 +171,9 @@ class textgenrnn:
                                      save_model_weights(
                                          self.config['name'])],
                                  verbose=verbose,
-                                 max_queue_size=2
+                                 max_queue_size=2,
+                                 validation_data=gen_val,
+                                 validation_steps=val_steps
                                  )
 
         # Keep the text-only version of the model if using context labels
