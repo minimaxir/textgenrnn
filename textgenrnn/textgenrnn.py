@@ -156,6 +156,7 @@ class textgenrnn:
                 self.save(weights_path)
 
             self.model = textgenrnn_model(self.num_classes,
+                                          dropout=dropout,
                                           cfg=self.config,
                                           context_size=context_labels.shape[1],
                                           weights_path=weights_path)
@@ -182,7 +183,8 @@ class textgenrnn:
                                outputs=self.model.output[1])
 
     def train_new_model(self, texts, context_labels=None, num_epochs=50,
-                        gen_epochs=1, batch_size=128, **kwargs):
+                        gen_epochs=1, batch_size=128, dropout=0.0,
+                        **kwargs):
         self.config = self.default_config.copy()
         self.config.update(**kwargs)
 
@@ -219,6 +221,7 @@ class textgenrnn:
 
         # Create a new, blank model w/ given params
         self.model = textgenrnn_model(self.num_classes,
+                                      dropout=dropout,
                                       cfg=self.config)
 
         # Save the files needed to recreate the model
@@ -235,6 +238,7 @@ class textgenrnn:
                             num_epochs=num_epochs,
                             gen_epochs=gen_epochs,
                             batch_size=batch_size,
+                            dropout=dropout,
                             **kwargs)
 
     def save(self, weights_path="textgenrnn_weights_saved.hdf5"):
