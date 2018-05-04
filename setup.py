@@ -1,11 +1,34 @@
 from setuptools import setup, find_packages
 
+long_description = '''
+Generate text using a pretrained neural network with a few lines of code,
+or easily train your own text-generating neural network of any size
+and complexity on any text dataset.
+
+* A modern neural network architecture which utilizes new techniques as
+attention-weighting and skip-embedding to accelerate training
+and improve model quality.
+* Able to train on and generate text at either the
+character-level or word-level.
+* Able to configure RNN size, the number of RNN layers,
+and whether to use bidirectional RNNs.
+* Able to train on any generic input text file, including large files.
+* Able to train models on a GPU and then use them with a CPU.
+* Able to utilize a powerful CuDNN implementation of RNNs
+when trained on the GPU, which massively speeds up training time as
+opposed to normal LSTM implementations.
+* Able to train the model using contextual labels,
+allowing it to learn faster and produce better results in some cases.
+'''
+
+
 setup(
     name='textgenrnn',
     packages=['textgenrnn'],  # this must be the same as the name above
-    version='1.1',
+    version='1.2',
     description='Pretrained character-based neural network for ' \
     'easily generating text.',
+    long_description=long_description,
     author='Max Woolf',
     author_email='max@minimaxir.com',
     url='https://github.com/minimaxir/textgenrnn',
