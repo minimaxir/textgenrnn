@@ -97,6 +97,7 @@ class textgenrnn:
                        gen_epochs=1,
                        train_size=1.0,
                        max_gen_length=300,
+                       validation=True,
                        **kwargs):
 
         if context_labels:
@@ -122,7 +123,7 @@ class textgenrnn:
 
         gen_val = None
         val_steps = None
-        if train_size < 1.0:
+        if train_size < 1.0 and validation:
             indices_list_val = indices_list[~indices_mask, :]
             gen_val = generate_sequences_from_texts(
                 texts, indices_list_val, self, context_labels, batch_size)
@@ -184,7 +185,7 @@ class textgenrnn:
 
     def train_new_model(self, texts, context_labels=None, num_epochs=50,
                         gen_epochs=1, batch_size=128, dropout=0.0,
-                        **kwargs):
+                        validation=True, **kwargs):
         self.config = self.default_config.copy()
         self.config.update(**kwargs)
 
@@ -239,6 +240,7 @@ class textgenrnn:
                             gen_epochs=gen_epochs,
                             batch_size=batch_size,
                             dropout=dropout,
+                            validation=validation,
                             **kwargs)
 
     def save(self, weights_path="textgenrnn_weights_saved.hdf5"):
