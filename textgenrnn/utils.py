@@ -100,7 +100,8 @@ def textgenrnn_encode_sequence(text, vocab, maxlen):
     return sequence.pad_sequences([encoded], maxlen=maxlen)
 
 
-def textgenrnn_texts_from_file(file_path, header=True, delim='\n'):
+def textgenrnn_texts_from_file(file_path, header=True,
+                               delim='\n', is_csv=False):
     '''
     Retrieves texts from a newline-delimited file and returns as a list.
     '''
@@ -108,7 +109,13 @@ def textgenrnn_texts_from_file(file_path, header=True, delim='\n'):
     with open(file_path, 'r', encoding='utf8', errors='ignore') as f:
         if header:
             f.readline()
-        texts = [line.rstrip(delim).strip('"') for line in f]
+        if is_csv:
+            texts = []
+            reader = csv.reader(f)
+            for row in reader:
+                texts.append(row[0])
+        else:
+            texts = [line.rstrip(delim) for line in f]
 
     return texts
 
