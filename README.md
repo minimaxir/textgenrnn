@@ -2,7 +2,7 @@
 
 ![dank text](/docs/textgenrnn_console.gif)
 
-Generate text using a pretrained neural network with a few lines of code, or easily train your own text-generating neural network of any size and complexity on any text dataset.
+Easily train your own text-generating neural network of any size and complexity on any text dataset with a few lines of code, or quickly train on a text using a pretrained model.
 
 textgenrnn is a Python 3 module on top of [Keras](https://github.com/fchollet/keras)/[TensorFlow](https://www.tensorflow.org) for creating [char-rnn](http://karpathy.github.io/2015/05/21/rnn-effectiveness/)s, with many cool features:
 
@@ -10,8 +10,8 @@ textgenrnn is a Python 3 module on top of [Keras](https://github.com/fchollet/ke
 * Able to train on and generate text at either the character-level or word-level.
 * Able to configure RNN size, the number of RNN layers, and whether to use bidirectional RNNs.
 * Able to train on any generic input text file, including large files.
-* Able to train models on a GPU and then use them with a CPU.
-* Able to utilize a powerful CuDNN implementation of RNNs when trained on the GPU, which massively speeds up training time as opposed to normal LSTM implementations.
+* Able to train models on a GPU and then use them to generate text with a CPU.
+* Able to utilize a powerful CuDNN implementation of RNNs when trained on the GPU, which massively speeds up training time as opposed to typical LSTM implementations.
 * Able to train the model using contextual labels, allowing it to learn faster and produce better results in some cases.
 
 You can play with textgenrnn and train any text file with a GPU *for free* in this [Colaboratory Notebook](https://drive.google.com/file/d/1mMKGnVxirJnqDViH7BDJxFqWrsXlPSoK/view?usp=sharing)!
@@ -29,7 +29,7 @@ textgen.generate()
 [Spoiler] Anyone else find this post and their person that was a little more than I really like the Star Wars in the fire or health and posting a personal house of the 2016 Letter for the game in a report of my backyard.
 ```
 
-The model can easily be trained on new texts, and can generate appropriate text *even after a single pass of the input data*.
+The included model can easily be trained on new texts, and can generate appropriate text *even after a single pass of the input data*.
 
 ```python
 textgen.train_from_file('hacker-news-2000.txt', num_epochs=1)
@@ -55,7 +55,7 @@ Urburg to Firefox acquires Nelf Multi Shamn
 Kubernetes by Google’s Bern
 ```
 
-You can also train a new model, with support for word level embeddings and bidirectional layers.
+You can also train a new model, with support for word level embeddings and bidirectional RNN layers.
 
 ## Usage
 

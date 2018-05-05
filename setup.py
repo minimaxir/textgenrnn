@@ -1,9 +1,9 @@
 from setuptools import setup, find_packages
 
 long_description = '''
-Generate text using a pretrained neural network with a few lines of code,
-or easily train your own text-generating neural network of any size
-and complexity on any text dataset.
+Easily train your own text-generating neural network of
+any size and complexity on any text dataset with a few lines
+of code, or quickly train on a text using a pretrained model.
 
 * A modern neural network architecture which utilizes new techniques as
 attention-weighting and skip-embedding to accelerate training
@@ -25,10 +25,11 @@ allowing it to learn faster and produce better results in some cases.
 setup(
     name='textgenrnn',
     packages=['textgenrnn'],  # this must be the same as the name above
-    version='1.2',
+    version='1.2.1',
     description='Pretrained character-based neural network for ' \
     'easily generating text.',
     long_description=long_description,
+    long_description_content_type='text/markdown',
     author='Max Woolf',
     author_email='max@minimaxir.com',
     url='https://github.com/minimaxir/textgenrnn',
