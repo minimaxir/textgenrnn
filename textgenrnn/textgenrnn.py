@@ -256,14 +256,16 @@ class textgenrnn:
         self.__init__(name=self.config['name'])
 
     def train_from_file(self, file_path, header=True, delim="\n",
-                        new_model=False, context=None, **kwargs):
+                        new_model=False, context=None,
+                        is_csv=False, **kwargs):
 
         context_labels = None
         if context:
             texts, context_labels = textgenrnn_texts_from_file_context(
                 file_path)
         else:
-            texts = textgenrnn_texts_from_file(file_path, header, delim)
+            texts = textgenrnn_texts_from_file(file_path, header,
+                                               delim, is_csv)
 
         print("{:,} texts collected.".format(len(texts)))
         if new_model:

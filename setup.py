@@ -25,9 +25,9 @@ allowing it to learn faster and produce better results in some cases.
 setup(
     name='textgenrnn',
     packages=['textgenrnn'],  # this must be the same as the name above
-    version='1.2.1',
-    description='Pretrained character-based neural network for ' \
-    'easily generating text.',
+    version='1.2.2',
+    description='Easily train your own text-generating neural network' \
+    'of any size and complexity',
     long_description=long_description,
     long_description_content_type='text/markdown',
     author='Max Woolf',
