@@ -4,6 +4,8 @@ from keras.preprocessing import sequence
 from keras.preprocessing.text import Tokenizer, text_to_word_sequence
 from keras import backend as K
 from sklearn.preprocessing import LabelBinarizer
+from sklearn.decomposition import PCA
+from sklearn.manifold import TSNE
 import numpy as np
 import json
 import h5py
@@ -289,3 +291,38 @@ class textgenrnn:
         with open(destination_path, 'w') as f:
             for text in texts:
                 f.write("{}\n".format(text))
+
+    def encode_text_vectors(self, texts, pca_dims=50, tsne_dims=None,
+                            tsne_seed=None, return_pca=False,
+                            return_tsne=False):
+
+        vector_output = Model(inputs=self.model.input,
+                              outputs=self.model.get_layer('attention').output)
+        encoded_vectors = []
+        maxlen = self.config['max_length']
+        for text in texts:
+            text_aug = [self.META_TOKEN] + list(text[0:maxlen])
+            encoded_text = textgenrnn_encode_sequence(text_aug, self.vocab,
+                                                      maxlen)
+            encoded_vector = vector_output.predict(encoded_text)
+            encoded_vectors.append(encoded_vector)
+
+        encoded_vectors = np.squeeze(np.array(encoded_vectors), axis=1)
+        if pca_dims is not None:
+            assert len(texts) > 1, "Must use more than 1 text for PCA"
+            pca = PCA(pca_dims)
+            encoded_vectors = pca.fit_transform(encoded_vectors)
+
+        if tsne_dims is not None:
+            tsne = TSNE(tsne_dims, random_state=tsne_seed)
+            encoded_vectors = tsne.fit_transform(encoded_vectors)
+
+        return_objects = encoded_vectors
+        if return_pca or return_tsne:
+            return_objects = [return_objects]
+        if return_pca:
+            return_objects.append(pca)
+        if return_tsne:
+            return_objects.append(tsne)
+
+        return return_objects
