@@ -296,6 +296,10 @@ class textgenrnn:
                             tsne_seed=None, return_pca=False,
                             return_tsne=False):
 
+        # if a single text, force it into a list:
+        if isinstance(texts, str):
+            texts = [texts]
+
         vector_output = Model(inputs=self.model.input,
                               outputs=self.model.get_layer('attention').output)
         encoded_vectors = []
