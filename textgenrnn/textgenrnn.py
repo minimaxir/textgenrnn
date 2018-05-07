@@ -6,6 +6,7 @@ from keras import backend as K
 from sklearn.preprocessing import LabelBinarizer
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
+from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 import json
 import h5py
@@ -330,3 +331,17 @@ class textgenrnn:
             return_objects.append(tsne)
 
         return return_objects
+
+    def similarity(self, text, texts, use_pca=True):
+        text_encoded = self.encode_text_vectors(text, pca_dims=None)
+        if use_pca:
+            texts_encoded, pca = self.encode_text_vectors(texts,
+                                                          return_pca=True)
+            text_encoded = pca.transform(text_encoded)
+        else:
+            texts_encoded = self.encode_text_vectors(texts, pca_dims=None)
+
+        cos_similairity = cosine_similarity(text_encoded, texts_encoded)[0]
+        text_sim_pairs = list(zip(texts, cos_similairity))
+        text_sim_pairs = sorted(text_sim_pairs, key=lambda x: -x[1])
+        return text_sim_pairs
