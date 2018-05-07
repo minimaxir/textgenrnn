@@ -5,19 +5,19 @@ Easily train your own text-generating neural network of
 any size and complexity on any text dataset with a few lines
 of code, or quickly train on a text using a pretrained model.
 
-* A modern neural network architecture which utilizes new techniques as
+- A modern neural network architecture which utilizes new techniques as
 attention-weighting and skip-embedding to accelerate training
 and improve model quality.
-* Able to train on and generate text at either the
+- Able to train on and generate text at either the
 character-level or word-level.
-* Able to configure RNN size, the number of RNN layers,
+- Able to configure RNN size, the number of RNN layers,
 and whether to use bidirectional RNNs.
-* Able to train on any generic input text file, including large files.
-* Able to train models on a GPU and then use them with a CPU.
-* Able to utilize a powerful CuDNN implementation of RNNs
+- Able to train on any generic input text file, including large files.
+- Able to train models on a GPU and then use them with a CPU.
+- Able to utilize a powerful CuDNN implementation of RNNs
 when trained on the GPU, which massively speeds up training time as
 opposed to normal LSTM implementations.
-* Able to train the model using contextual labels,
+- Able to train the model using contextual labels,
 allowing it to learn faster and produce better results in some cases.
 '''
 
@@ -25,8 +25,8 @@ allowing it to learn faster and produce better results in some cases.
 setup(
     name='textgenrnn',
     packages=['textgenrnn'],  # this must be the same as the name above
-    version='1.2.2',
-    description='Easily train your own text-generating neural network' \
+    version='1.3',
+    description='Easily train your own text-generating neural network ' \
     'of any size and complexity',
     long_description=long_description,
     long_description_content_type='text/markdown',
