@@ -55,7 +55,7 @@ Urburg to Firefox acquires Nelf Multi Shamn
 Kubernetes by Google’s Bern
 ```
 
-You can also train a new model, with support for word level embeddings and bidirectional RNN layers.
+You can also train a new model, with support for word level embeddings and bidirectional RNN layers by adding `new_model=True` to any train function.
 
 ## Usage
 
@@ -65,7 +65,7 @@ textgenrnn can be installed [from pypi](https://pypi.python.org/pypi/textgenrnn)
 pip3 install textgenrnn
 ```
 
-You can view a demo of common features and configuration options in [this Jupyter Notebook](/docs/textgenrnn-demo.ipynb).
+You can view a demo of common features and model configuration options in [this Jupyter Notebook](/docs/textgenrnn-demo.ipynb).
 
 `/datasets` contains example datasets using Hacker News/Reddit data for training textgenrnn.
 
