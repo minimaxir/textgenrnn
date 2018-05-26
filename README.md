@@ -14,7 +14,7 @@ textgenrnn is a Python 3 module on top of [Keras](https://github.com/fchollet/ke
 * Able to utilize a powerful CuDNN implementation of RNNs when trained on the GPU, which massively speeds up training time as opposed to typical LSTM implementations.
 * Able to train the model using contextual labels, allowing it to learn faster and produce better results in some cases.
 
-You can play with textgenrnn and train any text file with a GPU *for free* in this [Colaboratory Notebook](https://drive.google.com/file/d/1mMKGnVxirJnqDViH7BDJxFqWrsXlPSoK/view?usp=sharing)!
+You can play with textgenrnn and train any text file with a GPU *for free* in this [Colaboratory Notebook](https://drive.google.com/file/d/1mMKGnVxirJnqDViH7BDJxFqWrsXlPSoK/view?usp=sharing)! Read [this blog post](http://minimaxir.com/2018/05/text-neural-networks/) or [watch this video](https://www.youtube.com/watch?v=RW7mP6BfZuY) for more information!
 
 ## Examples
 
