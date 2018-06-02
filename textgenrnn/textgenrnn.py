@@ -230,11 +230,11 @@ class textgenrnn:
 
         # Save the files needed to recreate the model
         with open('{}_vocab.json'.format(self.config['name']),
-                  'w') as outfile:
+                  'w', encoding='utf8') as outfile:
             json.dump(self.tokenizer.word_index, outfile, ensure_ascii=False)
 
         with open('{}_config.json'.format(self.config['name']),
-                  'w') as outfile:
+                  'w', encoding='utf8') as outfile:
             json.dump(self.config, outfile, ensure_ascii=False)
 
         self.train_on_texts(texts, new_model=True,
