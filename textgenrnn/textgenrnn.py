@@ -101,7 +101,20 @@ class textgenrnn:
                        train_size=1.0,
                        max_gen_length=300,
                        validation=True,
+                       dropout=0.0,
+                       via_new_model=False,
                        **kwargs):
+
+        if new_model and not via_new_model:
+            self.train_new_model(texts,
+                                 context_labels=context_labels,
+                                 num_epochs=num_epochs,
+                                 gen_epochs=gen_epochs,
+                                 batch_size=batch_size,
+                                 dropout=dropout,
+                                 validation=validation,
+                                 **kwargs)
+            return
 
         if context_labels:
             context_labels = LabelBinarizer().fit_transform(context_labels)
@@ -238,6 +251,7 @@ class textgenrnn:
             json.dump(self.config, outfile, ensure_ascii=False)
 
         self.train_on_texts(texts, new_model=True,
+                            via_new_model=True,
                             context_labels=context_labels,
                             num_epochs=num_epochs,
                             gen_epochs=gen_epochs,
