@@ -320,6 +320,8 @@ class textgenrnn:
         encoded_vectors = []
         maxlen = self.config['max_length']
         for text in texts:
+            if self.config['word_level']:
+                text = text_to_word_sequence(text, filters='')
             text_aug = [self.META_TOKEN] + list(text[0:maxlen])
             encoded_text = textgenrnn_encode_sequence(text_aug, self.vocab,
                                                       maxlen)
