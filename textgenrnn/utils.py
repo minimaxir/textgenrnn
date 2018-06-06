@@ -53,15 +53,19 @@ def textgenrnn_generate(model, vocab,
         text = [meta_token] + list(prefix) if prefix else [meta_token]
     next_char = ''
 
+    if not isinstance(temperature, list):
+        temperature = [temperature]
+
     if model_input_count(model) > 1:
         model = Model(inputs=model.input[0], outputs=model.output[1])
 
     while next_char != meta_token and len(text) < max_gen_length:
         encoded_text = textgenrnn_encode_sequence(text[-maxlen:],
                                                   vocab, maxlen)
+        next_temperature = temperature[(len(text) - 1) % len(temperature)]
         next_index = textgenrnn_sample(
             model.predict(encoded_text, batch_size=1)[0],
-            temperature)
+            next_temperature)
         next_char = indices_char[next_index]
         text += [next_char]
 
