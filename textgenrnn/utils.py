@@ -175,11 +175,19 @@ class generate_after_epoch(Callback):
 
 
 class save_model_weights(Callback):
-    def __init__(self, weights_name):
+    def __init__(self, weights_name, num_epochs, save_epochs):
         self.weights_name = weights_name
+        self.num_epochs = num_epochs
+        self.save_epochs = save_epochs
 
     def on_epoch_end(self, epoch, logs={}):
+        print(epoch, self.save_epochs, self.num_epochs)
         if model_input_count(self.model) > 1:
             self.model = Model(inputs=self.model.input[0],
                                outputs=self.model.output[1])
-        self.model.save_weights("{}_weights.hdf5".format(self.weights_name))
+        if self.save_epochs > 0 and (epoch+1) % self.save_epochs == 0 and self.num_epochs != (epoch+1):
+            print("Saving file {}".format(epoch+1))
+            self.model.save_weights("{}_weights_{}.hdf5".format(self.weights_name, epoch+1))
+        else:
+            print("Saving file")
+            self.model.save_weights("{}_weights.hdf5".format(self.weights_name))

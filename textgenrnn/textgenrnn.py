@@ -103,6 +103,7 @@ class textgenrnn:
                        validation=True,
                        dropout=0.0,
                        via_new_model=False,
+					   save_epochs=0,
                        **kwargs):
 
         if new_model and not via_new_model:
@@ -113,6 +114,7 @@ class textgenrnn:
                                  batch_size=batch_size,
                                  dropout=dropout,
                                  validation=validation,
+								 save_epochs=save_epochs
                                  **kwargs)
             return
 
@@ -187,7 +189,9 @@ class textgenrnn:
                                          self, gen_epochs,
                                          max_gen_length),
                                      save_model_weights(
-                                         self.config['name'])],
+                                         self.config['name'], 
+                                         num_epochs,
+                                         save_epochs)],
                                  verbose=verbose,
                                  max_queue_size=2,
                                  validation_data=gen_val,
@@ -201,7 +205,7 @@ class textgenrnn:
 
     def train_new_model(self, texts, context_labels=None, num_epochs=50,
                         gen_epochs=1, batch_size=128, dropout=0.0,
-                        validation=True, **kwargs):
+                        validation=True, save_epochs=0, **kwargs):
         self.config = self.default_config.copy()
         self.config.update(**kwargs)
 
