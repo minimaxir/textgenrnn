@@ -56,8 +56,8 @@ def textgenrnn_generate(model, vocab,
     if not isinstance(temperature, list):
         temperature = [temperature]
 
-    if model_input_count(model) > 1:
-        model = Model(inputs=model.input[0], outputs=model.output[1])
+    if len(model.inputs) > 1:
+        model = Model(inputs=model.inputs[0], outputs=model.outputs[1])
 
     while next_char != meta_token and len(text) < max_gen_length:
         encoded_text = textgenrnn_encode_sequence(text[-maxlen:],
@@ -155,13 +155,6 @@ def textgenrnn_encode_cat(chars, vocab):
     return a
 
 
-def model_input_count(model):
-    if isinstance(model.input, list):
-        return len(model.input)
-    else:   # is a Tensor
-        return model.input.shape[0]
-
-
 class generate_after_epoch(Callback):
     def __init__(self, textgenrnn, gen_epochs, max_gen_length):
         self.textgenrnn = textgenrnn
@@ -179,7 +172,7 @@ class save_model_weights(Callback):
         self.weights_name = weights_name
 
     def on_epoch_end(self, epoch, logs={}):
-        if model_input_count(self.model) > 1:
-            self.model = Model(inputs=self.model.input[0],
-                               outputs=self.model.output[1])
+        if len(self.model.inputs) > 1:
+            self.model = Model(inputs=self.model.inputs[0],
+                               outputs=self.model.outputs[1])
         self.model.save_weights("{}_weights.hdf5".format(self.weights_name))
