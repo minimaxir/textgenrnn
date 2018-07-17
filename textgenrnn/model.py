@@ -68,8 +68,8 @@ https://github.com/keras-team/keras/issues/8860
 
 
 def new_rnn(cfg, layer_num):
-    has_gpu = K.backend() == 'tensorflow' and len(K.tensorflow_backend._get_available_gpus()) > 0
-    if has_gpu:
+    use_cudnnlstm = K.backend() == 'tensorflow' and len(K.tensorflow_backend._get_available_gpus()) > 0
+    if use_cudnnlstm:
         from keras.layers import CuDNNLSTM
         if cfg['rnn_bidirectional']:
             return Bidirectional(CuDNNLSTM(cfg['rnn_size'],
