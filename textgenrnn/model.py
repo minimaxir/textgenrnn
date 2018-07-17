@@ -1,6 +1,6 @@
 from keras.optimizers import RMSprop
 from keras.layers import Input, Embedding, Dense, LSTM, Bidirectional
-from keras.layers import CuDNNLSTM, concatenate, Reshape, SpatialDropout1D
+from keras.layers import concatenate, Reshape, SpatialDropout1D
 from keras.models import Model
 from keras import backend as K
 from .AttentionWeightedAverage import AttentionWeightedAverage
@@ -70,6 +70,7 @@ https://github.com/keras-team/keras/issues/8860
 def new_rnn(cfg, layer_num):
     has_gpu = K.backend() == 'tensorflow' and len(K.tensorflow_backend._get_available_gpus()) > 0
     if has_gpu:
+        from keras.layers import CuDNNLSTM
         if cfg['rnn_bidirectional']:
             return Bidirectional(CuDNNLSTM(cfg['rnn_size'],
                                            return_sequences=True),
