@@ -54,6 +54,8 @@ def textgenrnn_generate(model, vocab,
     Generates and returns a single text.
     '''
 
+    collapse_char = ' ' if word_level else ''
+
     if single_text:
         text = list(prefix) if prefix else ['']
         max_gen_length += maxlen
@@ -88,13 +90,14 @@ def textgenrnn_generate(model, vocab,
                 top_n=top_n
             )
             options = [indices_char[idx] for idx in options_index]
-            print('Controls:\n\t s: stop. \t x: backspace.')
-            print('Options:')
+            print('Controls:\n\ts: stop.\tx: backspace.')
+            print('\nOptions:')
 
             for i, option in enumerate(options, 1):
                 print('\t{}: {}'.format(i, option))
 
-            print('Your choice?')
+            print('\nProgress: {}'.format(collapse_char.join(text)[4:]))
+            print('\nYour choice?')
             user_input = input('> ')
 
             try:
@@ -106,11 +109,12 @@ def textgenrnn_generate(model, vocab,
                     next_char = '<s>'
                     text += [next_char]
                 elif user_input == 'x':
-                    del text[-1]
+                    try:
+                        del text[-1]
+                    except IndexError:
+                        pass
                 else:
                     print('That\'s not an option!')
-
-    collapse_char = ' ' if word_level else ''
 
     # if single text, ignore sequences generated w/ padding
     # if not single text, strip the <s> meta_tokens
