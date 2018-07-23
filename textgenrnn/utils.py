@@ -96,7 +96,7 @@ def textgenrnn_generate(model, vocab,
             for i, option in enumerate(options, 1):
                 print('\t{}: {}'.format(i, option))
 
-            print('\nProgress: {}'.format(collapse_char.join(text)[4:]))
+            print('\nProgress: {}'.format(collapse_char.join(text)[3:]))
             print('\nYour choice?')
             user_input = input('> ')
 
