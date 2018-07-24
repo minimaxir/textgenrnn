@@ -90,7 +90,7 @@ def textgenrnn_generate(model, vocab,
                 top_n=top_n
             )
             options = [indices_char[idx] for idx in options_index]
-            print('Controls:\n\ts: stop.\tx: backspace.')
+            print('Controls:\n\ts: stop.\tx: backspace.\to: write your own.')
             print('\nOptions:')
 
             for i, option in enumerate(options, 1):
@@ -108,6 +108,9 @@ def textgenrnn_generate(model, vocab,
                 if user_input == 's':
                     next_char = '<s>'
                     text += [next_char]
+                elif user_input == 'o':
+                    other = input('> ')
+                    text += [other]                    
                 elif user_input == 'x':
                     try:
                         del text[-1]
