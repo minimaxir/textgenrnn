@@ -71,7 +71,7 @@ textgen.generate(interactive=True, top_n=5)
   
 ![word_level_demo](/docs/word_level_demo.gif)
   
-This can add a *human touch* to the output; it feels like you're the writer! 
+This can add a *human touch* to the output; it feels like you're the writer! ([reference](https://fivethirtyeight.com/features/some-like-it-bot/))
   
 ## Usage
 
@@ -122,8 +122,6 @@ Additionally, the retraining is done with a momentum-based optimizer and a linea
 * A web-based implementation using tensorflow.js (works especially well due to the network's small size)
 
 * A way to visualize the attention-layer outputs to see how the network "learns."
-
-* Supervised text generation mode: allow the model to present the top *n* options and user select the next char/word ([reference](https://fivethirtyeight.com/features/some-like-it-bot/))
 
 * A mode to allow the model architecture to be used for chatbot conversations (may be released as a separate project)
 
