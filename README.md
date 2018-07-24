@@ -56,7 +56,23 @@ Kubernetes by Google’s Bern
 ```
 
 You can also train a new model, with support for word level embeddings and bidirectional RNN layers by adding `new_model=True` to any train function.
+ 
+### Interactive mode
+It's also possible to get involved in how the output unfolds, step by step. Interactive mode will suggest you the *top N* options for the next char/word, and allows you to pick one.  
+  
+Just pass `interactive=True` and `top=N`. N defaults to 3.
 
+```python
+from textgenrnn import textgenrnn
+
+textgen = textgenrnn()
+textgen.generate(interactive=True, top_n=5)
+```
+  
+![word_level_demo](/docs/word_level_demo.gif)
+  
+This can add a *human touch* to the output; it feels like you're the writer! 
+  
 ## Usage
 
 textgenrnn can be installed [from pypi](https://pypi.python.org/pypi/textgenrnn) via `pip`:
