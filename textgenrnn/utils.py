@@ -46,11 +46,24 @@ def textgenrnn_generate(model, vocab,
     Generates and returns a single text.
     '''
 
+    # If generating word level, must add spaces around each punctuation.
+    # https://stackoverflow.com/a/3645946/9314418
+    if word_level and prefix:
+        punct = '!"#$%&()*+,-./:;<=>?@[\]^_`{|}~\\n\\t\'‘’“”’–—'
+        for i in range(len(prefix)):
+            prefix[i] = re.sub('([{}])'.format(punct), r' \1 ', prefix[i])
+
     if single_text:
-        text = list(prefix) if prefix else ['']
+        if word_level:
+            text = prefix.split() if prefix else ['']
+        else:
+            text = list(prefix) if prefix else ['']
         max_gen_length += maxlen
     else:
-        text = [meta_token] + list(prefix) if prefix else [meta_token]
+        if word_level:
+            text = [meta_token] + prefix.split() if prefix else [meta_token]
+        else:
+            text = [meta_token] + list(prefix) if prefix else [meta_token]
     next_char = ''
 
     if not isinstance(temperature, list):
