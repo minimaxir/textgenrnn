@@ -1,0 +1,1 @@
+{"rnn_layers": 2, "dim_embeddings": 100, "max_length": 25, "rnn_size": 64, "name": "poem", "single_text": false, "word_level": false, "max_words": 10000, "rnn_bidirectional": true}
