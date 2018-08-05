@@ -1,7 +1,6 @@
 from keras.engine import InputSpec, Layer
 from keras import backend as K
 from keras import initializers
-import tensorflow as tf
 
 
 class AttentionWeightedAverage(Layer):
