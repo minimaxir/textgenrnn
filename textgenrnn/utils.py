@@ -46,11 +46,22 @@ def textgenrnn_generate(model, vocab,
     Generates and returns a single text.
     '''
 
+    # If generating word level, must add spaces around each punctuation.
+    # https://stackoverflow.com/a/3645946/9314418
+    if word_level and prefix:
+        punct = '!"#$%&()*+,-./:;<=>?@[\]^_`{|}~\\n\\t\'‘’“”’–—'
+        prefix = re.sub('([{}])'.format(punct), r' \1 ', prefix)
+        prefix_t = [x.lower() for x in prefix.split()]
+
+    if not word_level and prefix:
+        prefix_t = list(prefix)
+
     if single_text:
-        text = list(prefix) if prefix else ['']
+        text = prefix_t if prefix else ['']
         max_gen_length += maxlen
     else:
-        text = [meta_token] + list(prefix) if prefix else [meta_token]
+        text = [meta_token] + prefix_t if prefix else [meta_token]
+
     next_char = ''
 
     if not isinstance(temperature, list):
@@ -168,11 +179,17 @@ class generate_after_epoch(Callback):
 
 
 class save_model_weights(Callback):
-    def __init__(self, weights_name):
+    def __init__(self, weights_name, num_epochs, save_epochs):
         self.weights_name = weights_name
+        self.num_epochs = num_epochs
+        self.save_epochs = save_epochs
 
     def on_epoch_end(self, epoch, logs={}):
         if len(self.model.inputs) > 1:
-            self.model = Model(inputs=self.model.inputs[0],
-                               outputs=self.model.outputs[1])
-        self.model.save_weights("{}_weights.hdf5".format(self.weights_name))
+            self.model = Model(inputs=self.model.input[0],
+                               outputs=self.model.output[1])
+        if self.save_epochs > 0 and (epoch+1) % self.save_epochs == 0 and self.num_epochs != (epoch+1):
+            print("Saving Model Weights — Epoch #{}".format(epoch+1))
+            self.model.save_weights("{}_weights_epoch_{}.hdf5".format(self.weights_name, epoch+1))
+        else:
+            self.model.save_weights("{}_weights.hdf5".format(self.weights_name))

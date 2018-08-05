@@ -75,7 +75,6 @@ def generate_sequences_from_texts(texts, indices_list,
 
 
 def process_sequence(X, textgenrnn, new_tokenizer):
-    X = np.array(X)
     X = new_tokenizer.texts_to_sequences(X)
     X = sequence.pad_sequences(
         X, maxlen=textgenrnn.config['max_length'])
