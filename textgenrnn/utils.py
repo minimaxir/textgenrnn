@@ -51,18 +51,17 @@ def textgenrnn_generate(model, vocab,
     if word_level and prefix:
         punct = '!"#$%&()*+,-./:;<=>?@[\]^_`{|}~\\n\\t\'‘’“”’–—'
         prefix = re.sub('([{}])'.format(punct), r' \1 ', prefix)
+        prefix_t = [x.lower() for x in prefix.split()]
+
+    if not word_level and prefix:
+        prefix_t = list(prefix)
 
     if single_text:
-        if word_level:
-            text = prefix.split() if prefix else ['']
-        else:
-            text = list(prefix) if prefix else ['']
+        text = prefix_t if prefix else ['']
         max_gen_length += maxlen
     else:
-        if word_level:
-            text = [meta_token] + prefix.split() if prefix else [meta_token]
-        else:
-            text = [meta_token] + list(prefix) if prefix else [meta_token]
+        text = [meta_token] + prefix_t if prefix else [meta_token]
+
     next_char = ''
 
     if not isinstance(temperature, list):
