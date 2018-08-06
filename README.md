@@ -56,11 +56,12 @@ Kubernetes by Google’s Bern
 ```
 
 You can also train a new model, with support for word level embeddings and bidirectional RNN layers by adding `new_model=True` to any train function.
- 
-### Interactive mode
+
+## Interactive Mode
+
 It's also possible to get involved in how the output unfolds, step by step. Interactive mode will suggest you the *top N* options for the next char/word, and allows you to pick one.  
   
-Just pass `interactive=True` and `top=N`. N defaults to 3.
+When running textgenrnn in the terminal, pass `interactive=True` and `top=N` to `generate`. N defaults to 3.
 
 ```python
 from textgenrnn import textgenrnn
@@ -68,7 +69,7 @@ from textgenrnn import textgenrnn
 textgen = textgenrnn()
 textgen.generate(interactive=True, top_n=5)
 ```
-  
+
 ![word_level_demo](/docs/word_level_demo.gif)
   
 This can add a *human touch* to the output; it feels like you're the writer! ([reference](https://fivethirtyeight.com/features/some-like-it-bot/))
@@ -148,6 +149,8 @@ Max Woolf ([@minimaxir](http://minimaxir.com))
 ## Credits
 
 Andrej Karpathy for the original proposal of the char-rnn via the blog post [The Unreasonable Effectiveness of Recurrent Neural Networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/).
+
+[Daniel Grijalva](https://github.com/Juanets) for [contributing](https://github.com/minimaxir/textgenrnn/pull/52) an interactive mode.
 
 ## License
 
