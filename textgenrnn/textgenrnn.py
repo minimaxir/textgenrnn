@@ -2,6 +2,8 @@ from keras.callbacks import LearningRateScheduler, Callback
 from keras.models import Model, load_model
 from keras.preprocessing import sequence
 from keras.preprocessing.text import Tokenizer, text_to_word_sequence
+from keras.utils import multi_gpu_model
+from keras.optimizers import RMSprop
 from keras import backend as K
 from sklearn.preprocessing import LabelBinarizer
 from sklearn.decomposition import PCA
@@ -107,6 +109,7 @@ class textgenrnn:
                        dropout=0.0,
                        via_new_model=False,
                        save_epochs=0,
+                       multi_gpu=False,
                        **kwargs):
 
         if new_model and not via_new_model:
@@ -118,6 +121,7 @@ class textgenrnn:
                                  dropout=dropout,
                                  validation=validation,
                                  save_epochs=save_epochs,
+                                 multi_gpu=multi_gpu,
                                  **kwargs)
             return
 
@@ -141,6 +145,10 @@ class textgenrnn:
             indices_list = indices_list[self.config['max_length']:-2, :]
 
         indices_mask = np.random.rand(indices_list.shape[0]) < train_size
+
+        if multi_gpu:
+            num_gpus = len(K.tensorflow_backend._get_available_gpus())
+            batch_size = batch_size * num_gpus
 
         gen_val = None
         val_steps = None
@@ -183,23 +191,35 @@ class textgenrnn:
                                           context_size=context_labels.shape[1],
                                           weights_path=weights_path)
 
-        self.model.fit_generator(gen, steps_per_epoch=steps_per_epoch,
-                                 epochs=num_epochs,
-                                 callbacks=[
-                                     LearningRateScheduler(
-                                         lr_linear_decay),
-                                     generate_after_epoch(
-                                         self, gen_epochs,
-                                         max_gen_length),
-                                     save_model_weights(
-                                         self.config['name'],
-                                         num_epochs,
-                                         save_epochs)],
-                                 verbose=verbose,
-                                 max_queue_size=2,
-                                 validation_data=gen_val,
-                                 validation_steps=val_steps
-                                 )
+        model_t = self.model
+
+        if multi_gpu:
+            # Do not locate model/merge on CPU since sample sizes are small.
+            parallel_model = multi_gpu_model(self.model,
+                                             gpus=num_gpus,
+                                             cpu_merge=False)
+            parallel_model.compile(loss='categorical_crossentropy',
+                                   optimizer=RMSprop(lr=4e-3, rho=0.99))
+
+            model_t = parallel_model
+            print("Training on {} GPUs.".format(num_gpus))
+
+        model_t.fit_generator(gen, steps_per_epoch=steps_per_epoch,
+                              epochs=num_epochs,
+                              callbacks=[
+                                  LearningRateScheduler(
+                                      lr_linear_decay),
+                                  generate_after_epoch(
+                                      self, gen_epochs,
+                                      max_gen_length),
+                                  save_model_weights(
+                                      self, num_epochs,
+                                      save_epochs)],
+                              verbose=verbose,
+                              max_queue_size=10,
+                              validation_data=gen_val,
+                              validation_steps=val_steps
+                              )
 
         # Keep the text-only version of the model if using context labels
         if context_labels is not None:
@@ -208,7 +228,8 @@ class textgenrnn:
 
     def train_new_model(self, texts, context_labels=None, num_epochs=50,
                         gen_epochs=1, batch_size=128, dropout=0.0,
-                        validation=True, save_epochs=0, **kwargs):
+                        validation=True, save_epochs=0,
+                        multi_gpu=False, **kwargs):
         self.config = self.default_config.copy()
         self.config.update(**kwargs)
 
@@ -266,6 +287,7 @@ class textgenrnn:
                             dropout=dropout,
                             validation=validation,
                             save_epochs=save_epochs,
+                            multi_gpu=multi_gpu,
                             **kwargs)
 
     def save(self, weights_path="textgenrnn_weights_saved.hdf5"):

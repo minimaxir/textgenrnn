@@ -26,14 +26,14 @@ def textgenrnn_sample(preds, temperature, interactive=False, top_n=3):
     exp_preds = np.exp(preds)
     preds = exp_preds / np.sum(exp_preds)
     probas = np.random.multinomial(1, preds, 1)
-    
+
     if not interactive:
         index = np.argmax(probas)
 
         # prevent function from being able to choose 0 (placeholder)
         # choose 2nd best index from preds
         if index == 0:
-            index = np.argsort(preds)[-2]        
+            index = np.argsort(preds)[-2]
     else:
         # return list of top N chars/words
         # descending order, based on probability
@@ -55,7 +55,7 @@ def textgenrnn_generate(model, vocab,
     '''
 
     collapse_char = ' ' if word_level else ''
-    
+
     # If generating word level, must add spaces around each punctuation.
     # https://stackoverflow.com/a/3645946/9314418
     if word_level and prefix:
@@ -82,7 +82,7 @@ def textgenrnn_generate(model, vocab,
 
     while next_char != meta_token and len(text) < max_gen_length:
         encoded_text = textgenrnn_encode_sequence(text[-maxlen:],
-                                                vocab, maxlen)
+                                                  vocab, maxlen)
         next_temperature = temperature[(len(text) - 1) % len(temperature)]
 
         if not interactive:
@@ -91,7 +91,7 @@ def textgenrnn_generate(model, vocab,
                 model.predict(encoded_text, batch_size=1)[0],
                 next_temperature)
             next_char = indices_char[next_index]
-            text += [next_char]                    
+            text += [next_char]
         else:
             # ask user what the next char/word should be
             options_index = textgenrnn_sample(
@@ -121,7 +121,7 @@ def textgenrnn_generate(model, vocab,
                     text += [next_char]
                 elif user_input == 'o':
                     other = input('> ')
-                    text += [other]                    
+                    text += [other]
                 elif user_input == 'x':
                     try:
                         del text[-1]
@@ -227,17 +227,20 @@ class generate_after_epoch(Callback):
 
 
 class save_model_weights(Callback):
-    def __init__(self, weights_name, num_epochs, save_epochs):
-        self.weights_name = weights_name
+    def __init__(self, textgenrnn, num_epochs, save_epochs):
+        self.textgenrnn = textgenrnn
+        self.weights_name = textgenrnn.config['name']
         self.num_epochs = num_epochs
         self.save_epochs = save_epochs
 
     def on_epoch_end(self, epoch, logs={}):
-        if len(self.model.inputs) > 1:
-            self.model = Model(inputs=self.model.input[0],
-                               outputs=self.model.output[1])
+        if len(self.textgenrnn.model.inputs) > 1:
+            self.textgenrnn.model = Model(inputs=self.model.input[0],
+                                          outputs=self.model.output[1])
         if self.save_epochs > 0 and (epoch+1) % self.save_epochs == 0 and self.num_epochs != (epoch+1):
             print("Saving Model Weights — Epoch #{}".format(epoch+1))
-            self.model.save_weights("{}_weights_epoch_{}.hdf5".format(self.weights_name, epoch+1))
+            self.textgenrnn.model.save_weights(
+                "{}_weights_epoch_{}.hdf5".format(self.weights_name, epoch+1))
         else:
-            self.model.save_weights("{}_weights.hdf5".format(self.weights_name))
+            self.textgenrnn.model.save_weights(
+                "{}_weights.hdf5".format(self.weights_name))
