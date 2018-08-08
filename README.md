@@ -70,7 +70,7 @@ textgen = textgenrnn()
 textgen.generate(interactive=True, top_n=5)
 ```
 
-![word_level_demo](/docs/word_level_demo.gif)
+![word_level_demo](/docs/textgenrnn_interactive.gif)
   
 This can add a *human touch* to the output; it feels like you're the writer! ([reference](https://fivethirtyeight.com/features/some-like-it-bot/))
   
