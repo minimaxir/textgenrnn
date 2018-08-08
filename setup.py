@@ -19,13 +19,14 @@ when trained on the GPU, which massively speeds up training time as
 opposed to normal LSTM implementations.
 - Able to train the model using contextual labels,
 allowing it to learn faster and produce better results in some cases.
+- Able to generate text interactively for customized stories.
 '''
 
 
 setup(
     name='textgenrnn',
     packages=['textgenrnn'],  # this must be the same as the name above
-    version='1.3.2',
+    version='1.4',
     description='Easily train your own text-generating neural network ' \
     'of any size and complexity',
     long_description=long_description,
