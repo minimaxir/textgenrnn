@@ -129,6 +129,8 @@ def textgenrnn_generate(model, vocab,
                         pass
                 else:
                     print('That\'s not an option!')
+            except IndexError:
+                print('That\'s not an option!')
 
     # if single text, ignore sequences generated w/ padding
     # if not single text, strip the <s> meta_tokens

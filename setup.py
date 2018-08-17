@@ -26,7 +26,7 @@ allowing it to learn faster and produce better results in some cases.
 setup(
     name='textgenrnn',
     packages=['textgenrnn'],  # this must be the same as the name above
-    version='1.4',
+    version='1.4.1',
     description='Easily train your own text-generating neural network ' \
     'of any size and complexity',
     long_description=long_description,
