@@ -32,7 +32,7 @@ textgen.generate()
 The included model can easily be trained on new texts, and can generate appropriate text *even after a single pass of the input data*.
 
 ```python
-textgen.train_from_file('hacker-news-2000.txt', num_epochs=1)
+textgen.train_from_file('hacker_news_2000.txt', num_epochs=1)
 textgen.generate()
 ```
 
@@ -79,7 +79,7 @@ This can add a *human touch* to the output; it feels like you're the writer! ([r
 textgenrnn can be installed [from pypi](https://pypi.python.org/pypi/textgenrnn) via `pip`:
 
 ```sh
-pip3 install textgenrnn
+pip3 install textgenrnn tensorflow
 ```
 
 You can view a demo of common features and model configuration options in [this Jupyter Notebook](/docs/textgenrnn-demo.ipynb).
