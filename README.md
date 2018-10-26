@@ -82,6 +82,8 @@ textgenrnn can be installed [from pypi](https://pypi.python.org/pypi/textgenrnn)
 pip3 install textgenrnn
 ```
 
+You will also need to install TensorFlow (`pip3 install tensorflow` for CPU, `pip3 install tensorflow-gpu` for GPU). Note that TensorFlow cannot currently be installed this way in Python 3.7; you'll have to use an earlier Python 3 version.
+
 You can view a demo of common features and model configuration options in [this Jupyter Notebook](/docs/textgenrnn-demo.ipynb).
 
 `/datasets` contains example datasets using Hacker News/Reddit data for training textgenrnn.
