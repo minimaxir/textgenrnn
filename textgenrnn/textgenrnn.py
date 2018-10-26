@@ -59,7 +59,7 @@ class textgenrnn:
                   encoding='utf8', errors='ignore') as json_file:
             self.vocab = json.load(json_file)
 
-        self.tokenizer = Tokenizer(filters='', char_level=True)
+        self.tokenizer = Tokenizer(filters='', lower=False, char_level=True)
         self.tokenizer.word_index = self.vocab
         self.num_classes = len(self.vocab) + 1
         self.model = textgenrnn_model(self.num_classes,
@@ -248,7 +248,9 @@ class textgenrnn:
                 texts[i] = re.sub(' {2,}', ' ', texts[i])
 
         # Create text vocabulary for new texts
+        # if word-level, lowercase; if char-level, uppercase
         self.tokenizer = Tokenizer(filters='',
+                                   lower=self.config['word_level'],
                                    char_level=(not self.config['word_level']))
         self.tokenizer.fit_on_texts(texts)
 
