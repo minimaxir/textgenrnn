@@ -48,7 +48,7 @@ def textgenrnn_model(num_classes, cfg, context_size=None,
             optimizer = tf.keras.optimizers.RMSprop(lr=4e-3, rho=0.99)
             model.compile(loss='categorical_crossentropy', optimizer=optimizer)
             model = tf.contrib.tpu.keras_to_tpu_model(
-                        model_t,
+                        model,
                         strategy=tf.contrib.tpu.TPUDistributionStrategy(
                             tf.contrib.cluster_resolver.TPUClusterResolver(
                                 tpu_address)))
