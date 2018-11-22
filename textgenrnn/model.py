@@ -45,6 +45,7 @@ def textgenrnn_model(num_classes, cfg, context_size=None,
             device_name = os.environ['COLAB_TPU_ADDR']
             tpu_address = 'grpc://' + device_name
             model = tf.keras.models.Model(model)
+            optimizer = tf.keras.optimizers.RMSprop(lr=4e-3, rho=0.99)
             model.compile(loss='categorical_crossentropy', optimizer=optimizer)
             model = tf.contrib.tpu.keras_to_tpu_model(
                         model_t,
