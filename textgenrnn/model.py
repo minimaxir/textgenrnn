@@ -36,7 +36,22 @@ def textgenrnn_model(num_classes, cfg, context_size=None,
         model = Model(inputs=[input], outputs=[output])
         if weights_path is not None:
             model.load_weights(weights_path, by_name=True)
-        model.compile(loss='categorical_crossentropy', optimizer=optimizer)
+
+        # Automatically uses a TPU on Colaboratory if able.
+        if os.environ.get('COLAB_TPU_ADDR') is not None:
+            print("Using TPU on Google Colaboratory")
+            import tensorflow as tf
+            device_name = os.environ['COLAB_TPU_ADDR']
+            tpu_address = 'grpc://' + device_name
+            model = tf.keras.models.Model(model)
+            model.compile(loss='categorical_crossentropy', optimizer=optimizer)
+            model = tf.contrib.tpu.keras_to_tpu_model(
+                        model_t,
+                        strategy=tf.contrib.tpu.TPUDistributionStrategy(
+                            tf.contrib.cluster_resolver.TPUClusterResolver(
+                                tpu_address)))
+        else:                       
+            model.compile(loss='categorical_crossentropy', optimizer=optimizer)
 
     else:
         context_input = Input(

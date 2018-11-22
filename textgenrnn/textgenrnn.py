@@ -205,17 +205,6 @@ class textgenrnn:
             model_t = parallel_model
             print("Training on {} GPUs.".format(num_gpus))
 
-        # Automatically uses a TPU on Colaboratory if able.
-        if os.environ.get('COLAB_TPU_ADDR') is not None:
-            import tensorflow as tf
-            device_name = os.environ['COLAB_TPU_ADDR']
-            tpu_address = 'grpc://' + device_name
-            model_t = tf.contrib.tpu.keras_to_tpu_model(
-                        model_t,
-                        strategy=tf.contrib.tpu.TPUDistributionStrategy(
-                            tf.contrib.cluster_resolver.TPUClusterResolver(
-                                tpu_address)))
-
         model_t.fit_generator(gen, steps_per_epoch=steps_per_epoch,
                               epochs=num_epochs,
                               callbacks=[
