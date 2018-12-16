@@ -140,9 +140,9 @@ Additionally, the retraining is done with a momentum-based optimizer and a linea
 
 ### Articles
 
-Lifehacker: [How to Train Your Own Neural Network](https://lifehacker.com/we-trained-an-ai-to-generate-lifehacker-headlines-1826616918) by Beth Skwarecki
-New York Times: [Let Our Algorithm Choose Your Halloween Costume](https://www.nytimes.com/interactive/2018/10/26/opinion/halloween-spooky-costumes-machine-learning-generator.html) by Janelle Shane
-CNN Business: [This quirky experiment highlights AI's biggest challenges](https://www.cnn.com/2018/11/09/tech/janelle-shane-ai/index.html) by Rachel Metz
+* Lifehacker: [How to Train Your Own Neural Network](https://lifehacker.com/we-trained-an-ai-to-generate-lifehacker-headlines-1826616918) by Beth Skwarecki
+* New York Times: [Let Our Algorithm Choose Your Halloween Costume](https://www.nytimes.com/interactive/2018/10/26/opinion/halloween-spooky-costumes-machine-learning-generator.html) by Janelle Shane
+* CNN Business: [This quirky experiment highlights AI's biggest challenges](https://www.cnn.com/2018/11/09/tech/janelle-shane-ai/index.html) by Rachel Metz
 
 ### Projects
 
