@@ -117,6 +117,7 @@ class textgenrnn:
                                  context_labels=context_labels,
                                  num_epochs=num_epochs,
                                  gen_epochs=gen_epochs,
+                                 train_size=train_size,
                                  batch_size=batch_size,
                                  dropout=dropout,
                                  validation=validation,
@@ -228,6 +229,7 @@ class textgenrnn:
 
     def train_new_model(self, texts, context_labels=None, num_epochs=50,
                         gen_epochs=1, batch_size=128, dropout=0.0,
+                        train_size=1.0,
                         validation=True, save_epochs=0,
                         multi_gpu=False, **kwargs):
         self.config = self.default_config.copy()
@@ -285,6 +287,7 @@ class textgenrnn:
                             context_labels=context_labels,
                             num_epochs=num_epochs,
                             gen_epochs=gen_epochs,
+                            train_size=train_size,
                             batch_size=batch_size,
                             dropout=dropout,
                             validation=validation,
