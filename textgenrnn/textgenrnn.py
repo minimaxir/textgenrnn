@@ -70,9 +70,10 @@ class textgenrnn:
     def generate(self, n=1, return_as_list=False, prefix=None,
                  temperature=[1.0, 0.5, 0.2, 0.2],
                  max_gen_length=300, interactive=False,
-                 top_n=3):
+                 top_n=3, progress=True):
         gen_texts = []
-        for _ in range(n):
+        iterable = trange(n) if progress and n > 1 else range(n)
+        for _ in iterable:
             gen_text, _ = textgenrnn_generate(self.model,
                                            self.vocab,
                                            self.indices_char,
@@ -96,7 +97,7 @@ class textgenrnn:
         for temperature in temperatures:
             print('#'*20 + '\nTemperature: {}\n'.format(temperature) +
                   '#'*20)
-            self.generate(n, temperature=temperature, **kwargs)
+            self.generate(n, temperature=temperature, progress=False, **kwargs)
 
     def train_on_texts(self, texts, context_labels=None,
                        batch_size=128,

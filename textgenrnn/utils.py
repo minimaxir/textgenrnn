@@ -5,6 +5,7 @@ from keras.preprocessing.text import Tokenizer, text_to_word_sequence
 from keras import backend as K
 from sklearn.preprocessing import LabelBinarizer
 from random import shuffle
+from tqdm import trange
 import numpy as np
 import json
 import h5py
@@ -227,12 +228,13 @@ def textgenrnn_encode_cat(chars, vocab):
 
 def synthesize(textgens, n=1, return_as_list=False, prefix='',
                temperature=[0.5, 0.2, 0.2],
-               max_gen_length=300):
+               max_gen_length=300, progress=True):
     """Synthesizes texts using an ensemble of input models.
     """
 
     gen_texts = []
-    for _ in range(n):
+    iterable = trange(n) if progress and n > 1 else range(n)
+    for _ in iterable:
         shuffle(textgens)
         gen_text = prefix
         end = False
