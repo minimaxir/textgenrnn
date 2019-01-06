@@ -4,6 +4,7 @@ from keras.preprocessing import sequence
 from keras.preprocessing.text import Tokenizer, text_to_word_sequence
 from keras import backend as K
 from sklearn.preprocessing import LabelBinarizer
+from random import shuffle
 import numpy as np
 import json
 import h5py
@@ -43,18 +44,22 @@ def textgenrnn_sample(preds, temperature, interactive=False, top_n=3):
 
 
 def textgenrnn_generate(model, vocab,
-                        indices_char, prefix=None, temperature=0.5,
+                        indices_char, temperature=0.5,
                         maxlen=40, meta_token='<s>',
                         word_level=False,
                         single_text=False,
                         max_gen_length=300,
                         interactive=False,
-                        top_n=3):
+                        top_n=3,
+                        prefix=None,
+                        synthesize=False,
+                        stop_tokens=[' ', '\n']):
     '''
     Generates and returns a single text.
     '''
 
     collapse_char = ' ' if word_level else ''
+    end = False
 
     # If generating word level, must add spaces around each punctuation.
     # https://stackoverflow.com/a/3645946/9314418
@@ -80,7 +85,7 @@ def textgenrnn_generate(model, vocab,
     if len(model.inputs) > 1:
         model = Model(inputs=model.inputs[0], outputs=model.outputs[1])
 
-    while next_char != meta_token and len(text) < max_gen_length:
+    while not end and len(text) < max_gen_length:
         encoded_text = textgenrnn_encode_sequence(text[-maxlen:],
                                                   vocab, maxlen)
         next_temperature = temperature[(len(text) - 1) % len(temperature)]
@@ -92,6 +97,10 @@ def textgenrnn_generate(model, vocab,
                 next_temperature)
             next_char = indices_char[next_index]
             text += [next_char]
+            if next_char == meta_token or len(text) >= max_gen_length:
+                end = True
+            if synthesize and next_char in stop_tokens:
+                break
         else:
             # ask user what the next char/word should be
             options_index = textgenrnn_sample(
@@ -131,11 +140,13 @@ def textgenrnn_generate(model, vocab,
                     print('That\'s not an option!')
 
     # if single text, ignore sequences generated w/ padding
-    # if not single text, strip the <s> meta_tokens
+    # if not single text, remove the <s> meta_tokens
     if single_text:
         text = text[maxlen:]
     else:
-        text = text[1:-1]
+        text = text[1:]
+        if meta_token in text:
+            text.remove(meta_token)
 
     text_joined = collapse_char.join(text)
 
@@ -150,7 +161,7 @@ def textgenrnn_generate(model, vocab,
         #     text_joined = re.sub("([{}]) ".format(
         #       right_punct), r'\1', text_joined)
 
-    return text_joined
+    return text_joined, end
 
 
 def textgenrnn_encode_sequence(text, vocab, maxlen):
@@ -213,6 +224,45 @@ def textgenrnn_encode_cat(chars, vocab):
     a[rows, cols] = 1
     return a
 
+
+def synthesize(textgens, n=1, return_as_list=False, prefix='',
+               temperature=[0.5, 0.2, 0.2],
+               max_gen_length=300):
+    """Synthesizes texts using an ensemble of input models.
+    """
+
+    gen_texts = []
+    for _ in range(n):
+        shuffle(textgens)
+        gen_text = prefix
+        end = False
+        textgen_i = 0
+        while not end:
+            textgen = textgens[textgen_i % len(textgens)]
+            gen_text, end = textgenrnn_generate(textgen.model,
+                                                textgen.vocab,
+                                                textgen.indices_char,
+                                                temperature,
+                                                textgen.config['max_length'],
+                                                textgen.META_TOKEN,
+                                                textgen.config['word_level'],
+                                                textgen.config.get(
+                                                    'single_text', False),
+                                                max_gen_length,
+                                                prefix=gen_text,
+                                                synthesize=True)
+            textgen_i += 1
+        if not return_as_list:
+            print("{}\n".format(gen_text))
+        gen_texts.append(gen_text)
+    if return_as_list:
+        return gen_texts
+
+def synthesize_to_file(textgens, destination_path, **kwargs):
+        texts = synthesize(textgens, return_as_list=True, **kwargs)
+        with open(destination_path, 'w') as f:
+            for text in texts:
+                f.write("{}\n".format(text))
 
 class generate_after_epoch(Callback):
     def __init__(self, textgenrnn, gen_epochs, max_gen_length):

@@ -68,14 +68,14 @@ class textgenrnn:
         self.indices_char = dict((self.vocab[c], c) for c in self.vocab)
 
     def generate(self, n=1, return_as_list=False, prefix=None,
-                 temperature=0.5, max_gen_length=300, interactive=False,
+                 temperature=[1.0, 0.5, 0.2, 0.2],
+                 max_gen_length=300, interactive=False,
                  top_n=3):
         gen_texts = []
         for _ in range(n):
-            gen_text = textgenrnn_generate(self.model,
+            gen_text, _ = textgenrnn_generate(self.model,
                                            self.vocab,
                                            self.indices_char,
-                                           prefix,
                                            temperature,
                                            self.config['max_length'],
                                            self.META_TOKEN,
@@ -84,7 +84,8 @@ class textgenrnn:
                                                'single_text', False),
                                            max_gen_length,
                                            interactive,
-                                           top_n)
+                                           top_n,
+                                           prefix)
             if not return_as_list:
                 print("{}\n".format(gen_text))
             gen_texts.append(gen_text)
