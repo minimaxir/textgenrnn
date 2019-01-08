@@ -100,7 +100,9 @@ def textgenrnn_generate(model, vocab,
             text += [next_char]
             if next_char == meta_token or len(text) >= max_gen_length:
                 end = True
-            if synthesize and next_char in stop_tokens:
+            gen_break = (next_char in stop_tokens or word_level or
+                         len(stop_tokens) == 0)
+            if synthesize and gen_break:
                 break
         else:
             # ask user what the next char/word should be
@@ -227,8 +229,8 @@ def textgenrnn_encode_cat(chars, vocab):
 
 
 def synthesize(textgens, n=1, return_as_list=False, prefix='',
-               temperature=[0.5, 0.2, 0.2],
-               max_gen_length=300, progress=True):
+               temperature=[0.5, 0.2, 0.2], max_gen_length=300,
+               progress=True, stop_tokens=[' ', '\n']):
     """Synthesizes texts using an ensemble of input models.
     """
 
@@ -252,7 +254,8 @@ def synthesize(textgens, n=1, return_as_list=False, prefix='',
                                                     'single_text', False),
                                                 max_gen_length,
                                                 prefix=gen_text,
-                                                synthesize=True)
+                                                synthesize=True,
+                                                stop_tokens=stop_tokens)
             textgen_i += 1
         if not return_as_list:
             print("{}\n".format(gen_text))
@@ -260,11 +263,13 @@ def synthesize(textgens, n=1, return_as_list=False, prefix='',
     if return_as_list:
         return gen_texts
 
+
 def synthesize_to_file(textgens, destination_path, **kwargs):
-        texts = synthesize(textgens, return_as_list=True, **kwargs)
-        with open(destination_path, 'w') as f:
-            for text in texts:
-                f.write("{}\n".format(text))
+    texts = synthesize(textgens, return_as_list=True, **kwargs)
+    with open(destination_path, 'w') as f:
+        for text in texts:
+            f.write("{}\n".format(text))
+
 
 class generate_after_epoch(Callback):
     def __init__(self, textgenrnn, gen_epochs, max_gen_length):
