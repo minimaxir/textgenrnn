@@ -68,14 +68,15 @@ class textgenrnn:
         self.indices_char = dict((self.vocab[c], c) for c in self.vocab)
 
     def generate(self, n=1, return_as_list=False, prefix=None,
-                 temperature=0.5, max_gen_length=300, interactive=False,
-                 top_n=3):
+                 temperature=[1.0, 0.5, 0.2, 0.2],
+                 max_gen_length=300, interactive=False,
+                 top_n=3, progress=True):
         gen_texts = []
-        for _ in range(n):
-            gen_text = textgenrnn_generate(self.model,
+        iterable = trange(n) if progress and n > 1 else range(n)
+        for _ in iterable:
+            gen_text, _ = textgenrnn_generate(self.model,
                                            self.vocab,
                                            self.indices_char,
-                                           prefix,
                                            temperature,
                                            self.config['max_length'],
                                            self.META_TOKEN,
@@ -84,7 +85,8 @@ class textgenrnn:
                                                'single_text', False),
                                            max_gen_length,
                                            interactive,
-                                           top_n)
+                                           top_n,
+                                           prefix)
             if not return_as_list:
                 print("{}\n".format(gen_text))
             gen_texts.append(gen_text)
@@ -95,7 +97,7 @@ class textgenrnn:
         for temperature in temperatures:
             print('#'*20 + '\nTemperature: {}\n'.format(temperature) +
                   '#'*20)
-            self.generate(n, temperature=temperature, **kwargs)
+            self.generate(n, temperature=temperature, progress=False, **kwargs)
 
     def train_on_texts(self, texts, context_labels=None,
                        batch_size=128,
@@ -117,6 +119,7 @@ class textgenrnn:
                                  context_labels=context_labels,
                                  num_epochs=num_epochs,
                                  gen_epochs=gen_epochs,
+                                 train_size=train_size,
                                  batch_size=batch_size,
                                  dropout=dropout,
                                  validation=validation,
@@ -228,6 +231,7 @@ class textgenrnn:
 
     def train_new_model(self, texts, context_labels=None, num_epochs=50,
                         gen_epochs=1, batch_size=128, dropout=0.0,
+                        train_size=1.0,
                         validation=True, save_epochs=0,
                         multi_gpu=False, **kwargs):
         self.config = self.default_config.copy()
@@ -285,6 +289,7 @@ class textgenrnn:
                             context_labels=context_labels,
                             num_epochs=num_epochs,
                             gen_epochs=gen_epochs,
+                            train_size=train_size,
                             batch_size=batch_size,
                             dropout=dropout,
                             validation=validation,
