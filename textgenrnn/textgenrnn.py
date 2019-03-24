@@ -138,9 +138,15 @@ class textgenrnn:
             texts = [text_to_word_sequence(text, filters='') for text in texts]
 
         # calculate all combinations of text indices + token indices
-        indices_list = [np.meshgrid(np.array(i), np.arange(
-            len(text) + 1)) for i, text in enumerate(texts)]
-        indices_list = np.block(indices_list)
+        indices_list = [np.meshgrid(np.array(i), np.arange(len(text) + 1)) for i, text in enumerate(texts)]
+        #indices_list = np.block(indices_list) # this hangs when indices_list is large enough
+        # FIX BEGIN ------
+        indices_list_o = np.block(indices_list[0])
+        for i in range(len(indices_list)-1):
+            tmp = np.block(indices_list[i+1])
+            indices_list_o = np.concatenate([indices_list_o,tmp])
+        indices_list = indices_list_o
+        # FIX END ------
 
         # If a single text, there will be 2 extra indices, so remove them
         # Also remove first sequences which use padding
