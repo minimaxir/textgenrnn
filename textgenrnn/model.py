@@ -25,7 +25,7 @@ def textgenrnn_model(num_classes, cfg, context_size=None,
 
     rnn_layer_list = []
     for i in range(cfg['rnn_layers']):
-        prev_layer = embedded if i is 0 else rnn_layer_list[-1]
+        prev_layer = embedded if i == 0 else rnn_layer_list[-1]
         rnn_layer_list.append(new_rnn(cfg, i+1)(prev_layer))
 
     seq_concat = concatenate([embedded] + rnn_layer_list, name='rnn_concat')
