@@ -8,3 +8,6 @@ __pycache__
 /docs/textgenrnn_texts.txt
 /docs/hn_weights.hdf5
 *.pyc
+
+/.idea
+/__pycharm__
