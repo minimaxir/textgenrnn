@@ -190,7 +190,8 @@ def textgenrnn_texts_from_file(file_path, header=True,
             texts = []
             reader = csv.reader(f)
             for row in reader:
-                texts.append(row[0])
+                if row:
+                    texts.append(row[0])
         else:
             texts = [line.rstrip(delim) for line in f]
 
@@ -209,8 +210,9 @@ def textgenrnn_texts_from_file_context(file_path, header=True):
         context_labels = []
         reader = csv.reader(f)
         for row in reader:
-            texts.append(row[0])
-            context_labels.append(row[1])
+            if row:
+                texts.append(row[0])
+                context_labels.append(row[1])
 
     return (texts, context_labels)
 
