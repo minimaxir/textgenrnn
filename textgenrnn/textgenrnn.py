@@ -9,6 +9,8 @@ from sklearn.preprocessing import LabelBinarizer
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
 from sklearn.metrics.pairwise import cosine_similarity
+import tensorflow as tf
+from keras.backend.tensorflow_backend import set_session
 import numpy as np
 import json
 import h5py
@@ -37,7 +39,8 @@ class textgenrnn:
     def __init__(self, weights_path=None,
                  vocab_path=None,
                  config_path=None,
-                 name="textgenrnn"):
+                 name="textgenrnn",
+                 allow_growth=None):
 
         if weights_path is None:
             weights_path = resource_filename(__name__,
@@ -46,6 +49,11 @@ class textgenrnn:
         if vocab_path is None:
             vocab_path = resource_filename(__name__,
                                            'textgenrnn_vocab.json')
+
+        if allow_growth is not None:
+            c = tf.ConfigProto()
+            c.gpu_options.allow_growth = True
+            set_session(tf.Session(config=c))
 
         if config_path is not None:
             with open(config_path, 'r',
@@ -75,18 +83,18 @@ class textgenrnn:
         iterable = trange(n) if progress and n > 1 else range(n)
         for _ in iterable:
             gen_text, _ = textgenrnn_generate(self.model,
-                                           self.vocab,
-                                           self.indices_char,
-                                           temperature,
-                                           self.config['max_length'],
-                                           self.META_TOKEN,
-                                           self.config['word_level'],
-                                           self.config.get(
-                                               'single_text', False),
-                                           max_gen_length,
-                                           interactive,
-                                           top_n,
-                                           prefix)
+                                              self.vocab,
+                                              self.indices_char,
+                                              temperature,
+                                              self.config['max_length'],
+                                              self.META_TOKEN,
+                                              self.config['word_level'],
+                                              self.config.get(
+                                                  'single_text', False),
+                                              max_gen_length,
+                                              interactive,
+                                              top_n,
+                                              prefix)
             if not return_as_list:
                 print("{}\n".format(gen_text))
             gen_texts.append(gen_text)
