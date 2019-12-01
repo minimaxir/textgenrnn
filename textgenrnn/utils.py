@@ -155,14 +155,18 @@ def textgenrnn_generate(model, vocab,
 
     # If word level, remove spaces around punctuation for cleanliness.
     if word_level:
-        #     left_punct = "!%),.:;?@]_}\\n\\t'"
-        #     right_punct = "$([_\\n\\t'"
+        left_punct = "!%),.:;?@\]_}\\n\\t'"
+        right_punct = "$(\[_\\n\\t'"
         punct = '\\n\\t'
-        text_joined = re.sub(" ([{}]) ".format(punct), r'\1', text_joined)
-        #     text_joined = re.sub(" ([{}])".format(
-        #       left_punct), r'\1', text_joined)
-        #     text_joined = re.sub("([{}]) ".format(
-        #       right_punct), r'\1', text_joined)
+
+        text_joined = re.sub(" ([{}]) ".format(
+            punct), r'\1', text_joined)
+        text_joined = re.sub(" ([{}])".format(
+            left_punct), r'\1', text_joined)
+        text_joined = re.sub("([{}]) ".format(
+            right_punct), r'\1', text_joined)
+        text_joined = re.sub('" (.+?) "', 
+            r'"\1"', text_joined)
 
     return text_joined, end
 
