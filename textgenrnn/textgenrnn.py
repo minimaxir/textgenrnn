@@ -143,6 +143,12 @@ class textgenrnn:
             train_size = prop_keep
 
         if self.config['word_level']:
+            # If training word level, must add spaces around each
+            # punctuation. https://stackoverflow.com/a/3645946/9314418
+            punct = '!"#$%&()*+,-./:;<=>?@[\]^_`{|}~\\n\\t\'‘’“”’–—…'
+            for i in range(len(texts)):
+                texts[i] = re.sub('([{}])'.format(punct), r' \1 ', texts[i])
+                texts[i] = re.sub(' {2,}', ' ', texts[i])
             texts = [text_to_word_sequence(text, filters='') for text in texts]
 
         # calculate all combinations of text indices + token indices
@@ -256,15 +262,6 @@ class textgenrnn:
             self.config['rnn_layers'], self.config['rnn_size'],
             'Bidirectional ' if self.config['rnn_bidirectional'] else ''
         ))
-
-        # If training word level, must add spaces around each punctuation.
-        # https://stackoverflow.com/a/3645946/9314418
-
-        if self.config['word_level']:
-            punct = '!"#$%&()*+,-./:;<=>?@[\]^_`{|}~\\n\\t\'‘’“”’–—'
-            for i in range(len(texts)):
-                texts[i] = re.sub('([{}])'.format(punct), r' \1 ', texts[i])
-                texts[i] = re.sub(' {2,}', ' ', texts[i])
 
         # Create text vocabulary for new texts
         # if word-level, lowercase; if char-level, uppercase
