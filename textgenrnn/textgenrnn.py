@@ -1,9 +1,9 @@
-from keras.callbacks import LearningRateScheduler, Callback
-from keras.models import Model, load_model
-from keras.preprocessing import sequence
-from keras.preprocessing.text import Tokenizer, text_to_word_sequence
-from keras.utils import multi_gpu_model
-from keras.optimizers import RMSprop
+from tensorflow.keras.callbacks import LearningRateScheduler, Callback
+from tensorflow.keras.models import Model, load_model
+from tensorflow.keras.preprocessing import sequence
+from tensorflow.keras.preprocessing.text import Tokenizer, text_to_word_sequence
+from tensorflow.keras.utils import multi_gpu_model
+from tensorflow.keras.optimizers import RMSprop
 from keras import backend as K
 from sklearn.preprocessing import LabelBinarizer
 from sklearn.decomposition import PCA
