@@ -131,7 +131,7 @@ class textgenrnn:
                                  batch_size=batch_size,
                                  dropout=dropout,
                                  validation=validation,
-                                 save_epochs=save_epochs,
+                                 save_epochs=save_epoch,
                                  multi_gpu=multi_gpu,
                                  **kwargs)
             return
@@ -172,8 +172,10 @@ class textgenrnn:
 
         if multi_gpu:
             num_gpus = len(K.tensorflow_backend._get_available_gpus())
+            
+            assert num_gpus > 0, "Found 0 GPUs."
             batch_size = batch_size * num_gpus
-
+           
         gen_val = None
         val_steps = None
         if train_size < 1.0 and validation:
