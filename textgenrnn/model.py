@@ -1,8 +1,9 @@
-from keras.optimizers import RMSprop
-from keras.layers import Input, Embedding, Dense, LSTM, Bidirectional
-from keras.layers import concatenate, Reshape, SpatialDropout1D
-from keras.models import Model
-from keras import backend as K
+from tensorflow.keras.optimizers import RMSprop
+from tensorflow.keras.layers import Input, Embedding, Dense, LSTM, Bidirectional
+from tensorflow.keras.layers import concatenate, Reshape, SpatialDropout1D
+from tensorflow.keras.models import Model
+from tensorflow.keras import backend as K
+from tensorflow import test as test
 from .AttentionWeightedAverage import AttentionWeightedAverage
 
 
@@ -68,7 +69,7 @@ https://github.com/keras-team/keras/issues/8860
 
 
 def new_rnn(cfg, layer_num):
-    use_cudnnlstm = K.backend() == 'tensorflow' and len(K.tensorflow_backend._get_available_gpus()) > 0
+    use_cudnnlstm = K.backend() == 'tensorflow' and len(test.gpu_device_name()) > 0
     if use_cudnnlstm:
         from keras.layers import CuDNNLSTM
         if cfg['rnn_bidirectional']:

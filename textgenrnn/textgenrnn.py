@@ -4,7 +4,7 @@ from tensorflow.keras.preprocessing import sequence
 from tensorflow.keras.preprocessing.text import Tokenizer, text_to_word_sequence
 from tensorflow.keras.utils import multi_gpu_model
 from tensorflow.keras.optimizers import RMSprop
-from keras import backend as K
+from tensorflow.keras import backend as K
 from sklearn.preprocessing import LabelBinarizer
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
