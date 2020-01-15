@@ -3,7 +3,7 @@ from tensorflow.keras.layers import Input, Embedding, Dense, LSTM, Bidirectional
 from tensorflow.keras.layers import concatenate, Reshape, SpatialDropout1D
 from tensorflow.keras.models import Model
 from tensorflow.keras import backend as K
-from tensorflow import test as test
+from tensorflow import config as config
 from .AttentionWeightedAverage import AttentionWeightedAverage
 
 
@@ -67,17 +67,23 @@ for parity with CuDNNLSTM:
 https://github.com/keras-team/keras/issues/8860
 '''
 
+'''
+FIXME
+From TensorFlow 2 you do not need to specify CuDNNLSTM.
+You can just use LSTM with no activation function and it will
+automatically use the CuDNN version.
+This part can probably be cleaned up.
+'''
 
 def new_rnn(cfg, layer_num):
-    use_cudnnlstm = K.backend() == 'tensorflow' and len(test.gpu_device_name()) > 0
+    use_cudnnlstm = K.backend() == 'tensorflow' and len(config.get_visible_devices('GPU')) > 0
     if use_cudnnlstm:
-        from keras.layers import CuDNNLSTM
         if cfg['rnn_bidirectional']:
-            return Bidirectional(CuDNNLSTM(cfg['rnn_size'],
+            return Bidirectional(LSTM(cfg['rnn_size'],
                                            return_sequences=True),
                                  name='rnn_{}'.format(layer_num))
 
-        return CuDNNLSTM(cfg['rnn_size'],
+        return LSTM(cfg['rnn_size'],
                          return_sequences=True,
                          name='rnn_{}'.format(layer_num))
     else:

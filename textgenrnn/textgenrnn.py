@@ -1,10 +1,11 @@
-from tensorflow.keras.callbacks import LearningRateScheduler, Callback
-from tensorflow.keras.models import Model, load_model
+from ensorflow.keras.callbacks import LearningRateScheduler, Callback
+fron tensorflow.keras.models import Model, load_model
 from tensorflow.keras.preprocessing import sequence
 from tensorflow.keras.preprocessing.text import Tokenizer, text_to_word_sequence
 from tensorflow.keras.utils import multi_gpu_model
 from tensorflow.keras.optimizers import RMSprop
 from tensorflow.keras import backend as K
+from tensorflow import config as config
 from sklearn.preprocessing import LabelBinarizer
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
@@ -150,7 +151,7 @@ class textgenrnn:
         indices_mask = np.random.rand(indices_list.shape[0]) < train_size
 
         if multi_gpu:
-            num_gpus = len(K.tensorflow_backend._get_available_gpus())
+            num_gpus = len(config.list_visible_devices('GPU'))
             batch_size = batch_size * num_gpus
 
         gen_val = None
@@ -181,6 +182,12 @@ class textgenrnn:
         def lr_linear_decay(epoch):
             return (base_lr * (1 - (epoch / num_epochs)))
 
+        '''
+        FIXME
+        This part is a bit messy as we need to initialize the model within
+        strategy.scope() when using multi-GPU. Can probably be cleaned up a bit.
+        '''
+
         if context_labels is not None:
             if new_model:
                 weights_path = None
@@ -188,26 +195,45 @@ class textgenrnn:
                 weights_path = "{}_weights.hdf5".format(self.config['name'])
                 self.save(weights_path)
 
-            self.model = textgenrnn_model(self.num_classes,
-                                          dropout=dropout,
-                                          cfg=self.config,
-                                          context_size=context_labels.shape[1],
-                                          weights_path=weights_path)
 
-        model_t = self.model
+            if multi_gpu:
+                from tensorflow import distribute as distribute
+                strategy = distribute.MirroredStrategy()
+                with strategy.scope():
+                    parallel_model = textgenrnn_model(self.num_classes,
+                                                      dropout=dropout,
+                                                      cfg=self.config,
+                                                      context_size=context_labels.shape[1],
+                                                      weights_path=weights_path)
+                    parallel_model.compile(loss='categorical_crossentropy',
+                                           optimizer=RMSprop(lr=4e-3, rho=0.99))
+                model_t = parallel_model
+                print("Training on {} GPUs.".format(num_gpus))
+            else:
+                model_t = self.model
+        else:
+            if multi_gpu:
+                from tensorflow import distribute as distribute
+                if new_model:
+                    weights_path = None
+                else:
+                    weights_path = "{}_weights.hdf5".format(self.config['name'])
 
-        if multi_gpu:
-            # Do not locate model/merge on CPU since sample sizes are small.
-            parallel_model = multi_gpu_model(self.model,
-                                             gpus=num_gpus,
-                                             cpu_merge=False)
-            parallel_model.compile(loss='categorical_crossentropy',
-                                   optimizer=RMSprop(lr=4e-3, rho=0.99))
+                strategy = distribute.MirroredStrategy()
+                with strategy.scope():
+                # Do not locate model/merge on CPU since sample sizes are small.
+                    parallel_model = textgenrnn_model(self.num_classes,
+                                                      cfg=self.config,
+                                                      weights_path=weights_path)
+                    parallel_model.compile(loss='categorical_crossentropy',
+                                           optimizer=RMSprop(lr=4e-3, rho=0.99))
 
-            model_t = parallel_model
-            print("Training on {} GPUs.".format(num_gpus))
+                model_t = parallel_model
+                print("Training on {} GPUs.".format(num_gpus))
+            else:
+                model_t = self.model
 
-        model_t.fit_generator(gen, steps_per_epoch=steps_per_epoch,
+        model_t.fit(gen, steps_per_epoch=steps_per_epoch,
                               epochs=num_epochs,
                               callbacks=[
                                   LearningRateScheduler(
