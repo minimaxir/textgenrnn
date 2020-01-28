@@ -1,4 +1,4 @@
-from tensorflow.keras.optimizers import RMSprop
+from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.layers import Input, Embedding, Dense, LSTM, Bidirectional
 from tensorflow.keras.layers import concatenate, Reshape, SpatialDropout1D
 from tensorflow.keras.models import Model
@@ -10,7 +10,7 @@ from .AttentionWeightedAverage import AttentionWeightedAverage
 def textgenrnn_model(num_classes, cfg, context_size=None,
                      weights_path=None,
                      dropout=0.0,
-                     optimizer=RMSprop(lr=4e-3, rho=0.99)):
+                     optimizer=Adam(lr=4e-3)):
     '''
     Builds the model architecture for textgenrnn and
     loads the specified weights for the model.

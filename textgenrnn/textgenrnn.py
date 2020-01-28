@@ -3,7 +3,7 @@ from tensorflow.keras.models import Model, load_model
 from tensorflow.keras.preprocessing import sequence
 from tensorflow.keras.preprocessing.text import Tokenizer, text_to_word_sequence
 from tensorflow.keras.utils import multi_gpu_model
-from tensorflow.keras.optimizers import RMSprop
+from tensorflow.keras.optimizers import Adam
 from tensorflow.keras import backend as K
 from tensorflow import config as config
 from sklearn.preprocessing import LabelBinarizer
@@ -172,7 +172,7 @@ class textgenrnn:
         indices_mask = np.random.rand(indices_list.shape[0]) < train_size
 
         if multi_gpu:
-            num_gpus = len(config.list_visible_devices('GPU'))
+            num_gpus = len(config.get_visible_devices('GPU'))
             batch_size = batch_size * num_gpus
 
         gen_val = None
@@ -227,7 +227,7 @@ class textgenrnn:
                                                       context_size=context_labels.shape[1],
                                                       weights_path=weights_path)
                     parallel_model.compile(loss='categorical_crossentropy',
-                                           optimizer=RMSprop(lr=4e-3, rho=0.99))
+                                           optimizer=Adam(lr=4e-3))
                 model_t = parallel_model
                 print("Training on {} GPUs.".format(num_gpus))
             else:
@@ -247,7 +247,7 @@ class textgenrnn:
                                                       cfg=self.config,
                                                       weights_path=weights_path)
                     parallel_model.compile(loss='categorical_crossentropy',
-                                           optimizer=RMSprop(lr=4e-3, rho=0.99))
+                                           optimizer=Adam(lr=4e-3))
 
                 model_t = parallel_model
                 print("Training on {} GPUs.".format(num_gpus))
