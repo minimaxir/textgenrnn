@@ -26,7 +26,7 @@ allowing it to learn faster and produce better results in some cases.
 setup(
     name='textgenrnn',
     packages=['textgenrnn'],  # this must be the same as the name above
-    version='1.6.0',
+    version='2.0.0',
     description='Easily train your own text-generating neural network ' \
     'of any size and complexity',
     long_description=long_description,
@@ -39,5 +39,5 @@ setup(
     license='MIT',
     python_requires='>=3.5',
     include_package_data=True,
-    install_requires=['h5py', 'scikit-learn', 'tqdm']
+    install_requires=['h5py', 'scikit-learn', 'tqdm', 'keras', 'tensorflow>=2.1.0']
 )
