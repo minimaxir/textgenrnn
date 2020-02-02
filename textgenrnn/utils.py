@@ -155,14 +155,18 @@ def textgenrnn_generate(model, vocab,
 
     # If word level, remove spaces around punctuation for cleanliness.
     if word_level:
-        #     left_punct = "!%),.:;?@]_}\\n\\t'"
-        #     right_punct = "$([_\\n\\t'"
+        left_punct = "!%),.:;?@\]_}\\n\\t'"
+        right_punct = "$(\[_\\n\\t'"
         punct = '\\n\\t'
-        text_joined = re.sub(" ([{}]) ".format(punct), r'\1', text_joined)
-        #     text_joined = re.sub(" ([{}])".format(
-        #       left_punct), r'\1', text_joined)
-        #     text_joined = re.sub("([{}]) ".format(
-        #       right_punct), r'\1', text_joined)
+
+        text_joined = re.sub(" ([{}]) ".format(
+            punct), r'\1', text_joined)
+        text_joined = re.sub(" ([{}])".format(
+            left_punct), r'\1', text_joined)
+        text_joined = re.sub("([{}]) ".format(
+            right_punct), r'\1', text_joined)
+        text_joined = re.sub('" (.+?) "', 
+            r'"\1"', text_joined)
 
     return text_joined, end
 
@@ -190,7 +194,8 @@ def textgenrnn_texts_from_file(file_path, header=True,
             texts = []
             reader = csv.reader(f)
             for row in reader:
-                texts.append(row[0])
+                if row:
+                    texts.append(row[0])
         else:
             texts = [line.rstrip(delim) for line in f]
 
@@ -209,8 +214,9 @@ def textgenrnn_texts_from_file_context(file_path, header=True):
         context_labels = []
         reader = csv.reader(f)
         for row in reader:
-            texts.append(row[0])
-            context_labels.append(row[1])
+            if row:
+                texts.append(row[0])
+                context_labels.append(row[1])
 
     return (texts, context_labels)
 

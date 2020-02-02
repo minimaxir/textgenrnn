@@ -3,12 +3,15 @@ from tensorflow.keras.models import Model, load_model
 from tensorflow.keras.preprocessing import sequence
 from tensorflow.keras.preprocessing.text import Tokenizer, text_to_word_sequence
 from tensorflow.keras.utils import multi_gpu_model
-from tensorflow.keras.optimizers import RMSprop
-from keras import backend as K
+from tensorflow.keras.optimizers import Adam
+from tensorflow.keras import backend as K
+from tensorflow import config as config
 from sklearn.preprocessing import LabelBinarizer
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
 from sklearn.metrics.pairwise import cosine_similarity
+import tensorflow as tf
+from keras.backend.tensorflow_backend import set_session
 import numpy as np
 import json
 import h5py
@@ -37,7 +40,8 @@ class textgenrnn:
     def __init__(self, weights_path=None,
                  vocab_path=None,
                  config_path=None,
-                 name="textgenrnn"):
+                 name="textgenrnn",
+                 allow_growth=None):
 
         if weights_path is None:
             weights_path = resource_filename(__name__,
@@ -46,6 +50,11 @@ class textgenrnn:
         if vocab_path is None:
             vocab_path = resource_filename(__name__,
                                            'textgenrnn_vocab.json')
+
+        if allow_growth is not None:
+            c = tf.ConfigProto()
+            c.gpu_options.allow_growth = True
+            set_session(tf.Session(config=c))
 
         if config_path is not None:
             with open(config_path, 'r',
@@ -75,18 +84,18 @@ class textgenrnn:
         iterable = trange(n) if progress and n > 1 else range(n)
         for _ in iterable:
             gen_text, _ = textgenrnn_generate(self.model,
-                                           self.vocab,
-                                           self.indices_char,
-                                           temperature,
-                                           self.config['max_length'],
-                                           self.META_TOKEN,
-                                           self.config['word_level'],
-                                           self.config.get(
-                                               'single_text', False),
-                                           max_gen_length,
-                                           interactive,
-                                           top_n,
-                                           prefix)
+                                              self.vocab,
+                                              self.indices_char,
+                                              temperature,
+                                              self.config['max_length'],
+                                              self.META_TOKEN,
+                                              self.config['word_level'],
+                                              self.config.get(
+                                                  'single_text', False),
+                                              max_gen_length,
+                                              interactive,
+                                              top_n,
+                                              prefix)
             if not return_as_list:
                 print("{}\n".format(gen_text))
             gen_texts.append(gen_text)
@@ -135,12 +144,25 @@ class textgenrnn:
             train_size = prop_keep
 
         if self.config['word_level']:
+            # If training word level, must add spaces around each
+            # punctuation. https://stackoverflow.com/a/3645946/9314418
+            punct = '!"#$%&()*+,-./:;<=>?@[\]^_`{|}~\\n\\t\'‘’“”’–—…'
+            for i in range(len(texts)):
+                texts[i] = re.sub('([{}])'.format(punct), r' \1 ', texts[i])
+                texts[i] = re.sub(' {2,}', ' ', texts[i])
             texts = [text_to_word_sequence(text, filters='') for text in texts]
 
         # calculate all combinations of text indices + token indices
         indices_list = [np.meshgrid(np.array(i), np.arange(
             len(text) + 1)) for i, text in enumerate(texts)]
-        indices_list = np.block(indices_list)
+        # indices_list = np.block(indices_list) # this hangs when indices_list is large enough
+        # FIX BEGIN ------
+        indices_list_o = np.block(indices_list[0])
+        for i in range(len(indices_list)-1):
+            tmp = np.block(indices_list[i+1])
+            indices_list_o = np.concatenate([indices_list_o, tmp])
+        indices_list = indices_list_o
+        # FIX END ------
 
         # If a single text, there will be 2 extra indices, so remove them
         # Also remove first sequences which use padding
@@ -150,7 +172,7 @@ class textgenrnn:
         indices_mask = np.random.rand(indices_list.shape[0]) < train_size
 
         if multi_gpu:
-            num_gpus = len(K.tensorflow_backend._get_available_gpus())
+            num_gpus = len(config.get_visible_devices('GPU'))
             batch_size = batch_size * num_gpus
 
         gen_val = None
@@ -181,6 +203,12 @@ class textgenrnn:
         def lr_linear_decay(epoch):
             return (base_lr * (1 - (epoch / num_epochs)))
 
+        '''
+        FIXME
+        This part is a bit messy as we need to initialize the model within
+        strategy.scope() when using multi-GPU. Can probably be cleaned up a bit.
+        '''
+
         if context_labels is not None:
             if new_model:
                 weights_path = None
@@ -188,26 +216,45 @@ class textgenrnn:
                 weights_path = "{}_weights.hdf5".format(self.config['name'])
                 self.save(weights_path)
 
-            self.model = textgenrnn_model(self.num_classes,
-                                          dropout=dropout,
-                                          cfg=self.config,
-                                          context_size=context_labels.shape[1],
-                                          weights_path=weights_path)
 
-        model_t = self.model
+            if multi_gpu:
+                from tensorflow import distribute as distribute
+                strategy = distribute.MirroredStrategy()
+                with strategy.scope():
+                    parallel_model = textgenrnn_model(self.num_classes,
+                                                      dropout=dropout,
+                                                      cfg=self.config,
+                                                      context_size=context_labels.shape[1],
+                                                      weights_path=weights_path)
+                    parallel_model.compile(loss='categorical_crossentropy',
+                                           optimizer=Adam(lr=4e-3))
+                model_t = parallel_model
+                print("Training on {} GPUs.".format(num_gpus))
+            else:
+                model_t = self.model
+        else:
+            if multi_gpu:
+                from tensorflow import distribute as distribute
+                if new_model:
+                    weights_path = None
+                else:
+                    weights_path = "{}_weights.hdf5".format(self.config['name'])
 
-        if multi_gpu:
-            # Do not locate model/merge on CPU since sample sizes are small.
-            parallel_model = multi_gpu_model(self.model,
-                                             gpus=num_gpus,
-                                             cpu_merge=False)
-            parallel_model.compile(loss='categorical_crossentropy',
-                                   optimizer=RMSprop(lr=4e-3, rho=0.99))
+                strategy = distribute.MirroredStrategy()
+                with strategy.scope():
+                # Do not locate model/merge on CPU since sample sizes are small.
+                    parallel_model = textgenrnn_model(self.num_classes,
+                                                      cfg=self.config,
+                                                      weights_path=weights_path)
+                    parallel_model.compile(loss='categorical_crossentropy',
+                                           optimizer=Adam(lr=4e-3))
 
-            model_t = parallel_model
-            print("Training on {} GPUs.".format(num_gpus))
+                model_t = parallel_model
+                print("Training on {} GPUs.".format(num_gpus))
+            else:
+                model_t = self.model
 
-        model_t.fit_generator(gen, steps_per_epoch=steps_per_epoch,
+        model_t.fit(gen, steps_per_epoch=steps_per_epoch,
                               epochs=num_epochs,
                               callbacks=[
                                   LearningRateScheduler(
@@ -241,15 +288,6 @@ class textgenrnn:
             self.config['rnn_layers'], self.config['rnn_size'],
             'Bidirectional ' if self.config['rnn_bidirectional'] else ''
         ))
-
-        # If training word level, must add spaces around each punctuation.
-        # https://stackoverflow.com/a/3645946/9314418
-
-        if self.config['word_level']:
-            punct = '!"#$%&()*+,-./:;<=>?@[\]^_`{|}~\\n\\t\'‘’“”’–—'
-            for i in range(len(texts)):
-                texts[i] = re.sub('([{}])'.format(punct), r' \1 ', texts[i])
-                texts[i] = re.sub(' {2,}', ' ', texts[i])
 
         # Create text vocabulary for new texts
         # if word-level, lowercase; if char-level, uppercase
@@ -340,7 +378,7 @@ class textgenrnn:
 
     def generate_to_file(self, destination_path, **kwargs):
         texts = self.generate(return_as_list=True, **kwargs)
-        with open(destination_path, 'w') as f:
+        with open(destination_path, 'w', encoding="utf-8") as f:
             for text in texts:
                 f.write("{}\n".format(text))
 
