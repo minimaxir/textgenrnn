@@ -1,8 +1,8 @@
-from keras.callbacks import LearningRateScheduler, Callback
-from keras.models import Model, load_model
-from keras.preprocessing import sequence
-from keras.preprocessing.text import Tokenizer, text_to_word_sequence
-from keras import backend as K
+from tensorflow.keras.callbacks import LearningRateScheduler, Callback
+from tensorflow.keras.models import Model, load_model
+from tensorflow.keras.preprocessing import sequence
+from tensorflow.keras.preprocessing.text import Tokenizer, text_to_word_sequence
+from tensorflow.keras import backend as K
 from sklearn.preprocessing import LabelBinarizer
 from random import shuffle
 from tqdm import trange
