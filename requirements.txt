@@ -1,5 +1,4 @@
 h5py
 scikit-learn
 tqdm
-keras
 tensorflow>=2.1.0
