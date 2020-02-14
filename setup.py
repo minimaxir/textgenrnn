@@ -39,5 +39,5 @@ setup(
     license='MIT',
     python_requires='>=3.5',
     include_package_data=True,
-    install_requires=['h5py', 'scikit-learn', 'tqdm', 'keras', 'tensorflow>=2.1.0']
+    install_requires=['h5py', 'scikit-learn', 'tqdm', 'tensorflow>=2.1.0']
 )
