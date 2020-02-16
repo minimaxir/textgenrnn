@@ -32,7 +32,7 @@ textgen.generate()
 The included model can easily be trained on new texts, and can generate appropriate text *even after a single pass of the input data*.
 
 ```python
-textgen.train_from_file('hacker-news-2000.txt', num_epochs=1)
+textgen.train_from_file('hacker_news_2000.txt', num_epochs=1)
 textgen.generate()
 ```
 
