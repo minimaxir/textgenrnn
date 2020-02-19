@@ -276,6 +276,7 @@ def synthesize_to_file(textgens, destination_path, **kwargs):
 
 class generate_after_epoch(Callback):
     def __init__(self, textgenrnn, gen_epochs, max_gen_length):
+        super().__init__()
         self.textgenrnn = textgenrnn
         self.gen_epochs = gen_epochs
         self.max_gen_length = max_gen_length
@@ -288,6 +289,7 @@ class generate_after_epoch(Callback):
 
 class save_model_weights(Callback):
     def __init__(self, textgenrnn, num_epochs, save_epochs):
+        super().__init__()
         self.textgenrnn = textgenrnn
         self.weights_name = textgenrnn.config['name']
         self.num_epochs = num_epochs
