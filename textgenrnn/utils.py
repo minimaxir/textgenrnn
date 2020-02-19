@@ -1,16 +1,13 @@
-from tensorflow.keras.callbacks import LearningRateScheduler, Callback
-from tensorflow.keras.models import Model, load_model
-from tensorflow.keras.preprocessing import sequence
-from tensorflow.keras.preprocessing.text import Tokenizer, text_to_word_sequence
-from tensorflow.keras import backend as K
-from sklearn.preprocessing import LabelBinarizer
-from random import shuffle
-from tqdm import trange
-import numpy as np
-import json
-import h5py
 import csv
 import re
+from random import shuffle
+
+import numpy as np
+from tensorflow.keras import backend as K
+from tensorflow.keras.callbacks import Callback
+from tensorflow.keras.models import Model
+from tensorflow.keras.preprocessing import sequence
+from tqdm import trange
 
 
 def textgenrnn_sample(preds, temperature, interactive=False, top_n=3):
