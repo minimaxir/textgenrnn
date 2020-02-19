@@ -75,8 +75,6 @@ def textgenrnn_generate(model, vocab,
     else:
         text = [meta_token] + prefix_t if prefix else [meta_token]
 
-    next_char = ''
-
     if not isinstance(temperature, list):
         temperature = [temperature]
 
