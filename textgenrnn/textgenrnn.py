@@ -145,9 +145,6 @@ class textgenrnn:
         if context_labels:
             context_labels = LabelBinarizer().fit_transform(context_labels)
 
-        if 'prop_keep' in kwargs:
-            train_size = prop_keep
-
         if self.config['word_level']:
             # If training word level, must add spaces around each
             # punctuation. https://stackoverflow.com/a/3645946/9314418
