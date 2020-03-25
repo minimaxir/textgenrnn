@@ -1,16 +1,13 @@
-from tensorflow.keras.callbacks import LearningRateScheduler, Callback
-from tensorflow.keras.models import Model, load_model
-from tensorflow.keras.preprocessing import sequence
-from tensorflow.keras.preprocessing.text import Tokenizer, text_to_word_sequence
-from tensorflow.keras import backend as K
-from sklearn.preprocessing import LabelBinarizer
-from random import shuffle
-from tqdm import trange
-import numpy as np
-import json
-import h5py
 import csv
 import re
+from random import shuffle
+
+import numpy as np
+from tensorflow.keras import backend as K
+from tensorflow.keras.callbacks import Callback
+from tensorflow.keras.models import Model
+from tensorflow.keras.preprocessing import sequence
+from tqdm import trange
 
 
 def textgenrnn_sample(preds, temperature, interactive=False, top_n=3):
@@ -77,8 +74,6 @@ def textgenrnn_generate(model, vocab,
         max_gen_length += maxlen
     else:
         text = [meta_token] + prefix_t if prefix else [meta_token]
-
-    next_char = ''
 
     if not isinstance(temperature, list):
         temperature = [temperature]
@@ -279,6 +274,7 @@ def synthesize_to_file(textgens, destination_path, **kwargs):
 
 class generate_after_epoch(Callback):
     def __init__(self, textgenrnn, gen_epochs, max_gen_length):
+        super().__init__()
         self.textgenrnn = textgenrnn
         self.gen_epochs = gen_epochs
         self.max_gen_length = max_gen_length
@@ -291,6 +287,7 @@ class generate_after_epoch(Callback):
 
 class save_model_weights(Callback):
     def __init__(self, textgenrnn, num_epochs, save_epochs):
+        super().__init__()
         self.textgenrnn = textgenrnn
         self.weights_name = textgenrnn.config['name']
         self.num_epochs = num_epochs

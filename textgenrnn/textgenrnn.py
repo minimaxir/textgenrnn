@@ -1,26 +1,31 @@
-from tensorflow.keras.callbacks import LearningRateScheduler, Callback
-from tensorflow.keras.models import Model, load_model
-from tensorflow.keras.preprocessing import sequence
-from tensorflow.keras.preprocessing.text import Tokenizer, text_to_word_sequence
-from tensorflow.keras.utils import multi_gpu_model
-from tensorflow.keras.optimizers import Adam
-from tensorflow.keras import backend as K
-from tensorflow import config as config
-from sklearn.preprocessing import LabelBinarizer
+import json
+import re
+
+import numpy as np
+import tensorflow as tf
+import tqdm
+from pkg_resources import resource_filename
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
 from sklearn.metrics.pairwise import cosine_similarity
-import tensorflow as tf
+from sklearn.preprocessing import LabelBinarizer
+from tensorflow import config as config
 from tensorflow.compat.v1.keras.backend import set_session
-import numpy as np
-import json
-import h5py
-from pkg_resources import resource_filename
+from tensorflow.keras.callbacks import LearningRateScheduler
+from tensorflow.keras.models import Model
+from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.preprocessing.text import Tokenizer, text_to_word_sequence
+
 from .model import textgenrnn_model
-from .model_training import *
-from .utils import *
-import csv
-import re
+from .model_training import generate_sequences_from_texts
+from .utils import (
+    generate_after_epoch,
+    save_model_weights,
+    textgenrnn_encode_sequence,
+    textgenrnn_generate,
+    textgenrnn_texts_from_file,
+    textgenrnn_texts_from_file_context,
+)
 
 
 class textgenrnn:
@@ -81,7 +86,7 @@ class textgenrnn:
                  max_gen_length=300, interactive=False,
                  top_n=3, progress=True):
         gen_texts = []
-        iterable = trange(n) if progress and n > 1 else range(n)
+        iterable = tqdm.trange(n) if progress and n > 1 else range(n)
         for _ in iterable:
             gen_text, _ = textgenrnn_generate(self.model,
                                               self.vocab,
@@ -139,9 +144,6 @@ class textgenrnn:
 
         if context_labels:
             context_labels = LabelBinarizer().fit_transform(context_labels)
-
-        if 'prop_keep' in kwargs:
-            train_size = prop_keep
 
         if self.config['word_level']:
             # If training word level, must add spaces around each

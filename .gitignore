@@ -9,4 +9,6 @@ __pycache__
 /docs/hn_weights.hdf5
 *.pyc
 test.py
-textgenrnn_weights.hdf5
+*.hdf5
+*vocab.json
+*config.json
