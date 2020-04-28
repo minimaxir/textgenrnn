@@ -57,9 +57,9 @@ class textgenrnn:
                                            'textgenrnn_vocab.json')
 
         if allow_growth is not None:
-            c = tf.ConfigProto()
+            c = tf.compat.v1.ConfigProto()
             c.gpu_options.allow_growth = True
-            set_session(tf.Session(config=c))
+            set_session(tf.compat.v1.Session(config=c))
 
         if config_path is not None:
             with open(config_path, 'r',
