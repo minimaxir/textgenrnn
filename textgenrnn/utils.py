@@ -64,7 +64,8 @@ def textgenrnn_generate(model, vocab,
     if word_level and prefix:
         punct = '!"#$%&()*+,-./:;<=>?@[\]^_`{|}~\\n\\t\'‘’“”’–—'
         prefix = re.sub('([{}])'.format(punct), r' \1 ', prefix)
-        prefix_t = [x.lower() for x in prefix.split()]
+        prefix = re.sub(' {2,}', r' ', prefix)
+        prefix_t = [x.lower() for x in prefix.split(' ')]
 
     if not word_level and prefix:
         prefix_t = list(prefix)
