@@ -79,7 +79,7 @@ This can add a *human touch* to the output; it feels like you're the writer! ([r
 textgenrnn can be installed [from pypi](https://pypi.python.org/pypi/textgenrnn) via `pip`:
 
 ```sh
-pip3 install textgenrnn
+pip3 install textgenrnn tensorflow
 ```
 
 For the latest textgenrnn, *you must have a minimum TensorFlow version of 2.1.0*.
