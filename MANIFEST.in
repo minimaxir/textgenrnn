@@ -1,2 +1,3 @@
 include textgenrnn/textgenrnn_weights.hdf5
 include textgenrnn/textgenrnn_vocab.json
+global-exclude .DS_Store
