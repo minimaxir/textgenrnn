@@ -193,7 +193,8 @@ def textgenrnn_texts_from_file(file_path, header=True,
                 if row:
                     texts.append(row[0])
         else:
-            texts = [line.rstrip(delim) for line in f]
+            text_data = f.read()
+            texts = text_data.split(delim)
 
     return texts
 
