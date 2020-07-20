@@ -128,6 +128,14 @@ class textgenrnn:
                        multi_gpu=False,
                        **kwargs):
 
+        if kwargs.get('word_level',self.config['word_level']):
+            # If training word level, must add spaces around each
+            # punctuation. https://stackoverflow.com/a/3645946/9314418
+            punct = '!"#$%&()*+,-./:;<=>?@[\]^_`{|}~\\n\\t\'‘’“”’–—…'
+            for i in range(len(texts)):
+                texts[i] = re.sub('([{}])'.format(punct), r' \1 ', texts[i])
+                texts[i] = re.sub(' {2,}', ' ', texts[i])
+                
         if new_model and not via_new_model:
             self.train_new_model(texts,
                                  context_labels=context_labels,
@@ -146,12 +154,6 @@ class textgenrnn:
             context_labels = LabelBinarizer().fit_transform(context_labels)
 
         if self.config['word_level']:
-            # If training word level, must add spaces around each
-            # punctuation. https://stackoverflow.com/a/3645946/9314418
-            punct = '!"#$%&()*+,-./:;<=>?@[\]^_`{|}~\\n\\t\'‘’“”’–—…'
-            for i in range(len(texts)):
-                texts[i] = re.sub('([{}])'.format(punct), r' \1 ', texts[i])
-                texts[i] = re.sub(' {2,}', ' ', texts[i])
             texts = [text_to_word_sequence(text, filters='') for text in texts]
 
         # calculate all combinations of text indices + token indices
@@ -362,21 +364,13 @@ class textgenrnn:
                                                delim, is_csv)
 
         print("{:,} texts collected.".format(len(texts)))
-        if new_model:
-            self.train_new_model(
-                texts, context_labels=context_labels, **kwargs)
-        else:
-            self.train_on_texts(texts, context_labels=context_labels, **kwargs)
+        self.train_on_texts(texts, context_labels=context_labels, new_model=new_model, **kwargs)
 
     def train_from_largetext_file(self, file_path, new_model=True, **kwargs):
         with open(file_path, 'r', encoding='utf8', errors='ignore') as f:
             texts = [f.read()]
 
-        if new_model:
-            self.train_new_model(
-                texts, single_text=True, **kwargs)
-        else:
-            self.train_on_texts(texts, single_text=True, **kwargs)
+        self.train_on_texts(texts, single_text=True, new_model=new_model, **kwargs)
 
     def generate_to_file(self, destination_path, **kwargs):
         texts = self.generate(return_as_list=True, **kwargs)
