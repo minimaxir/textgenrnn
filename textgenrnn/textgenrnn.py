@@ -364,21 +364,13 @@ class textgenrnn:
                                                delim, is_csv)
 
         print("{:,} texts collected.".format(len(texts)))
-        if new_model:
-            self.train_new_model(
-                texts, context_labels=context_labels, **kwargs)
-        else:
-            self.train_on_texts(texts, context_labels=context_labels, **kwargs)
+        self.train_on_texts(texts, context_labels=context_labels, new_model=new_model, **kwargs)
 
     def train_from_largetext_file(self, file_path, new_model=True, **kwargs):
         with open(file_path, 'r', encoding='utf8', errors='ignore') as f:
             texts = [f.read()]
 
-        if new_model:
-            self.train_new_model(
-                texts, single_text=True, **kwargs)
-        else:
-            self.train_on_texts(texts, single_text=True, **kwargs)
+        self.train_on_texts(texts, single_text=True, new_model=new_model, **kwargs)
 
     def generate_to_file(self, destination_path, **kwargs):
         texts = self.generate(return_as_list=True, **kwargs)
