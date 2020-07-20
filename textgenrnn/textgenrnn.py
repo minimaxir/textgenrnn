@@ -128,7 +128,7 @@ class textgenrnn:
                        multi_gpu=False,
                        **kwargs):
 
-        if self.config['word_level']:
+        if kwargs.get('word_level',self.config['word_level']):
             # If training word level, must add spaces around each
             # punctuation. https://stackoverflow.com/a/3645946/9314418
             punct = '!"#$%&()*+,-./:;<=>?@[\]^_`{|}~\\n\\t\'‘’“”’–—…'
