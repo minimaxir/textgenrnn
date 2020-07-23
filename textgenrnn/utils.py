@@ -297,7 +297,9 @@ class save_model_weights(Callback):
         if len(self.textgenrnn.model.inputs) > 1:
             self.textgenrnn.model = Model(inputs=self.model.input[0],
                                           outputs=self.model.output[1])
-        if self.save_epochs > 0 and (epoch+1) % self.save_epochs == 0 and self.num_epochs != (epoch+1):
+        if self.save_epochs <= 0:
+            return
+        elif (epoch+1) % self.save_epochs == 0 and self.num_epochs != (epoch+1):
             print("Saving Model Weights — Epoch #{}".format(epoch+1))
             self.textgenrnn.model.save_weights(
                 "{}_weights_epoch_{}.hdf5".format(self.weights_name, epoch+1))
