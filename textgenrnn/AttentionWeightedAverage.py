@@ -62,3 +62,8 @@ class AttentionWeightedAverage(Layer):
             return [None] * len(input_mask)
         else:
             return None
+
+    def get_config(self):
+        config = super(AttentionWeightedAverage, self).get_config()
+        config.update({"return_attention": self.return_attention})
+        return config
