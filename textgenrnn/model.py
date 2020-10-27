@@ -2,7 +2,6 @@ from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.layers import Input, Embedding, Dense, LSTM, Bidirectional
 from tensorflow.keras.layers import concatenate, Reshape, SpatialDropout1D
 from tensorflow.keras.models import Model
-from tensorflow.keras import backend as K
 from tensorflow import config as config
 from .AttentionWeightedAverage import AttentionWeightedAverage
 
@@ -65,35 +64,22 @@ each combination of parameters must be hardcoded.
 The normal LSTMs use sigmoid recurrent activations
 for parity with CuDNNLSTM:
 https://github.com/keras-team/keras/issues/8860
-'''
 
-'''
-FIXME
 From TensorFlow 2 you do not need to specify CuDNNLSTM.
 You can just use LSTM with no activation function and it will
 automatically use the CuDNN version.
-This part can probably be cleaned up.
 '''
 
+
 def new_rnn(cfg, layer_num):
-    use_cudnnlstm = K.backend() == 'tensorflow' and len(config.get_visible_devices('GPU')) > 0
-    if use_cudnnlstm:
-        if cfg['rnn_bidirectional']:
-            return Bidirectional(LSTM(cfg['rnn_size'],
-                                           return_sequences=True),
-                                 name='rnn_{}'.format(layer_num))
+    kwargs = dict(
+        units=cfg['rnn_size'],
+        return_sequences=True,
+    )
+    if not config.get_visible_devices('GPU'):
+        kwargs['recurrent_activation'] = 'sigmoid'
 
-        return LSTM(cfg['rnn_size'],
-                         return_sequences=True,
-                         name='rnn_{}'.format(layer_num))
-    else:
-        if cfg['rnn_bidirectional']:
-            return Bidirectional(LSTM(cfg['rnn_size'],
-                                      return_sequences=True,
-                                      recurrent_activation='sigmoid'),
-                                 name='rnn_{}'.format(layer_num))
+    if cfg['rnn_bidirectional']:
+        return Bidirectional(LSTM(**kwargs), name='rnn_{}'.format(layer_num))
 
-        return LSTM(cfg['rnn_size'],
-                    return_sequences=True,
-                    recurrent_activation='sigmoid',
-                    name='rnn_{}'.format(layer_num))
+    return LSTM(name='rnn_{}'.format(layer_num), **kwargs)
