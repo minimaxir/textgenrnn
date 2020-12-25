@@ -149,7 +149,7 @@ Additionally, the retraining is done with a momentum-based optimizer and a linea
 * [Tweet Generator](https://github.com/minimaxir/tweet-generator) — Train a neural network optimized for generating tweets based off of any number of Twitter users
 * [Hacker News Simulator](https://twitter.com/hackernews_nn) — Twitter bot trained on 300,000+ Hacker News submissions using textgenrnn.
 * [SubredditRNN](https://www.reddit.com/r/subredditnn) — Reddit Subreddit where all submitted content is from textgenrnn bots.
-* [Human-AI Collaborated Pizzas](https://howtogeneratealmostanything.com/food/2018/08/30/episode2.html) — Pizza recepies generated with textgenrnn and made in real life.
+* [Human-AI Collaborated Pizzas](https://howtogeneratealmostanything.com/food/2018/08/30/episode2.html) — Pizza recipes generated with textgenrnn and made in real life.
 * [Board Game Titles](https://boardgamegeek.com/thread/2105706/i-trained-neural-network-17000-game-titles-bgg)
 * [Video Game Discussion Forum Titles](https://www.resetera.com/threads/i-trained-an-ai-on-tens-of-thousands-of-resetera-post-titles-and-discovered-how-the-world-ends.82679/)
 * [A.I Created Cakes](https://www.cupcaikes.com/index.html)
