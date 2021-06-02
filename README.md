@@ -155,6 +155,7 @@ Additionally, the retraining is done with a momentum-based optimizer and a linea
 * [A.I Created Cakes](https://www.cupcaikes.com/index.html)
 * [AI Created Cookies](http://aiweirdness.com/post/180892528177/aw-yeah-its-time-for-cookies-with-neural-networks)
 * [AI Generated Songs](http://aiweirdness.com/post/180654319147/how-to-begin-a-song)
+* [Metal band names](https://www.makeitmetal.net/)
 
 ### Tweets
 
