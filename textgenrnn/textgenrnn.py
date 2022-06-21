@@ -1,31 +1,29 @@
+mport csv
 import json
 import re
 
+import h5py
 import numpy as np
 import tensorflow as tf
-import tqdm
+# from keras.backend.tensorflow_backend import set_session
+from keras.backend import set_session
 from pkg_resources import resource_filename
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.preprocessing import LabelBinarizer
 from tensorflow import config as config
-from tensorflow.compat.v1.keras.backend import set_session
-from tensorflow.keras.callbacks import LearningRateScheduler
-from tensorflow.keras.models import Model
+from tensorflow.keras import backend as K
 from tensorflow.keras.optimizers import Adam
-from tensorflow.keras.preprocessing.text import Tokenizer, text_to_word_sequence
+from tensorflow.keras.preprocessing.text import (Tokenizer,
+                                                 text_to_word_sequence)
 
 from .model import textgenrnn_model
-from .model_training import generate_sequences_from_texts
-from .utils import (
-    generate_after_epoch,
-    save_model_weights,
-    textgenrnn_encode_sequence,
-    textgenrnn_generate,
-    textgenrnn_texts_from_file,
-    textgenrnn_texts_from_file_context,
-)
+from .model_training import *
+from .utils import *
+
+# from tensorflow.keras.utils import multi_gpu_model
+# from keras.utils import multi_gpu_model
 
 
 class textgenrnn:
@@ -57,9 +55,9 @@ class textgenrnn:
                                            'textgenrnn_vocab.json')
 
         if allow_growth is not None:
-            c = tf.compat.v1.ConfigProto()
+            c = tf.ConfigProto()
             c.gpu_options.allow_growth = True
-            set_session(tf.compat.v1.Session(config=c))
+            set_session(tf.Session(config=c))
 
         if config_path is not None:
             with open(config_path, 'r',
@@ -86,7 +84,7 @@ class textgenrnn:
                  max_gen_length=300, interactive=False,
                  top_n=3, progress=True):
         gen_texts = []
-        iterable = tqdm.trange(n) if progress and n > 1 else range(n)
+        iterable = trange(n) if progress and n > 1 else range(n)
         for _ in iterable:
             gen_text, _ = textgenrnn_generate(self.model,
                                               self.vocab,
@@ -144,6 +142,9 @@ class textgenrnn:
 
         if context_labels:
             context_labels = LabelBinarizer().fit_transform(context_labels)
+
+        if 'prop_keep' in kwargs:
+            train_size = prop_keep
 
         if self.config['word_level']:
             # If training word level, must add spaces around each
@@ -218,7 +219,6 @@ class textgenrnn:
                 weights_path = "{}_weights.hdf5".format(self.config['name'])
                 self.save(weights_path)
 
-
             if multi_gpu:
                 from tensorflow import distribute as distribute
                 strategy = distribute.MirroredStrategy()
@@ -240,11 +240,12 @@ class textgenrnn:
                 if new_model:
                     weights_path = None
                 else:
-                    weights_path = "{}_weights.hdf5".format(self.config['name'])
+                    weights_path = "{}_weights.hdf5".format(
+                        self.config['name'])
 
                 strategy = distribute.MirroredStrategy()
                 with strategy.scope():
-                # Do not locate model/merge on CPU since sample sizes are small.
+                    # Do not locate model/merge on CPU since sample sizes are small.
                     parallel_model = textgenrnn_model(self.num_classes,
                                                       cfg=self.config,
                                                       weights_path=weights_path)
@@ -257,21 +258,21 @@ class textgenrnn:
                 model_t = self.model
 
         model_t.fit(gen, steps_per_epoch=steps_per_epoch,
-                              epochs=num_epochs,
-                              callbacks=[
-                                  LearningRateScheduler(
-                                      lr_linear_decay),
-                                  generate_after_epoch(
-                                      self, gen_epochs,
-                                      max_gen_length),
-                                  save_model_weights(
-                                      self, num_epochs,
-                                      save_epochs)],
-                              verbose=verbose,
-                              max_queue_size=10,
-                              validation_data=gen_val,
-                              validation_steps=val_steps
-                              )
+                    epochs=num_epochs,
+                    callbacks=[
+                        LearningRateScheduler(
+                            lr_linear_decay),
+                        generate_after_epoch(
+                            self, gen_epochs,
+                            max_gen_length),
+                        save_model_weights(
+                            self, num_epochs,
+                            save_epochs)],
+                    verbose=verbose,
+                    max_queue_size=10,
+                    validation_data=gen_val,
+                    validation_steps=val_steps
+                    )
 
         # Keep the text-only version of the model if using context labels
         if context_labels is not None:
