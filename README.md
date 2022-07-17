@@ -102,7 +102,7 @@ The included pretrained-model follows a [neural network architecture](https://gi
 
 ![context model](/docs/context_model.png)
 
-Alternatively, if context labels are provided with each text document, the model can be trained in a contextual mode, where the model learns the text *given the context* so the recurrent layers learn the *decontextualized* language. The text-only path can piggy-back off the decontextualized layers; in all, this results in much faster training and better quantitative and qualitative model performance than just training the model gien the text alone.
+Alternatively, if context labels are provided with each text document, the model can be trained in a contextual mode, where the model learns the text *given the context* so the recurrent layers learn the *decontextualized* language. The text-only path can piggy-back off the decontextualized layers; in all, this results in much faster training and better quantitative and qualitative model performance than just training the model given the text alone.
 
 The model weights included with the package are trained on hundreds of thousands of text documents from Reddit submissions ([via BigQuery](http://minimaxir.com/2015/10/reddit-bigquery/)), from a very *diverse* variety of subreddits. The network was also trained using the decontextual approach noted above in order to both improve training performance and mitigate authorial bias.
 
@@ -130,7 +130,7 @@ Additionally, the retraining is done with a momentum-based optimizer and a linea
 
 * More depth toward context (positional context + allowing multiple context labels)
 
-* A larger pretrained network which can accommodate longer character sequences and a more indepth understanding of language, creating better generated sentences.
+* A larger pretrained network which can accommodate longer character sequences and a more in-depth understanding of language, creating better generated sentences.
 
 * Hierarchical softmax activation for word-level models (once Keras has good support for it).
 
@@ -149,7 +149,7 @@ Additionally, the retraining is done with a momentum-based optimizer and a linea
 * [Tweet Generator](https://github.com/minimaxir/tweet-generator) — Train a neural network optimized for generating tweets based off of any number of Twitter users
 * [Hacker News Simulator](https://twitter.com/hackernews_nn) — Twitter bot trained on 300,000+ Hacker News submissions using textgenrnn.
 * [SubredditRNN](https://www.reddit.com/r/subredditnn) — Reddit Subreddit where all submitted content is from textgenrnn bots.
-* [Human-AI Collaborated Pizzas](https://howtogeneratealmostanything.com/food/2018/08/30/episode2.html) — Pizza recepies generated with textgenrnn and made in real life.
+* [Human-AI Collaborated Pizzas](https://howtogeneratealmostanything.com/food/2018/08/30/episode2.html) — Pizza recipes generated with textgenrnn and made in real life.
 * [Board Game Titles](https://boardgamegeek.com/thread/2105706/i-trained-neural-network-17000-game-titles-bgg)
 * [Video Game Discussion Forum Titles](https://www.resetera.com/threads/i-trained-an-ai-on-tens-of-thousands-of-resetera-post-titles-and-discovered-how-the-world-ends.82679/)
 * [A.I Created Cakes](https://www.cupcaikes.com/index.html)
